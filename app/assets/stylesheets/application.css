@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.navbar-nav a {
+	color: #CACD34!important;
+}
+
+.social {
+  margin-top: -5px;
+}
+
+.error {
+	color:#A94442;
+}
+
+
+/************************ CONACT PAGE *****************************************************/
+
+.contact-page {
+  background: url("checkered-flag-opa1000.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  color: #FFFFFF;
+  height: 531px;
+  padding: 10px;
+}
+
+.contact-form button {
+  float: right;
+  width: 115px;
+}
+
+.contact-rigth {
+  color: #FF0000;
+  float: right;
+  margin-right: 61px;
+  margin-top: 25px;
+}
+/************************ CATEGORY PAGE *****************************************************/
+
+.category-panel {
+ 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.59);
+  border-radius: 20px;
+  color: #CACD34;
+  float: left;
+  margin-left: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 30%;
+  cursor: pointer;
+  height: 218px;
+  margin-bottom: 23px;
+}
+
+.category-panel:hover {
+ 	background: url('cuadros_baderatrans.png');
+}
+
+.categories-desc p{
+  color:white!important;
+}
+
+.categories-pages {
+  background: url('checkered-flag-opa1000.png');
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 5px;
+}
+.categories-pages p {
+  color: white;
+}
+
+.categories-links {
+  display: inline-flex;
+  margin-left: 16%;
+  text-align: center;
+}
