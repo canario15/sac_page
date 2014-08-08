@@ -24,6 +24,10 @@
 	color:#A94442;
 }
 
+.clearBoth {
+  clear:both;
+}
+
 
 /************************ CONACT PAGE *****************************************************/
 
@@ -84,4 +88,55 @@
   display: inline-flex;
   margin-left: 16%;
   text-align: center;
+}
+
+
+/************************ ABOUT PAGE *****************************************************/
+.about-page {
+  background: url('checkered-flag-opa1000.png');
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 5px;
+  text-align: center;
+}
+
+.com-dir {
+  width: 100%;
+}
+.com-dir p{
+  color: #FFFFFF;
+  margin-top: 3%;
+}
+
+.com-voc {
+  width: 50%;
+  float: left;
+}
+.com-voc p{
+  color: #FFFFFF;
+  margin-top: 3%;
+}
+
+.com-fis {
+  width: 50%;
+  float: left;
+}
+.com-fis p{
+  color: #FFFFFF;
+  margin-top: 3%;
+}
+
+.profile {
+  margin-left: 5%;
+  float: left;
+  text-align: center;
+}
+
+.vice {
+  margin-top: 7%;
+  margin-left: 23%;
+}
+
+.secre {
+  margin-top: 7%;
 }
