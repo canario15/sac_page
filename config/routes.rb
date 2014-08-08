@@ -2,11 +2,11 @@ SacPage::Application.routes.draw do
 
   root :to => "pages#home"
 
-  get '/news' => 'pages#news', as: :news
-  get '/categories' => 'pages#categories', as: :categories
-  get '/galleries' => 'pages#galleries', as: :galleries
-  get '/about' => 'pages#about', as: :about
-  get '/contact' => 'pages#contact', as: :contact
+  get '/noticias' => 'pages#news', as: :news
+  get '/categorias' => 'pages#categories', as: :categories
+  get '/galeria' => 'pages#galleries', as: :galleries
+  get '/nosotros' => 'pages#about', as: :about
+  get '/contacto' => 'pages#contact', as: :contact
 
   post 'send_contact_info' => 'pages#send_contact_info', as: :send_contact_info
 

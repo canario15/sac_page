@@ -19,7 +19,6 @@ $(document).ready(function () {
 
 	$('.carousel').carousel({ interval: 5000 });
 
-
 	$(".contact-form").validate({
 		rules: {
 			name: "required",
