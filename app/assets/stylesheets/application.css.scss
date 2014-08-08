@@ -140,3 +140,55 @@
 .secre {
   margin-top: 7%;
 }
+
+/************************ NEWS PAGE *****************************************************/
+
+.news-page {
+  background: url(asset-path('checkered-flag-opa1000.png'));
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 5px;
+}
+
+.news-panel {
+  border-bottom: 1px solid #E5E5E5;
+  margin-left: 5%;
+  padding: 20px;
+  width: 90%;
+}
+
+.news-panel p {
+  color: #FFFFFF;
+}
+
+.news-panel h3 {
+  color: #CACD34;
+  text-decoration: underline;
+}
+
+.news-panel img {
+  float: left;
+  margin-right: 2%;
+}
+
+.left-img img {
+  float: right;
+  margin-left: 2%;
+}
+
+.news-panel a {
+  color: #CACD34;
+}
+
+.news-panel a:focus {
+  color: #CACD34;
+}
+
+.news-panel a:hover {
+  color: #CACD34;
+}
+
+.news-panel span {
+  color: #C0C0C0;
+}
+
