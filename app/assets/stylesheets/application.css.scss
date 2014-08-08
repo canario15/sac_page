@@ -32,7 +32,7 @@
 /************************ CONACT PAGE *****************************************************/
 
 .contact-page {
-  background: url("checkered-flag-opa1000.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: url(asset-path("checkered-flag-opa1000.png")) repeat scroll 0 0 rgba(0, 0, 0, 0);
   border-radius: 20px;
   color: #FFFFFF;
   height: 531px;
@@ -67,7 +67,7 @@
 }
 
 .category-panel:hover {
- 	background: url('cuadros_baderatrans.png');
+ 	background: url(asset-path('cuadros_baderatrans.png'));
 }
 
 .categories-desc p{
@@ -75,7 +75,7 @@
 }
 
 .categories-pages {
-  background: url('checkered-flag-opa1000.png');
+  background: url(asset-path('checkered-flag-opa1000.png'));
   border-radius: 20px;
   color: #FFFFFF;
   padding: 5px;
@@ -93,7 +93,7 @@
 
 /************************ ABOUT PAGE *****************************************************/
 .about-page {
-  background: url('checkered-flag-opa1000.png');
+  background: url(asset-path('checkered-flag-opa1000.png'));
   border-radius: 20px;
   color: #FFFFFF;
   padding: 5px;
