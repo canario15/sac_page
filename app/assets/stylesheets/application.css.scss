@@ -86,7 +86,7 @@
 
 .categories-links {
   display: inline-flex;
-  margin-left: 16%;
+  margin-left: 8%;
   text-align: center;
 }
 
@@ -203,4 +203,28 @@
 
 #gallery {
   color: #FFFFFF;
+}
+
+
+
+.small-table {
+  width: 50% !important;
+  margin-left: 25%;
+}
+.panel-blk {
+  background-color: #000000 !important;
+  border-color: #CACD34 !important;
+  color: #CACD34 !important;
+}
+
+.panel-group .panel {
+    border-radius: 4px!important;
+    margin-bottom: 18px!important;
+}
+.panel-default {
+    border-color: #FFFFFF!important;
+}
+
+.panel {
+  background: url(asset-path('checkered-flag-opa1000.png'));
 }
