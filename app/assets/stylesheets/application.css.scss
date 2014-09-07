@@ -90,6 +90,36 @@
   text-align: center;
 }
 
+.small-table {
+  width: 50% !important;
+  margin-left: 25%;
+}
+.panel-blk {
+  background-color: #000000 !important;
+  border-color: #CACD34 !important;
+  color: #CACD34 !important;
+}
+
+.panel-group .panel {
+    border-radius: 4px!important;
+    margin-bottom: 18px!important;
+}
+.panel-default {
+    border-color: #FFFFFF!important;
+}
+
+.panel {
+  background: url(asset-path('checkered-flag-opa1000.png'));
+}
+
+.pilot-container {
+  margin-top: 2%;
+}
+
+.pilot {
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
 
 /************************ ABOUT PAGE *****************************************************/
 .about-page {
@@ -206,25 +236,3 @@
 }
 
 
-
-.small-table {
-  width: 50% !important;
-  margin-left: 25%;
-}
-.panel-blk {
-  background-color: #000000 !important;
-  border-color: #CACD34 !important;
-  color: #CACD34 !important;
-}
-
-.panel-group .panel {
-    border-radius: 4px!important;
-    margin-bottom: 18px!important;
-}
-.panel-default {
-    border-color: #FFFFFF!important;
-}
-
-.panel {
-  background: url(asset-path('checkered-flag-opa1000.png'));
-}

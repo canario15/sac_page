@@ -2,6 +2,8 @@ SacPage::Application.routes.draw do
 
   root :to => "pages#home"
 
+  get  '/descargar' => 'application#download', as: :download
+
   get '/noticias' => 'pages#news', as: :news
   get '/categorias' => 'pages#categories', as: :categories
   get '/galeria' => 'pages#galleries', as: :galleries
@@ -11,24 +13,23 @@ SacPage::Application.routes.draw do
   post 'send_contact_info' => 'pages#send_contact_info', as: :send_contact_info
 
   get 'categorias/formula_sac' => 'categories#formula_sac', as: :formula_sac
-  get 'categorias/turismo_pista_sac' => 'categories#turismo_pista_sac', as: :turismo_pista_sac
-  get 'categorias/karting_125' => 'categories#karting_125', as: :karting_125
-
   get 'categorias/formula_sac/campeonato' => 'categories#championship_formula_sac', as: :championship_formula_sac
-  get 'categorias/turismo_pista_sac/campeonato' => 'categories#championship_turismo_pista_sac', as: :championship_turismo_pista_sac
-  get 'categorias/karting_125/campeonato' => 'categories#championship_karting_125', as: :championship_karting_125
-
-  get 'categorias/formula_sac/pilotos' => 'categories#pilots_formula_sac', as: :pilots_formula_sac
-  get 'categorias/turismo_pista_sac/pilotos' => 'categories#pilots_turismo_pista_sac', as: :pilots_turismo_pista_sac
-  get 'categorias/karting_125/pilotos' => 'categories#pilots_karting_125', as: :pilots_karting_125
-
   get 'categorias/formula_sac/galeria' => 'categories#gallery_formula_sac', as: :gallery_formula_sac
-  get 'categorias/turismo_pista_sac/galeria' => 'categories#gallery_turismo_pista_sac', as: :gallery_turismo_pista_sac
-  get 'categorias/karting_125/galeria' => 'categories#gallery_karting_125', as: :gallery_karting_125
-
+  get 'categorias/formula_sac/pilotos' => 'categories#pilots_formula_sac', as: :pilots_formula_sac
   get 'categorias/formula_sac/reglamentos' => 'categories#regulation_formula_sac', as: :regulation_formula_sac
+  get 'categorias/turismo_pista_sac' => 'categories#turismo_pista_sac', as: :turismo_pista_sac
+  get 'categorias/turismo_pista_sac/campeonato' => 'categories#championship_turismo_pista_sac', as: :championship_turismo_pista_sac
+  get 'categorias/turismo_pista_sac/galeria' => 'categories#gallery_turismo_pista_sac', as: :gallery_turismo_pista_sac
+  get 'categorias/turismo_pista_sac/pilotos' => 'categories#pilots_turismo_pista_sac', as: :pilots_turismo_pista_sac
   get 'categorias/turismo_pista_sac/reglamentos' => 'categories#regulation_turismo_pista_sac', as: :regulation_turismo_pista_sac
+  get "categorias/turismo_pista_sac/reglamentos/download_pdf"
+  get 'categorias/karting_125' => 'categories#karting_125', as: :karting_125
+  get 'categorias/karting_125/campeonato' => 'categories#championship_karting_125', as: :championship_karting_125
+  get 'categorias/karting_125/galeria' => 'categories#gallery_karting_125', as: :gallery_karting_125
+  get 'categorias/karting_125/pilotos' => 'categories#pilots_karting_125', as: :pilots_karting_125
   get 'categorias/karting_125/reglamentos' => 'categories#regulation_karting_125', as: :regulation_karting_125
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
