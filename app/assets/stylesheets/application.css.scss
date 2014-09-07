@@ -79,6 +79,8 @@
   border-radius: 20px;
   color: #FFFFFF;
   padding: 5px;
+  float: left;
+  width: 100%;
 }
 .categories-pages p {
   color: white;
@@ -120,6 +122,29 @@
   margin-left: 2%;
   margin-bottom: 2%;
 }
+
+.links-container {
+  margin-top: 25px;
+}
+
+.link-files {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.59);
+  border-radius: 20px;
+  color: #CACD34;
+  cursor: pointer;
+  float: left;
+  height: 211px;
+  margin-bottom: 23px;
+  margin-left: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 21%;
+}
+
+.link-files:hover {
+  background: url(asset-path('cuadros_baderatrans.png'));
+}
+
 
 /************************ ABOUT PAGE *****************************************************/
 .about-page {
