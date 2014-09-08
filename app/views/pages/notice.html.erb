@@ -1,0 +1,8 @@
+<div class="news-page">
+	<h1><%= @notice.title %></h1>
+	<div class="news-panel">
+		<%= image_tag @notice.photo(:original), width: 500 %>
+		<span><%= l(@notice.created_at, :format => :short) %></span>
+		<p><%= @notice.context %></p>
+	</div>
+</div>

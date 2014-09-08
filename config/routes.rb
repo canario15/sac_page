@@ -1,10 +1,15 @@
 SacPage::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  ActiveAdmin.routes(self)
+
   root :to => "pages#home"
 
   get  '/descargar' => 'application#download', as: :download
 
   get '/noticias' => 'pages#news', as: :news
+  get '/noticias/:id' => 'pages#notice', as: :notice
   get '/categorias' => 'pages#categories', as: :categories
   get '/galeria' => 'pages#galleries', as: :galleries
   get '/nosotros' => 'pages#about', as: :about

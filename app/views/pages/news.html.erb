@@ -1,21 +1,16 @@
 <div class="news-page">
 	<h1>Noticias</h1>
-	<% 6.times.each do |d| %>
-		<div class="news-panel">
-			<%= image_tag 'logo.png', width: 200 %>
-			<%= link_to "#" do %>
-				<h3>Titulo noticia</h3>
+	<% @notices.each_with_index do |notice,i| %>
+		<div class="news-panel <%= "left-img" if !i.even? %>">
+			<%= image_tag notice.photo(:medium), width: 200 %>
+			<%= link_to notice_path(notice) do %>
+				<h3><%= notice.title %></h3>
 			<% end -%>
-			<span> Agosto 10, 2014 </span>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel magna at libero feugiat pharetra ut vitae eros. Cras nec diam sed neque fermentum auctor. Ut sit amet elementum purus. Quisque volutpat erat vitae mauris tincidunt, eu fermentum eros porta. Sed vestibulum pretium erat non porttitor. Duis iaculis nibh auctor augue imperdiet, vitae mollis libero Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel magna at libero feugiat pharetra ut vitae eros. Cras nec diam sed neque fermentum auctor. Ut sit amet elementum purus <%= link_to "[…]" , "#" %></p>
-		</div>
-		<div class="news-panel left-img">
-			<%= image_tag 'logo.png', width: 200 %>
-			<%= link_to "#" do %>
-				<h3>Titulo noticia</h3>
-			<% end -%>
-			<span> Agosto 10, 2014 </span>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel magna at libero feugiat pharetra ut vitae eros. Cras nec diam sed neque fermentum auctor. Ut sit amet elementum purus. Quisque volutpat erat vitae mauris tincidunt, eu fermentum eros porta. Sed vestibulum pretium erat non porttitor. Duis iaculis nibh auctor augue imperdiet, vitae mollis libero Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel magna at libero feugiat pharetra ut vitae eros. Cras nec diam sed neque fermentum auctor. Ut sit amet elementum purus <%= link_to "[…]" , "#" %> </p>
+			<span><%= l(notice.created_at, :format => :short) %></span>
+			<p> <%= truncate(notice.context, length: 544) { link_to "más" , notice_path(notice) } %></p>
 		</div>
 	<% end -%>
+	<div class="apple_pagination">
+    <%= will_paginate @notices, :container => false %>
+  </div>
 </div>

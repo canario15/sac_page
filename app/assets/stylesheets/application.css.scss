@@ -223,12 +223,16 @@
 
 .news-panel img {
   float: left;
+  margin-bottom: -1px;
   margin-right: 2%;
+  margin-top: 20px;
 }
 
 .left-img img {
   float: right;
   margin-left: 2%;
+  margin-bottom: -1px;
+  margin-top: 20px;
 }
 
 .news-panel a {
@@ -261,3 +265,39 @@
 }
 
 
+/*pagination*/
+.apple_pagination {
+  background: #f1f1f1!important;
+  border: 1px solid #e5e5e5!important;
+  text-align: center!important;
+  padding: 1em!important;
+  cursor: default!important;
+  margin-top: -2px!important;
+  border-radius: 0 0 20px 20px!important;
+}
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em !important;
+}
+.apple_pagination .disabled {
+  color: #aaaaaa!important;
+}
+.apple_pagination .current {
+  font-style: normal!important;
+  font-weight: bold!important;
+  background-color: #bebebe!important;
+  display: inline-block!important;
+  width: 1.4em!important;
+  height: 1.4em!important;
+  line-height: 1.5!important;
+  -moz-border-radius: 1em!important;
+  -webkit-border-radius: 1em!important;
+  border-radius: 1em!important;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px!important;
+}
+.apple_pagination a {
+  text-decoration: none!important;
+  color: black!important;
+}
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline!important;
+}

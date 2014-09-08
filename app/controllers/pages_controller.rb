@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def news
+    @notices = Notice.paginate(:page => params[:page])
   end
 
   def categories
@@ -19,6 +20,10 @@ class PagesController < ApplicationController
   end
 
   def send_contact_info
+  end
+
+  def notice
+    @notice = Notice.find_by(id: params[:id])
   end
 
 end

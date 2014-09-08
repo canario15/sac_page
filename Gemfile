@@ -38,6 +38,14 @@ group :production do
 	gem 'rails_12factor'
 end
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+gem 'devise'
+
+gem "paperclip", "~> 4.2"
+
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
