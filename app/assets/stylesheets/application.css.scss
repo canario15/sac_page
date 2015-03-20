@@ -8,8 +8,11 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require active_admin.css.scss
  *= require_self
- *= require_tree .
+ *= require bootstrap.css
+ *= require business-casual.css.scss
+ *= require nanogallery.css.scss
  */
 
 .navbar-nav a {
@@ -28,6 +31,9 @@
   clear:both;
 }
 
+thead th {
+    background: none!important;
+}
 
 /************************ CONACT PAGE *****************************************************/
 
