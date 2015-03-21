@@ -1,13 +1,28 @@
 class CategoriesController < ApplicationController
 
-	def formula_sac
+
+  def show
+    @category = Category.find_by_id(params[:id])
   end
 
-  def turismo_pista_sac
+  def show_championship
+    @category = Category.find_by_id(params[:id])
   end
 
-  def karting_125
+  def show_gallery
+    @category = Category.find_by_id(params[:id])
   end
+
+  def show_pilots
+    @category = Category.find_by_id(params[:id])
+    @pilots = @category.pilots
+  end
+
+  def show_regulation
+    @category = Category.find_by_id(params[:id])
+  end
+
+
 
   def championship_formula_sac
   end
@@ -16,24 +31,6 @@ class CategoriesController < ApplicationController
   end
 
   def championship_karting_125
-  end
-
-  def pilots_formula_sac
-  end
-
-  def pilots_turismo_pista_sac
-  end
-
-  def pilots_karting_125
-  end
-
-  def gallery_formula_sac
-  end
-
-  def gallery_turismo_pista_sac
-  end
-
-  def gallery_karting_125
   end
 
   def regulation_formula_sac

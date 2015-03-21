@@ -1,0 +1,8 @@
+<div class="categories-pages">
+  <h1> PILOTOS  DE <%= @category.name %></h1>
+   <div class="pilot-container">
+    <% @pilots.each do |pilot| %>
+        <%= image_tag pilot.avatar, width: 250, class: "pilot" %>
+    <% end %>
+  </div>
+</div>

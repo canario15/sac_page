@@ -1,21 +1,11 @@
 <div class="acces-categ">
-	<%= link_to turismo_pista_sac_path do %>
-		<div class="category-panel" >
-			<h3>Turismo Pista  SAC</h3>
-			<%= image_tag 'tps.png', width: 196 %>
-		</div>
-	<% end -%>
-	<%= link_to formula_sac_path do %>
-		<div class="category-panel" >
-			<h3>Fórmula SAC</h3>
-			<%= image_tag 'formula_sac.png', width: 296 %>
-		</div>
-	<% end -%>
-	<%= link_to karting_125_path do %>
-		<div class="category-panel" >
-			<h3>Karting 125cc</h3>
-			<%= image_tag 'karting_logo.png', width: 196 %>
-		</div>
+	<% @categories.each do |category| %>
+		<%= link_to category_path(category) do %>
+			<div class="category-panel" >
+				<h3><%= category.name %></h3>
+				<%= image_tag category.logo, width: 196 %>
+			</div>
+		<% end -%>
 	<% end -%>
 </div>
 <div class="categories-desc">

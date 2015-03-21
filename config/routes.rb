@@ -10,29 +10,44 @@ SacPage::Application.routes.draw do
 
   get '/noticias' => 'pages#news', as: :news
   get '/noticias/:id' => 'pages#notice', as: :notice
-  get '/categorias' => 'pages#categories', as: :categories
+  get 'categorias/turismo_pista_sac/campeonato' => 'categories#championship_turismo_pista_sac', as: :championship_turismo_pista_sac
+
+  get '/categorias'                 => 'pages#categories',              as: :categories
+  get '/categorias/:id'             => 'categories#show',               as: :category
+  get '/categorias/:id/campeonato'  => 'categories#show_championship',  as: :category_championship
+  get '/categorias/:id/galeria'     => 'categories#show_gallery',       as: :category_gallery
+  get '/categorias/:id/pilotos'     => 'categories#show_pilots',        as: :category_pilots
+  get '/categorias/:id/reglamentos' => 'categories#show_regulation',    as: :category_regulation
+
+  get 'categorias/formula_sac/campeonato'       => 'categories#championship_formula_sac', as: :championship_formula_sac
+  get 'categorias/karting_125/campeonato'       => 'categories#championship_karting_125', as: :championship_karting_125
+
+  get 'categorias/formula_sac/reglamentos' => 'categories#regulation_formula_sac', as: :regulation_formula_sac
+  get 'categorias/turismo_pista_sac/reglamentos' => 'categories#regulation_turismo_pista_sac', as: :regulation_turismo_pista_sac
+  get "categorias/turismo_pista_sac/reglamentos/download_pdf"
+  get 'categorias/karting_125/reglamentos' => 'categories#regulation_karting_125', as: :regulation_karting_125
+
+
+
+
   get '/galeria' => 'pages#galleries', as: :galleries
   get '/nosotros' => 'pages#about', as: :about
   get '/contacto' => 'pages#contact', as: :contact
 
+
+
+
+
+
+
+
+
+
+
+
+
   post 'send_contact_info' => 'pages#send_contact_info', as: :send_contact_info
 
-  get 'categorias/formula_sac' => 'categories#formula_sac', as: :formula_sac
-  get 'categorias/formula_sac/campeonato' => 'categories#championship_formula_sac', as: :championship_formula_sac
-  get 'categorias/formula_sac/galeria' => 'categories#gallery_formula_sac', as: :gallery_formula_sac
-  get 'categorias/formula_sac/pilotos' => 'categories#pilots_formula_sac', as: :pilots_formula_sac
-  get 'categorias/formula_sac/reglamentos' => 'categories#regulation_formula_sac', as: :regulation_formula_sac
-  get 'categorias/turismo_pista_sac' => 'categories#turismo_pista_sac', as: :turismo_pista_sac
-  get 'categorias/turismo_pista_sac/campeonato' => 'categories#championship_turismo_pista_sac', as: :championship_turismo_pista_sac
-  get 'categorias/turismo_pista_sac/galeria' => 'categories#gallery_turismo_pista_sac', as: :gallery_turismo_pista_sac
-  get 'categorias/turismo_pista_sac/pilotos' => 'categories#pilots_turismo_pista_sac', as: :pilots_turismo_pista_sac
-  get 'categorias/turismo_pista_sac/reglamentos' => 'categories#regulation_turismo_pista_sac', as: :regulation_turismo_pista_sac
-  get "categorias/turismo_pista_sac/reglamentos/download_pdf"
-  get 'categorias/karting_125' => 'categories#karting_125', as: :karting_125
-  get 'categorias/karting_125/campeonato' => 'categories#championship_karting_125', as: :championship_karting_125
-  get 'categorias/karting_125/galeria' => 'categories#gallery_karting_125', as: :gallery_karting_125
-  get 'categorias/karting_125/pilotos' => 'categories#pilots_karting_125', as: :pilots_karting_125
-  get 'categorias/karting_125/reglamentos' => 'categories#regulation_karting_125', as: :regulation_karting_125
 
 
 

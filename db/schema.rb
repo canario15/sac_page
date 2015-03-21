@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140907224506) do
+ActiveRecord::Schema.define(version: 20150320231505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,20 @@ ActiveRecord::Schema.define(version: 20140907224506) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  create_table "categories_pilots", force: true do |t|
+    t.integer "category_id"
+    t.integer "pilot_id"
+  end
+
   create_table "notices", force: true do |t|
     t.string   "title"
     t.text     "context"
@@ -76,6 +90,20 @@ ActiveRecord::Schema.define(version: 20140907224506) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "pilots", force: true do |t|
+    t.integer  "number"
+    t.string   "full_name"
+    t.string   "team"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "car"
+    t.string   "city"
   end
 
 end

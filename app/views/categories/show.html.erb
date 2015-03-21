@@ -1,0 +1,30 @@
+<div class="categories-pages">
+	<h1> <%= @category.name %> </h1>
+	<p> <%= @category.description %> </p>
+	<div class="links">
+		<div class="categories-links">
+			<%= link_to category_championship_path(@category) do %>
+				<%= image_tag 'table.png', width: 54 %>
+				<h3>CAMPEONATO</h3>
+			<% end -%>
+		</div>
+		<div class="categories-links">
+			<%= link_to category_gallery_path(@category) do %>
+				<%= image_tag 'gallery.png', width: 54 %>
+				<h3>GALERÍA</h3>
+			<% end -%>
+		</div>
+		<div class="categories-links">
+			<%= link_to category_pilots_path(@category) do %>
+				<%= image_tag 'helmet.png', width: 54 %>
+				<h3>PILOTOS</h3>
+			<% end -%>
+		</div>
+		<div class="categories-links">
+			<%= link_to category_regulation_path(@category) do %>
+				<%= image_tag 'files.png', width: 54 %>
+				<h3>REGLAMENTOS</h3>
+			<% end -%>
+		</div>
+	</div>
+</div>

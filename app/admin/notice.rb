@@ -39,7 +39,4 @@ ActiveAdmin.register Notice do
     end
   end
 
-
-
-
 end

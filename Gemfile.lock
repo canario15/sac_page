@@ -61,6 +61,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    columnize (0.8.9)
+    debugger (1.6.3)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.4)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.4)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -186,6 +193,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
+  debugger
   devise
   jbuilder (~> 1.2)
   jquery-rails
