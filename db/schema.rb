@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320231505) do
+ActiveRecord::Schema.define(version: 20150322012401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,17 @@ ActiveRecord::Schema.define(version: 20150320231505) do
     t.integer "pilot_id"
   end
 
+  create_table "championships", force: true do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.integer  "one_id"
+    t.integer  "two_id"
+    t.integer  "three_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "notices", force: true do |t|
     t.string   "title"
     t.text     "context"
@@ -91,6 +102,17 @@ ActiveRecord::Schema.define(version: 20150320231505) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  create_table "pilot_steps", force: true do |t|
+    t.integer "step_id"
+    t.string  "time"
+    t.integer "pilot_id"
+    t.integer "score"
+    t.integer "position"
+  end
+
+  add_index "pilot_steps", ["pilot_id"], name: "index_pilot_steps_on_pilot_id", using: :btree
+  add_index "pilot_steps", ["step_id"], name: "index_pilot_steps_on_step_id", using: :btree
 
   create_table "pilots", force: true do |t|
     t.integer  "number"
@@ -105,5 +127,24 @@ ActiveRecord::Schema.define(version: 20150320231505) do
     t.string   "car"
     t.string   "city"
   end
+
+  create_table "races", force: true do |t|
+    t.integer  "championship_id"
+    t.string   "city"
+    t.datetime "date"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "races", ["championship_id"], name: "index_races_on_championship_id", using: :btree
+
+  create_table "steps", force: true do |t|
+    t.integer "race_id"
+    t.integer "number"
+    t.string  "name"
+  end
+
+  add_index "steps", ["race_id"], name: "index_steps_on_race_id", using: :btree
 
 end

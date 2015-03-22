@@ -2,6 +2,12 @@ es:
   activerecord:
     models:
       Notice: "Noticia"
+      category: "Categoría"
+      championship: "Campeonato"
+      pilot: "Piloto"
+      race: "Fecha"
+      step: "Serie"
+      pilot_step: "Piloto en la serie"
 
     attributes:
       notice:
@@ -9,6 +15,39 @@ es:
         context: "Texto"
         photo: "Foto"
         created_at: "Fecha"
+      category:
+        name: "Nombre"
+        description: "Descripción"
+      championship:
+        name: "Nombre"
+        year: "Año"
+        one: "Campeón"
+        two: "Vicecamepón"
+        three: "Tercero"
+        category: "Categoría"
+      pilot:
+        categories: "Categoría/s"
+        number: "Número"
+        full_name: "Nombre completo"
+        team: "Equipo"
+        car: "Auto"
+        city: "Ciudad"
+      pilot_step:
+        step: "Serie"
+        pilot: "Piloto"
+        time: "Timepo"
+        position: "Posición"
+        score: "Puntos"
+      race:
+        championship: "Campeonato"
+        city: "Ciudad"
+        date: "Fecha"
+        name: "Nombre"
+      step:
+        race: "Fecha"
+        number: "Numero de carrera"
+        name: "Nombre"
+
   time:
     formats:
       long: "%d de %B de %Y a las %H:%M"
