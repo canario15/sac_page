@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322012401) do
+ActiveRecord::Schema.define(version: 20150323005939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,19 +103,29 @@ ActiveRecord::Schema.define(version: 20150322012401) do
     t.datetime "photo_updated_at"
   end
 
+  create_table "pilot_races", force: true do |t|
+    t.integer  "pilot_id"
+    t.integer  "race_id"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pilot_races", ["pilot_id"], name: "index_pilot_races_on_pilot_id", using: :btree
+  add_index "pilot_races", ["race_id"], name: "index_pilot_races_on_race_id", using: :btree
+
   create_table "pilot_steps", force: true do |t|
     t.integer "step_id"
     t.string  "time"
-    t.integer "pilot_id"
+    t.integer "pilot_race_id"
     t.integer "score"
     t.integer "position"
   end
 
-  add_index "pilot_steps", ["pilot_id"], name: "index_pilot_steps_on_pilot_id", using: :btree
+  add_index "pilot_steps", ["pilot_race_id"], name: "index_pilot_steps_on_pilot_race_id", using: :btree
   add_index "pilot_steps", ["step_id"], name: "index_pilot_steps_on_step_id", using: :btree
 
   create_table "pilots", force: true do |t|
-    t.integer  "number"
     t.string   "full_name"
     t.string   "team"
     t.datetime "created_at"
@@ -131,10 +141,11 @@ ActiveRecord::Schema.define(version: 20150322012401) do
   create_table "races", force: true do |t|
     t.integer  "championship_id"
     t.string   "city"
-    t.datetime "date"
+    t.date     "date"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "observation"
   end
 
   add_index "races", ["championship_id"], name: "index_races_on_championship_id", using: :btree
@@ -143,6 +154,7 @@ ActiveRecord::Schema.define(version: 20150322012401) do
     t.integer "race_id"
     t.integer "number"
     t.string  "name"
+    t.text    "observation"
   end
 
   add_index "steps", ["race_id"], name: "index_steps_on_race_id", using: :btree

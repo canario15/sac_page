@@ -1,0 +1,6 @@
+<div class="categories-pages">
+	<h1> Campeonatos <%= @category.name %></h1>
+	<% @category.championships.each do |c| %>
+		<%= link_to "#{c.year}  -  #{c.name}", championship_path(championship_id: c.id) %></br>
+	<% end -%>
+</div>

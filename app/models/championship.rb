@@ -10,4 +10,6 @@ class Championship < ActiveRecord::Base
 
 	accepts_nested_attributes_for :races, :allow_destroy => true
 
+	default_scope order('year DESC')
+
 end

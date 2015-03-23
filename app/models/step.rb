@@ -4,4 +4,5 @@ class Step < ActiveRecord::Base
 
   accepts_nested_attributes_for :pilot_steps, :allow_destroy => true
 
+  default_scope order('number ASC')
 end

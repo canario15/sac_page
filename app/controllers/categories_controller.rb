@@ -5,8 +5,12 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_id(params[:id])
   end
 
-  def show_championship
+  def show_championships
     @category = Category.find_by_id(params[:id])
+  end
+
+  def championship
+    @championship = Championship.find_by_id(params[:championship_id])
   end
 
   def show_gallery

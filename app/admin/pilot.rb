@@ -9,7 +9,6 @@ ActiveAdmin.register Pilot do
 
   form do |f|
     f.inputs "Piloto" do
-      f.input :number
       f.input :full_name
       f.input :city
       f.input :car
@@ -22,7 +21,6 @@ ActiveAdmin.register Pilot do
 
 
   index :title => "Pilotos"  do
-    column :number
     column :full_name
     column :city
     column :car
@@ -35,7 +33,6 @@ ActiveAdmin.register Pilot do
 
   show :title => :full_name do |ad|
     attributes_table do
-      row :number
       row :full_name
       row :city
       row :car

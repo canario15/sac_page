@@ -5,6 +5,8 @@ ActiveAdmin.register Championship do
 
   menu :label => "Campeonatos"
 
+  config.sort_order = 'year_desc'
+
   permit_params :name, :category_id, :year, :one_id, :two_id, :three_id, races_attributes: [:id, :city, :date, :name, :_destroy]
 
   form do |f|
@@ -17,7 +19,7 @@ ActiveAdmin.register Championship do
       f.input :three
       f.has_many :races, allow_destroy: true  do |r|
         r.input :city
-        r.input :date, as: :datepicker, datepicker_options: { min_date: "2013-10-8",        max_date: "+3D" }
+        r.input :date, as: :datepicker
         r.input :name
       end
     end

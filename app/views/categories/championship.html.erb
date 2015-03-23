@@ -1,0 +1,271 @@
+<div class="categories-pages">
+  <h1><%= "#{@championship.year} - #{@championship.name}" %></h1>
+  <div class="tables-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pos.</th>
+          <th>#</th>
+          <th>Piloto</th>
+          <th>Departamento</th>
+          <th>1 fecha</th>
+          <th>2 fecha</th>
+          <th>3 fecha</th>
+          <th>4 fecha</th>
+          <th>5 fecha</th>
+          <th>6 fecha</th>
+          <th>7 fecha</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1°</td>
+          <td>2</td>
+          <td>Leonel Nobile</td>
+          <td>Paysandu</td>
+          <td>0</td>
+          <td>15</td>
+          <td>6</td>
+          <td>15</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>36</td>
+        </tr>
+        <tr>
+          <td>2°</td>
+          <td>15</td>
+          <td>Germán Fagalde</td>
+          <td>Salto</td>
+          <td>0</td>
+          <td>12</td>
+          <td>15</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <td>3°</td>
+          <td>7</td>
+          <td>José Luis Lura</td>
+          <td>Salto</td>
+          <td>0</td>
+          <td>6</td>
+          <td>12</td>
+          <td>8</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td>4°</td>
+          <td>21</td>
+          <td>Bruno Mori</td>
+          <td>Salto</td>
+          <td>N/C</td>
+          <td>8</td>
+          <td>8</td>
+          <td>10</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td>5°</td>
+          <td>11</td>
+          <td>Cesar Piastri</td>
+          <td>Salto</td>
+          <td>N/C</td>
+          <td>7</td>
+          <td>7</td>
+          <td>12</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td>6°</td>
+          <td>12</td>
+          <td>Ignacio Alonso</td>
+          <td>Tacuarembó</td>
+          <td>0</td>
+          <td>10</td>
+          <td>10</td>
+          <td>N/C</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>7°</td>
+          <td>6</td>
+          <td>Mario Bonica</td>
+          <td>Paysandu</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td>5</td>
+          <td>N/C</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>8°</td>
+          <td>3</td>
+          <td>Marcos Dominguez</td>
+          <td>Rivera</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>9°</td>
+          <td>26</td>
+          <td>Sebastán Gonzalez</td>
+          <td>Maldonado</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td>N/C</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Detalles por fecha</h3>
+    <div class="panel-group" id="accordion">
+      <% @championship.races.each_with_index do |race, i|%>
+        <div class="panel panel-default">
+          <div class="panel-blk panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
+                <%= "Fecha N°#{i+1} - #{race.date} - #{race.city} - #{race.name} " %>
+              </a>
+            </h4>
+          </div>
+           <div id="collapse<%=i%>" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table table-condensed small-table">
+                <thead>
+                  <tr>
+                    <th> Posición </th>
+                    <th> #        </th>
+                    <th> Piloto   </th>
+                    <th> Tiempo   </th>
+                    <th> Puntos   </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% race.steps.each do |step|%>
+                    <tr><td style="text-align:center" colspan="5"><%= step.name %></td></tr>
+                    <% step.pilot_steps.each do |ps|%>
+                      <tr>
+                        <td><%= ps.position%>°          </td>
+                        <td><%= ps.pilot_race.number %> </td>
+                        <td><%= ps.pilot_race.pilot %>  </td>
+                        <td><%= ps.time %>              </td>
+                        <td><%= ps.score %>             </td>
+                      </tr>
+                    <% end -%>
+                  <% end -%>
+                </tbody>
+              </table>
+              <table class="table table-condensed small-table">
+                <thead>
+                  <tr><td style="text-align:center" colspan="7">Clasificación Final</td></tr>
+                  <tr>
+                    <th>Pos.</th>
+                    <th>#</th>
+                    <th>Piloto</th>
+                    <th>Clasif.</th>
+                    <th>1er serie</th>
+                    <th>2da serie</th>
+                    <th>Final</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1°</td>
+                    <td>2</td>
+                    <td>Leonel Nobile</td>
+                    <td>0</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>22</td>
+                    <td>71</td>
+                  </tr>
+                  <tr>
+                    <td>2°</td>
+                    <td>15</td>
+                    <td>Germán Fagalde</td>
+                    <td>0</td>
+                    <td>22</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>71</td>
+                  </tr>
+                  <tr>
+                    <td>3°</td>
+                    <td>12</td>
+                    <td>Ignacio Alonso</td>
+                    <td>0</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>70</td>
+                  </tr>
+                  <tr>
+                    <td>4°</td>
+                    <td>21</td>
+                    <td>Bruno Mori</td>
+                    <td>0</td>
+                    <td>20</td>
+                    <td>22</td>
+                    <td>21</td>
+                    <td>63</td>
+                  </tr>
+                  <tr>
+                    <td>5°</td>
+                    <td>11</td>
+                    <td>Cesar Piastri</td>
+                    <td>0</td>
+                    <td>21</td>
+                    <td>21</td>
+                    <td>20</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td>6°</td>
+                    <td>7</td>
+                    <td>José Luis Lura</td>
+                    <td>1</td>
+                    <td>25</td>
+                    <td>0</td>
+                    <td>23</td>
+                    <td>49</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>

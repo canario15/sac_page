@@ -6,8 +6,9 @@ es:
       championship: "Campeonato"
       pilot: "Piloto"
       race: "Fecha"
-      step: "Serie"
+      step: "Series"
       pilot_step: "Piloto en la serie"
+      pilot_race: "Pilotos Inscriptos"
 
     attributes:
       notice:
@@ -27,7 +28,6 @@ es:
         category: "Categoría"
       pilot:
         categories: "Categoría/s"
-        number: "Número"
         full_name: "Nombre completo"
         team: "Equipo"
         car: "Auto"
@@ -38,19 +38,25 @@ es:
         time: "Timepo"
         position: "Posición"
         score: "Puntos"
+      pilot_race:
+        pilot: "Piloto"
+        number: "Número"
+        race: "Fecha"
       race:
         championship: "Campeonato"
         city: "Ciudad"
         date: "Fecha"
         name: "Nombre"
+        observation: "Observaciones"
       step:
         race: "Fecha"
         number: "Numero de carrera"
         name: "Nombre"
+        observation: "Observaciones"
 
   time:
     formats:
-      long: "%d de %B de %Y a las %H:%M"
+      long: "%d de %B de %Y"
       short: "%d de %B - %Y"
   date:
     abbr_day_names:

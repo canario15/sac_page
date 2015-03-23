@@ -7,7 +7,7 @@ ActiveAdmin.register Step do
 
   menu false
 
-  permit_params :number, :name, pilot_steps_attributes: [:id, :pilot_id, :position, :time, :score, :_destroy]
+  permit_params :number, :name, :observation, pilot_steps_attributes: [:id, :pilot_race_id, :position, :time, :score, :_destroy]
 
   form do |f|
     f.inputs "Fecha" do
@@ -15,11 +15,12 @@ ActiveAdmin.register Step do
       f.input :number, :input_html => { :disabled => true }
       f.input :name, :input_html => { :disabled => true }
       f.has_many :pilot_steps, allow_destroy: true  do |r|
-        r.input :pilot
+        r.input :pilot_race, :as => :select, :collection =>  f.object.race.pilot_races
         r.input :time
         r.input :position
         r.input :score
       end
+      f.input :observation
     end
     f.actions
   end
@@ -31,14 +32,13 @@ ActiveAdmin.register Step do
       row :name
       row "Resultado" do
         table_for(ad.pilot_steps) do |r|
-          r.column "Piloto", :pilot
+          r.column "Piloto", :pilot_race
           r.column "Tiempo", :time
           r.column "Posición", :position
           r.column "Puntos", :score
-          r.column("Ver") {|pr|  link_to("Ver", admin_pilot_step_path(pr)) }
-          r.column("Editar") {|pr|  link_to("Editar", edit_admin_pilot_step_path(pr)) }
         end
       end
+      row :observation
     end
   end
 

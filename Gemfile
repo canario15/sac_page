@@ -48,6 +48,8 @@ gem "paperclip", "~> 4.2"
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 
+gem 'hirb'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
