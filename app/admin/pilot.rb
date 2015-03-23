@@ -1,4 +1,5 @@
 ActiveAdmin.register Pilot do
+  actions :index, :show, :edit, :update, :new, :create
 
   config.batch_actions = false
   config.filters = false

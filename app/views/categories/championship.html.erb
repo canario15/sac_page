@@ -182,85 +182,46 @@
                         <td><%= ps.score %>             </td>
                       </tr>
                     <% end -%>
+                    <% unless step.observation.blank? %>
+                      <tr><td style="color:red;font-size:10px;" colspan="5">OBS: <%= step.observation %></td></tr>
+                    <% end -%>
                   <% end -%>
                 </tbody>
               </table>
-              <table class="table table-condensed small-table">
+              <table class="table table-condensed">
                 <thead>
-                  <tr><td style="text-align:center" colspan="7">Clasificación Final</td></tr>
+                <tr><td style="text-align:center" colspan="7"><h4>Clasificación Final</h4></td></tr>
                   <tr>
                     <th>Pos.</th>
                     <th>#</th>
                     <th>Piloto</th>
-                    <th>Clasif.</th>
-                    <th>1er serie</th>
-                    <th>2da serie</th>
-                    <th>Final</th>
+                    <% race.steps.each do |step|%>
+                      <th><%= step.name %></th>
+                    <% end -%>
                     <th>Total</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1°</td>
-                    <td>2</td>
-                    <td>Leonel Nobile</td>
-                    <td>0</td>
-                    <td>24</td>
-                    <td>25</td>
-                    <td>22</td>
-                    <td>71</td>
-                  </tr>
-                  <tr>
-                    <td>2°</td>
-                    <td>15</td>
-                    <td>Germán Fagalde</td>
-                    <td>0</td>
-                    <td>22</td>
-                    <td>24</td>
-                    <td>25</td>
-                    <td>71</td>
-                  </tr>
-                  <tr>
-                    <td>3°</td>
-                    <td>12</td>
-                    <td>Ignacio Alonso</td>
-                    <td>0</td>
-                    <td>23</td>
-                    <td>23</td>
-                    <td>24</td>
-                    <td>70</td>
-                  </tr>
-                  <tr>
-                    <td>4°</td>
-                    <td>21</td>
-                    <td>Bruno Mori</td>
-                    <td>0</td>
-                    <td>20</td>
-                    <td>22</td>
-                    <td>21</td>
-                    <td>63</td>
-                  </tr>
-                  <tr>
-                    <td>5°</td>
-                    <td>11</td>
-                    <td>Cesar Piastri</td>
-                    <td>0</td>
-                    <td>21</td>
-                    <td>21</td>
-                    <td>20</td>
-                    <td>62</td>
-                  </tr>
-                  <tr>
-                    <td>6°</td>
-                    <td>7</td>
-                    <td>José Luis Lura</td>
-                    <td>1</td>
-                    <td>25</td>
-                    <td>0</td>
-                    <td>23</td>
-                    <td>49</td>
-                  </tr>
+                  <% race.race_results.each do |race_result| %>
+                    <tr>
+                      <td><%= "#{race_result.position}" %>°</td>
+                      <td><%= "#{race_result.pilot_race.number}" %></td>
+                      <td><%= "#{race_result.pilot_race.pilot}" %></td>
+                      <% race.steps.each do |step|%>
+                        <% pist = step.pilot_steps.where(pilot_race_id: race_result.pilot_race.id).first %>
+                        <% unless pist.blank? %>
+                          <td><%= pist.score %></td>
+                        <% else %>
+                          <td> 0 </td>
+                        <% end -%>
+                      <% end -%>
+                      <td><%= race_result.score %></td>
+                    </tr>
+                  <% end -%>
                 </tbody>
+                <% unless race.observation.blank? %>
+                  <tr><td style="color:red;font-size:10px;" colspan="7">OBS: <%= race.observation %></td></tr>
+                <% end -%>
               </table>
             </div>
           </div>

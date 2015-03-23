@@ -9,6 +9,7 @@ es:
       step: "Series"
       pilot_step: "Piloto en la serie"
       pilot_race: "Pilotos Inscriptos"
+      race_result: "Resultado fecha"
 
     attributes:
       notice:
@@ -53,6 +54,12 @@ es:
         number: "Numero de carrera"
         name: "Nombre"
         observation: "Observaciones"
+      race_result:
+        race: "Fecha"
+        pilot_race: "Piloto"
+        position: "Posición"
+        score: "Puntos en la fecha"
+        score_for_champ: "Puntos para el campeonato"
 
   time:
     formats:

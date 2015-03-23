@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323005939) do
+ActiveRecord::Schema.define(version: 20150323225137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(version: 20150323005939) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -60,8 +58,6 @@ ActiveRecord::Schema.define(version: 20150323005939) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
@@ -82,14 +78,12 @@ ActiveRecord::Schema.define(version: 20150323005939) do
   end
 
   create_table "championships", force: true do |t|
-    t.string   "name"
-    t.integer  "year"
-    t.integer  "one_id"
-    t.integer  "two_id"
-    t.integer  "three_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.integer "year"
+    t.integer "one_id"
+    t.integer "two_id"
+    t.integer "three_id"
+    t.integer "category_id"
   end
 
   create_table "notices", force: true do |t|
@@ -104,11 +98,9 @@ ActiveRecord::Schema.define(version: 20150323005939) do
   end
 
   create_table "pilot_races", force: true do |t|
-    t.integer  "pilot_id"
-    t.integer  "race_id"
-    t.integer  "number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "pilot_id"
+    t.integer "race_id"
+    t.integer "number"
   end
 
   add_index "pilot_races", ["pilot_id"], name: "index_pilot_races_on_pilot_id", using: :btree
@@ -128,8 +120,6 @@ ActiveRecord::Schema.define(version: 20150323005939) do
   create_table "pilots", force: true do |t|
     t.string   "full_name"
     t.string   "team"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -138,14 +128,23 @@ ActiveRecord::Schema.define(version: 20150323005939) do
     t.string   "city"
   end
 
+  create_table "race_results", force: true do |t|
+    t.integer "pilot_race_id"
+    t.integer "race_id"
+    t.integer "score"
+    t.integer "position"
+    t.integer "score_for_champ"
+  end
+
+  add_index "race_results", ["pilot_race_id"], name: "index_race_results_on_pilot_race_id", using: :btree
+  add_index "race_results", ["race_id"], name: "index_race_results_on_race_id", using: :btree
+
   create_table "races", force: true do |t|
-    t.integer  "championship_id"
-    t.string   "city"
-    t.date     "date"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "observation"
+    t.integer "championship_id"
+    t.string  "city"
+    t.date    "date"
+    t.string  "name"
+    t.text    "observation"
   end
 
   add_index "races", ["championship_id"], name: "index_races_on_championship_id", using: :btree
