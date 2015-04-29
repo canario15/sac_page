@@ -22,7 +22,10 @@ ActiveAdmin.register Step do
       end
       f.input :observation
     end
-    f.actions
+    f.actions do
+      f.action :submit
+      f.action :cancel, :wrapper_html => { :class => 'cancel'}
+    end
   end
 
   show :title => :name do |ad|

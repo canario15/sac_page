@@ -8,13 +8,9 @@
           <th>#</th>
           <th>Piloto</th>
           <th>Departamento</th>
-          <th>1 fecha</th>
-          <th>2 fecha</th>
-          <th>3 fecha</th>
-          <th>4 fecha</th>
-          <th>5 fecha</th>
-          <th>6 fecha</th>
-          <th>7 fecha</th>
+          <% @championship.races.each_with_index do |race, i|%>
+            <th>Fecha N° <%= i + 1 %></th>
+          <% end -%>
           <th>Total</th>
         </tr>
       </thead>
@@ -30,7 +26,6 @@
           <td>15</td>
           <td></td>
           <td></td>
-          <td></td>
           <td>36</td>
         </tr>
         <tr>
@@ -42,7 +37,6 @@
           <td>12</td>
           <td>15</td>
           <td>0</td>
-          <td></td>
           <td></td>
           <td></td>
           <td>27</td>
@@ -58,7 +52,6 @@
           <td>8</td>
           <td></td>
           <td></td>
-          <td></td>
           <td>26</td>
         </tr>
         <tr>
@@ -70,7 +63,6 @@
           <td>8</td>
           <td>8</td>
           <td>10</td>
-          <td></td>
           <td></td>
           <td></td>
           <td>26</td>
@@ -86,7 +78,6 @@
           <td>12</td>
           <td></td>
           <td></td>
-          <td></td>
           <td>26</td>
         </tr>
         <tr>
@@ -98,7 +89,6 @@
           <td>10</td>
           <td>10</td>
           <td>N/C</td>
-          <td></td>
           <td></td>
           <td></td>
           <td>20</td>
@@ -114,7 +104,6 @@
           <td>N/C</td>
           <td></td>
           <td></td>
-          <td></td>
           <td>5</td>
         </tr>
         <tr>
@@ -122,7 +111,6 @@
           <td>3</td>
           <td>Marcos Dominguez</td>
           <td>Rivera</td>
-          <td>N/C</td>
           <td>N/C</td>
           <td>N/C</td>
           <td>N/C</td>
@@ -140,7 +128,6 @@
           <td>N/C</td>
           <td>N/C</td>
           <td>N/C</td>
-          <td></td>
           <td></td>
           <td></td>
           <td>0</td>

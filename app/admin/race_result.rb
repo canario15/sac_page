@@ -17,7 +17,10 @@ ActiveAdmin.register RaceResult do
       f.input :score, :input_html => { :disabled => true }
       f.input :score_for_champ
     end
-    f.actions
+    f.actions do
+      f.action :submit
+      f.action :cancel, :wrapper_html => { :class => 'cancel'}
+    end
   end
 
   show :title => "Resultado fecha piloto" do |ad|

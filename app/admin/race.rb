@@ -25,7 +25,10 @@ ActiveAdmin.register Race do
       end
       f.input :observation
     end
-    f.actions
+    f.actions do
+      f.action :submit
+      f.action :cancel, :wrapper_html => { :class => 'cancel'}
+    end
   end
 
   index :title => "Fechas"  do
@@ -70,6 +73,7 @@ ActiveAdmin.register Race do
       end
       row :observation
     end
+
   end
 
 

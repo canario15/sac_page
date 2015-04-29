@@ -15,7 +15,10 @@ ActiveAdmin.register PilotRace do
       f.input :pilot
       f.input :number
     end
-    f.actions
+    f.actions do
+      f.action :submit
+      f.action :cancel, :wrapper_html => { :class => 'cancel'}
+    end
   end
 
   show :title => "Pilotos de la fecha" do |ad|
