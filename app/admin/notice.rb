@@ -34,7 +34,7 @@ ActiveAdmin.register Notice do
       row :created_at
       row :context
       row :photo do
-          image_tag(ad.photo.url(:medium))
+          image_tag(ad.photo.url(:small))
         end
     end
   end

@@ -24,26 +24,17 @@ class CategoriesController < ApplicationController
 
   def show_regulation
     @category = Category.find_by_id(params[:id])
-  end
 
-
-
-  def championship_formula_sac
-  end
-
-  def championship_turismo_pista_sac
-  end
-
-  def championship_karting_125
-  end
-
-  def regulation_formula_sac
   end
 
   def regulation_turismo_pista_sac
   end
 
   def regulation_karting_125
+  end
+
+  def method_name
+    
   end
 
 
