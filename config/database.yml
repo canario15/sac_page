@@ -17,5 +17,5 @@ production:
   encoding: unicode
   database: sac_production
   pool: 5
-  username: sac
-  password:
+  username: postgres
+  password: password
