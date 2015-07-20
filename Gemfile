@@ -8,7 +8,6 @@ gem 'rails', '4.0.1'
 #postgres database
 gem 'pg'
 
-gem 'debugger'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -60,4 +59,4 @@ gem 'hirb'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
