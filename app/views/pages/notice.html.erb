@@ -7,7 +7,9 @@
     <%= link_to('Share on Facebook', "https://www.facebook.com/dialog/feed?
                                       app_id=131568497179574
                                       &display=popup&caption=#{@notice.title}
+                                      &name=NOMBREE
                                       &link=#{request.original_url}
+                                      &picture=#{image_tag @notice.photo(:medium)}
                                       &redirect_uri=#{request.original_url}",:target => :blank) %>
   </div>
 </div>
