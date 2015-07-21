@@ -4,29 +4,32 @@
 		<%= image_tag @notice.photo(:original), width: 500 %>
 		<span><%= l(@notice.created_at, :format => :short) %></span>
 		<p><%= @notice.context %></p>
-    <%= link_to("#", class: "fb-share-btn", :"data-name" => @notice.title, :"data-caption" => l(@notice.created_at, :format => :short), :"data-link" => request.original_url, :"data-picture" => asset_url(@notice.photo.url(:medium)) ) do %>
+    <%= link_to("#", class: "fb-share-btn" ) do %>
+
       <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
     <% end -%>
     <br></br>
+    <%= hidden_field("", "data-share", :"data-name" => @notice.title, :"data-caption" => l(@notice.created_at, :format => :short), :"data-link" => request.original_url, :"data-picture" => asset_url(@notice.photo.url(:medium)), :"data-description" => truncate(@notice.context, length: 544)) %>
   </div>
   <br>
 </div>
 <script type="text/javascript">
     $('.fb-share-btn').on( 'click', function(e) {
     e.preventDefault();
-    info = $('.fb-share-btn');
+    info = $('#data-share');
     FB.ui( {
       method: 'feed',
       name: info.data("name"),
       link: info.data("link"),
       picture: info.data("picture"),
+      description: info.data("description"),
       caption: info.data("caption")
     },
     function( response ) {
       if ( response !== null && typeof response.post_id !== 'undefined' ) {
         console.log( response );
         // ajax call to save response
-        $.post( 'http://www.webniraj.com/', { 'meta': response }, function( result ) {
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
           console.log( result );
         }, 'json' );
       }

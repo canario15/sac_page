@@ -46,28 +46,6 @@ $(document).ready(function () {
 		}
 	});
 
-/*	$('.fb-share-btn').on( 'click', function(e) {
-		e.preventDefault();
-		var info = $('.fb-share-btn');
-		FB.ui( {
-      method: 'feed',
-      name: info.data("name") ,
-      link: info.data("link"),
-      picture: info.data("picture"),
-      caption: info.data("caption")
-    },
-    function( response ) {
-      if ( response !== null && typeof response.post_id !== 'undefined' ) {
-        console.log( response );
-        // ajax call to save response
-        $.post( 'http://www.webniraj.com/', { 'meta': response }, function( result ) {
-          console.log( result );
-        }, 'json' );
-      }
-    });
-  });*/
-
-
 });
 
 
