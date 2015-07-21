@@ -4,7 +4,7 @@
 		<%= image_tag @notice.photo(:original), width: 500 , class: "notice-image"%>
 		<span><%= l(@notice.created_at, :format => :short) %></span>
 		<p><%= @notice.context %></p>
-    <%= link_to("#", class: "fb-share-btn") do %>
+    <%= link_to("#", class: "fb-share-btn", :"data-name" => @notice.title, :"data-caption" => l(@notice.created_at, :format => :short), :"data-link" => request.original_url, :"data-picture" => asset_url(@notice.photo.url(:medium)) ) do %>
       <%= image_tag 'publicarlo-en-fb.png', width: 100 %>
     <% end -%>
     <br></br>

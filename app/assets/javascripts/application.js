@@ -48,12 +48,13 @@ $(document).ready(function () {
 
 	$('.fb-share-btn').on( 'click', function(e) {
 		e.preventDefault();
+		var info = $('.fb-share-btn');
 		FB.ui( {
       method: 'feed',
-      name: "Facebook API: Tracking Shares using the JavaScript SDK",
-      link: "https://www.webniraj.com/2013/05/11/facebook-api-tracking-shares-using-the-javascript-sdk/",
-      picture: "https://stackexchange.com/users/flair/557969.png",
-      caption: "Tracking Facebook Shares on your website or application is a useful way of seeing how popular your articles are with your readers. In order to tracking Shares, you must used the Facebook JavaScript SDK."
+      name: info.data("name") ,
+      link: info.data("link"),
+      picture: info.data("picture"),
+      caption: info.data("caption")
     },
     function( response ) {
       if ( response !== null && typeof response.post_id !== 'undefined' ) {
