@@ -1,13 +1,35 @@
 <div class="news-page">
 	<h1><%= @notice.title %></h1>
 	<div class="news-panel">
-		<%= image_tag @notice.photo(:original), width: 500 , class: "notice-image"%>
+		<%= image_tag @notice.photo(:original), width: 500 %>
 		<span><%= l(@notice.created_at, :format => :short) %></span>
 		<p><%= @notice.context %></p>
     <%= link_to("#", class: "fb-share-btn", :"data-name" => @notice.title, :"data-caption" => l(@notice.created_at, :format => :short), :"data-link" => request.original_url, :"data-picture" => asset_url(@notice.photo.url(:medium)) ) do %>
-      <%= image_tag 'publicarlo-en-fb.png', width: 100 %>
+      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
     <% end -%>
     <br></br>
   </div>
   <br>
 </div>
+<script type="text/javascript">
+    $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.webniraj.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+</script>

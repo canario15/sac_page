@@ -46,7 +46,7 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.fb-share-btn').on( 'click', function(e) {
+/*	$('.fb-share-btn').on( 'click', function(e) {
 		e.preventDefault();
 		var info = $('.fb-share-btn');
 		FB.ui( {
@@ -65,7 +65,7 @@ $(document).ready(function () {
         }, 'json' );
       }
     });
-  });
+  });*/
 
 
 });
