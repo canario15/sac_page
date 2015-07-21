@@ -6,7 +6,7 @@
 		<p><%= @notice.context %></p>
     <%= link_to('Share on Facebook', "https://www.facebook.com/dialog/feed?
                                       app_id=131568497179574
-                                      &display=popup&caption=An%20example%20caption
+                                      &display=popup&caption=#{@notice.title}
                                       &link=#{request.original_url}
                                       &redirect_uri=#{request.original_url}",:target => :blank) %>
   </div>
