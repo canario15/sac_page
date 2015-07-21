@@ -4,12 +4,13 @@
 		<%= image_tag @notice.photo(:original), width: 500 %>
 		<span><%= l(@notice.created_at, :format => :short) %></span>
 		<p><%= @notice.context %></p>
+    <% debugger %>
     <%= link_to('Share on Facebook', "https://www.facebook.com/dialog/feed?
                                       app_id=131568497179574
                                       &display=popup&caption=#{@notice.title}
                                       &name=NOMBREE
                                       &link=#{request.original_url}
-                                      &picture=#{image_tag @notice.photo(:medium)}
+                                      &picture=#{@notice.photo(:medium)}
                                       &redirect_uri=#{request.original_url}",:target => :blank) %>
   </div>
 </div>
