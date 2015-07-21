@@ -10,7 +10,7 @@
                                       &display=popup&caption=#{@notice.title}
                                       &name=NOMBREE
                                       &link=#{request.original_url}
-                                      &picture=#{@notice.photo(:medium)}
+                                      &picture=#{asset_url(@notice.photo.url(:medium))}
                                       &redirect_uri=#{request.original_url}",:target => :blank) %>
   </div>
 </div>
