@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 	$('.carousel').carousel({ interval: 5000 });
 
-	$(".contact-form").validate({
+  $(".contact-form").validate({
 		rules: {
 			name: "required",
 			tel: "required",
@@ -45,4 +45,28 @@ $(document).ready(function () {
 			}
 		}
 	});
+
+	$('.fb-share-btn').on( 'click', function(e) {
+		e.preventDefault();
+		FB.ui( {
+      method: 'feed',
+      name: "Facebook API: Tracking Shares using the JavaScript SDK",
+      link: "https://www.webniraj.com/2013/05/11/facebook-api-tracking-shares-using-the-javascript-sdk/",
+      picture: "https://stackexchange.com/users/flair/557969.png",
+      caption: "Tracking Facebook Shares on your website or application is a useful way of seeing how popular your articles are with your readers. In order to tracking Shares, you must used the Facebook JavaScript SDK."
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.webniraj.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+
+
 });
+
+
