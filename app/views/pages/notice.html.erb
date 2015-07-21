@@ -1,16 +1,20 @@
 <div class="news-page">
 	<h1><%= @notice.title %></h1>
 	<div class="news-panel">
-		<%= image_tag @notice.photo(:original), width: 500 %>
+		<%= image_tag @notice.photo(:original), width: 500 , class: "notice-image"%>
 		<span><%= l(@notice.created_at, :format => :short) %></span>
 		<p><%= @notice.context %></p>
-    <%= link_to('Share on Facebook', "https://www.facebook.com/dialog/feed?
-                                      app_id=131568497179574
-                                      &display=popup
-                                      &name=#{@notice.title}
-                                      &caption=#{l(@notice.created_at, :format => :short)}
-                                      &link=#{request.original_url}
-                                      &picture=#{asset_url(@notice.photo.url(:medium))}
-                                      &redirect_uri=#{request.original_url}",:target => :blank) %>
+    <%= link_to("https://www.facebook.com/dialog/feed?app_id=131568497179574
+                &display=popup
+                &name=#{@notice.title}
+                &caption=#{l(@notice.created_at, :format => :short)}
+                &link=#{request.original_url}
+                &picture=#{asset_url(@notice.photo.url(:medium))}
+                &redirect_uri=#{request.original_url}",:target => :blank, class: "fb-share-btn") do %>
+      <%= image_tag 'publicarlo-en-fb.png', width: 100 %>
+    <% end -%>
+    <br>
+    <br>
   </div>
+  <br>
 </div>
