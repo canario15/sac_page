@@ -1,8 +1,30 @@
 <div class="categories-pages">
   <h1> PILOTOS  DE <%= @category.name %></h1>
-   <div class="pilot-container">
+   <div class="pilots-container">
     <% @pilots.each do |pilot| %>
-        <%= image_tag pilot.avatar, width: 250, class: "pilot" %>
+      <div class="pilot-module">
+        <figure>
+          <%= image_tag pilot.avatar, width: 250  %>
+        </figure>
+        <div class="data-pilot">
+          <h2> <%= pilot.last_name %>,<br> <%= pilot.first_name %> </h2>
+          <div class="car-data">
+            <span><%= pilot.number %></span>
+            <div class="logo">
+              <%= image_tag 'logo_vw.png', class: "", width: 40 %>
+            </div>
+            <div class="team">
+              <%= pilot.car %>
+            </div>
+            <div class="team">
+              <%= pilot.team %>
+            </div>
+            <div class="team">
+              <%= pilot.city %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720231924) do
+ActiveRecord::Schema.define(version: 20150722014743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(version: 20150720231924) do
     t.datetime "avatar_updated_at"
     t.string   "car"
     t.string   "city"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "race_results", force: true do |t|
@@ -118,6 +120,9 @@ ActiveRecord::Schema.define(version: 20150720231924) do
     t.integer "score"
     t.integer "position"
     t.integer "score_for_champ"
+    t.integer "championship_id"
+    t.integer "category_id"
+    t.integer "pilot_id"
   end
 
   add_index "race_results", ["pilot_race_id"], name: "index_race_results_on_pilot_race_id", using: :btree

@@ -4,134 +4,27 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Pos.</th>
-          <th>#</th>
-          <th>Piloto</th>
-          <th>Departamento</th>
-          <% @championship.races.each_with_index do |race, i|%>
-            <th>Fecha N° <%= i + 1 %></th>
-          <% end -%>
-          <th>Total</th>
+          <th> Pos.      </th>
+          <th> #         </th>
+          <th> Piloto    </th>
+          <th> Localidad </th>
+          <th> Equipo    </th>
+          <th> Auto      </th>
+          <th> Puntos    </th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1°</td>
-          <td>2</td>
-          <td>Leonel Nobile</td>
-          <td>Paysandu</td>
-          <td>0</td>
-          <td>15</td>
-          <td>6</td>
-          <td>15</td>
-          <td></td>
-          <td></td>
-          <td>36</td>
-        </tr>
-        <tr>
-          <td>2°</td>
-          <td>15</td>
-          <td>Germán Fagalde</td>
-          <td>Salto</td>
-          <td>0</td>
-          <td>12</td>
-          <td>15</td>
-          <td>0</td>
-          <td></td>
-          <td></td>
-          <td>27</td>
-        </tr>
-        <tr>
-          <td>3°</td>
-          <td>7</td>
-          <td>José Luis Lura</td>
-          <td>Salto</td>
-          <td>0</td>
-          <td>6</td>
-          <td>12</td>
-          <td>8</td>
-          <td></td>
-          <td></td>
-          <td>26</td>
-        </tr>
-        <tr>
-          <td>4°</td>
-          <td>21</td>
-          <td>Bruno Mori</td>
-          <td>Salto</td>
-          <td>N/C</td>
-          <td>8</td>
-          <td>8</td>
-          <td>10</td>
-          <td></td>
-          <td></td>
-          <td>26</td>
-        </tr>
-        <tr>
-          <td>5°</td>
-          <td>11</td>
-          <td>Cesar Piastri</td>
-          <td>Salto</td>
-          <td>N/C</td>
-          <td>7</td>
-          <td>7</td>
-          <td>12</td>
-          <td></td>
-          <td></td>
-          <td>26</td>
-        </tr>
-        <tr>
-          <td>6°</td>
-          <td>12</td>
-          <td>Ignacio Alonso</td>
-          <td>Tacuarembó</td>
-          <td>0</td>
-          <td>10</td>
-          <td>10</td>
-          <td>N/C</td>
-          <td></td>
-          <td></td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>7°</td>
-          <td>6</td>
-          <td>Mario Bonica</td>
-          <td>Paysandu</td>
-          <td>N/C</td>
-          <td>N/C</td>
-          <td>5</td>
-          <td>N/C</td>
-          <td></td>
-          <td></td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>8°</td>
-          <td>3</td>
-          <td>Marcos Dominguez</td>
-          <td>Rivera</td>
-          <td>N/C</td>
-          <td>N/C</td>
-          <td>N/C</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>9°</td>
-          <td>26</td>
-          <td>Sebastán Gonzalez</td>
-          <td>Maldonado</td>
-          <td>N/C</td>
-          <td>N/C</td>
-          <td>N/C</td>
-          <td>N/C</td>
-          <td></td>
-          <td></td>
-          <td>0</td>
-        </tr>
+        <% @championship.championship_data.each_with_index do |result, i|%>
+          <tr>
+            <td> <%= i + 1 %>°           </td>
+            <td> <%= result.number %>    </td>
+            <td> <%= result.full_name %> </td>
+            <td> <%= result.city %>      </td>
+            <td> <%= result.team %>      </td>
+            <td> <%= result.car %>       </td>
+            <td> <%= result.score %>     </td>
+          </tr>
+        <% end -%>
       </tbody>
     </table>
     <h3>Detalles por fecha</h3>

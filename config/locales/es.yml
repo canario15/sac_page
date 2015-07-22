@@ -30,6 +30,8 @@ es:
       pilot:
         categories: "Categoría/s"
         full_name: "Nombre completo"
+        first_name: "Nombre"
+        last_name: "Apellido"
         team: "Equipo"
         car: "Auto"
         city: "Ciudad"
