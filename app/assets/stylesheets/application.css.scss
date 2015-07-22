@@ -13,7 +13,20 @@
  *= require bootstrap.css
  *= require business-casual.css.scss
  *= require nanogallery.css.scss
+ *= require jquery.selectbox.css
  */
+
+
+@font-face {
+  font-family: "bebasneue_regular";
+  src: url(/assets/bebasneue_regular.otf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url(/assets/Gotham-Bold.ttf) format("truetype");
+}
+
+
 
 .navbar-nav a {
 	color: #CACD34!important;
@@ -121,6 +134,261 @@ thead th {
 }
 
 /***********PILOT*************/
+
+.categories-pages2 {
+  background: white;
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 0 31px;
+  float: left;
+  width: 100%;
+}
+
+.generic-tbl {
+  color: #878787;
+  font-family: "bebasneue_regular" !important;
+  font-size: 30px;
+  padding-bottom: 25px;
+}
+
+.table2 {
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.generic-tbl thead {
+  background-color: #333;
+  padding: 3px !important;
+  color: #aaa;
+  font-size: 25px !important;
+}
+
+.table2 > thead > tr > th, .table2 > tbody > tr > th, .table2 > tbody > tr > td {
+  border-bottom: 0 none;
+  padding: 7px 10px 1px;
+  vertical-align: middle;
+}
+
+.table2 th {
+  text-align: left;
+}
+
+
+.generic-tbl .pos {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -828px rgba(0, 0, 0, 0);
+  color: #111;
+  font-size: 35px;
+  width: 78px;
+}
+
+.table2 > tbody > tr > td {
+  border-bottom: 1px solid #eee;
+}
+
+.generic-tbl .piloto.first a {
+  font-size: 23px;
+  line-height: 22px;
+}
+.generic-tbl .piloto a {
+  color: #444;
+  font-family: "Gotham-Bold";
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.generic-tbl .copas {
+  color: #e82821;
+  font-family: "Gotham-Bold";
+  font-size: 26px;
+}
+
+.generic-tbl .copas em {
+  background: url(asset-path("sprites-iconos.png")) repeat scroll 0 -1371px rgba(0, 0, 0, 0);
+  display: inline-block;
+  height: 32px;
+  margin-right: 15px;
+  width: 28px;
+}
+
+.generic-tbl .pts {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -921px rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 30px;
+  padding-left: 30px;
+  width: 108px;
+}
+
+.breadcrumbs {
+  color: #999;
+  font-family: "Gotham-Book";
+  font-size: 22px;
+  margin: 30px 0;
+  text-transform: uppercase;
+}
+
+.breadcrumbs a {
+  color: #444;
+  font-family: "Gotham-Bold";
+}
+
+.breadcrumbs a:hover {
+  text-decoration: none;
+  color: #e55151;
+}
+
+
+.championship-data .hd {
+    background-color: #eee;
+    padding: 20px;
+}
+
+
+.championship-data .race-info {
+  margin-top: -10px;
+}
+
+.championship-data .race-info span.disputadas {
+  color: #8c8c8c;
+  display: block;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  line-height: 30px;
+  margin-top: 5px;
+}
+
+.championship-data .race-info span.num {
+  color: #535353;
+  display: block;
+  font-family: "bebasneue_regular";
+  font-size: 45px;
+  font-weight: bolder;
+  letter-spacing: -1px;
+  line-height: 32px;
+  margin-top: 8px;
+}
+
+em, dfn {
+    font-style: italic;
+}
+
+a.champion-for-year {
+  background-color: #e52b2b;
+  border: 0 none;
+  color: #fff;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  margin-left: 106px;
+  margin-top: 1px;
+  padding: 15px 15px 11px;
+  position: absolute;
+  text-decoration: none;
+}
+.champion-for-year:hover {
+  text-decoration: none;
+  color: #e52b2b!important;
+  background-color: white;
+}
+
+.champion-for-year:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.campeonato-info .sbHolder {
+   width: 200px;
+}
+
+.campeonato-info .sbOptions {
+  width: 200px;
+}
+
+.sbOptions a:hover , .sbOptions a:focus, .sbOptions a.sbFocus {
+  color:#e55151!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .pilots-container {
   margin-top: 2%;

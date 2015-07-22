@@ -1,3 +1,117 @@
+<div class="categories-pages2">
+  <div class="championship-data">
+    <div class="breadcrumbs">
+      <a>TPS</a> / <a>Campeonato</a> / <a> <%= @championship.year %> </a>
+    </div>
+    <div class="hd">
+      <div class="row">
+        <div class="col-lg-5 col-md-3 col-sm-9 col-xs-12">
+
+          <select id="type_query" tabindex="1" name="type_query">
+            <option value="1">Campeonato</option>
+            <option value="2">Puntos por Fecha</option>
+          </select>
+
+           <select id="year_query" tabindex="2" name="year_query">
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+          </select>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 divider">
+          <div class="race-info">
+            <span class="disputadas">Disputadas</span>
+            <span class="num"><%= @championship.race_done %> <em>/</em> <%= @championship.races.count %><span>
+          </span></span></div>
+        </div>
+        <div class="col-lg-5 col-md-3 col-sm-4 col-xs-12">
+          <a class="champion-for-year" href="#">
+            <strong>Campeones por año</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="table-responsive generic-tbl championship-tbl">
+      <table class="table2" id="table-hidden-content">
+        <thead>
+          <tr>
+            <th> POS.      </th>
+            <th> #         </th>
+            <th> PILOTO    </th>
+            <th> LOCALIDAD </th>
+           <!-- <th> EQUIPO    </th> -->
+            <th> AUTO      </th>
+            <th>           </th>
+            <th> PTOS.    </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @championship.championship_data.each_with_index do |result, i|%>
+            <tr bgcolor="">
+              <td class="pos"><%= i + 1 %><span>°</span></td>
+              <td><%= result.number %></td>
+              <td class="piloto first"><a href="#"> <%= result.last_name %>,  <%= result.first_name %> </a></td>
+              <td> <%= result.city %>      </td>
+            <!--  <td> <%= result.team %>      </td> -->
+              <td> <%= result.car %>       </td>
+              <td class="copas">
+                <% races_win = Pilot.win_races(@championship.id, result.pilot_id) %>
+                <% if races_win > 0 %>
+                  <em></em>
+                    <%= races_win %>
+                <% end -%>
+              </td>
+              <td class="pts"> <%= result.score %> </td>
+            </tr>
+          <% end -%>
+        </tbody>
+      </table>
+    </div><!-- /tabla campeonato -->
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="categories-pages">
   <h1><%= "#{@championship.year} - #{@championship.name}" %></h1>
   <div class="tables-container">

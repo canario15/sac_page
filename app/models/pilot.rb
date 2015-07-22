@@ -2,7 +2,7 @@ class Pilot < ActiveRecord::Base
 
 	has_and_belongs_to_many :categories
 
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/default_profile.jpg"
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/default_profile.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   before_save :set_full_name
@@ -22,6 +22,10 @@ class Pilot < ActiveRecord::Base
    else
     "#"
    end
+  end
+
+  def self.win_races(championship_id, pilot_id)
+   races_win =  RaceResult.where(championship_id: championship_id, score_for_champ: 15, pilot_id: pilot_id ).count
   end
 
 end
