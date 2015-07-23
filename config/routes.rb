@@ -9,6 +9,9 @@ SacPage::Application.routes.draw do
   get '/noticias'                                     => 'pages#news',                              as: :news
   get '/noticias/:id'                                 => 'pages#notice',                            as: :notice
 
+  get '/circuitos'                                    => 'circuits#index',                          as: :circuits
+  get '/circuitos/:id'                                => 'circuits#show',                           as: :show_circuit
+
   get '/categorias'                                   => 'pages#categories',                        as: :categories
   get '/categorias/:id'                               => 'categories#show',                         as: :category
   get '/categorias/:id/campeonatos'                   => 'categories#show_championships',           as: :category_championships
@@ -30,7 +33,7 @@ SacPage::Application.routes.draw do
 
 
   get "/championship_by_year"                         => 'categories#championship_by_year',         as: :championship_by_year
-  get "/championship_query"                           => 'categories#championship_query',         as: :championship_query
+  get "/championship_query"                           => 'categories#championship_query',           as: :championship_query
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

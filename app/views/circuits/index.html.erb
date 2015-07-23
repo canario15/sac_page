@@ -1,0 +1,31 @@
+<div class="circuit-page">
+  <div class="page-title">
+    <h1> Circuitos </h1>
+  </div>
+  <ul class="row circuit-list">
+    <% @circuits.each do |circuit| %>
+      <li class="col-sm-4 col-xs-12 link-to-circuit" style="width:32%;">
+        <%= link_to show_circuit_path(circuit), class: "link-to-circuit" do %>
+          <div class="info-circuit">
+            <div class="hd">
+              <h2><%= circuit.name %></h2>
+              <p><%= circuit.location %></p>
+            </div>
+            <figure class="cont-circuit">
+              <%= image_tag circuit.logo, width: 260  %>
+            </figure>
+          </div>
+        <% end -%>
+      </li><!-- /modulo info carrera -->
+    <% end -%>
+    <div class="clearfix visible-lg visible-md"></div>
+  </ul>
+</div>
+
+
+
+
+
+
+
+

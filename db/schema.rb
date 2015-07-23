@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722014743) do
+ActiveRecord::Schema.define(version: 20150723222023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,20 @@ ActiveRecord::Schema.define(version: 20150722014743) do
     t.integer "two_id"
     t.integer "three_id"
     t.integer "category_id"
+  end
+
+  create_table "circuits", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "description"
+    t.string   "large"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "map_position"
   end
 
   create_table "notices", force: true do |t|

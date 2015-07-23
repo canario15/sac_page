@@ -25,6 +25,11 @@
   font-family: "Gotham-Bold";
   src: url(/assets/Gotham-Bold.ttf) format("truetype");
 }
+@font-face {
+  font-family: "GothamBlackRegular";
+  src: url(/assets/GothamBlackRegular.ttf) format("truetype");
+}
+
 
 .my-logo {
   float: left;
@@ -850,4 +855,194 @@ a.champion-for-year {
   float: right;
   margin-right: 61px;
   margin-top: 25px;
+}
+
+
+/****************************************************************************CIRCUITS*******************************************************/
+
+
+/***** INDEX ****/
+
+.circuit-page {
+  background: url(asset-path('checkered-flag2.png'));
+  border-radius: 20px;
+  color: #878787;
+  padding: 5px 5px 23px;
+  text-align: center;
+}
+
+.circuit-list {
+  list-style-type: none;
+  margin-left: 6px !important;
+}
+
+.link-to-circuit{
+  text-decoration:none!important;
+}
+
+.info-circuit {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  min-height: 434px;
+  padding: 15px;
+  position: relative;
+}
+
+.info-circuit:hover {
+  background: white;
+  border: 1px solid #dc1919;
+}
+
+
+.info-circuit .hd {
+  min-height: 100px;
+  text-align:left;
+}
+
+.info-circuit .hd h2 {
+  color: #dc1919;
+  font-family: "Gotham-Bold";
+  font-size: 30px;
+  letter-spacing: -1px;
+  line-height: 27px;
+  margin: 0;
+  padding: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.info-circuit .hd p {
+  color: #666;
+  font-family: "Gotham-Bold";
+  font-size: 16px;
+  line-height: 17px;
+}
+
+.info-circuit figure {
+  min-height: 170px;
+  padding-bottom: 15px;
+  margin-top: 37px;
+}
+
+.btn-red-small {
+  background-color: #e55151;
+  color: #fff !important;
+  font-family: "bebasneue_regular";
+  font-size: 20px;
+  padding: 2px 7px;
+  text-decoration:none!important;
+}
+
+a.btn-red-small:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+a.btn-red-small:visited {
+  color: #fff !important;
+  text-decoration: none!important;
+}
+
+.nav-race {
+  text-align:center;
+}
+
+/***** SHOW ****/
+
+.circuit-show {
+  text-align: left;
+}
+
+.info-circuit-show {
+  float:left;
+}
+
+.info-circuit-show h2 {
+  color: #e55151;
+  font-family: "GothamBlackRegular";
+  font-size: 43px;
+  letter-spacing: -1px;
+  line-height: 50px;
+  margin-top: 0;
+  text-transform: uppercase;
+  width: 485px;
+}
+
+.info-circuit-show  p {
+  color: #666;
+  font-family: "Gotham-Book";
+  font-size: 18px;
+  line-height: 18px;
+  margin: 0 0 15px;
+}
+
+.info-circuit-show .mts {
+  background-color: #fff;
+  color: #e6504c;
+  float: left;
+  font-family: "Gotham-Bold";
+  font-size: 25px;
+  padding: 2px 13px;
+}
+
+.circuit-map {
+  margin-left: 540px;
+}
+
+.como-llegar  {
+  margin-top: 41px;
+}
+
+.como-llegar h3 {
+  background-color: #444;
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  margin: 0 ;
+  padding: 9px 14px 2.5px;
+}
+
+.map-container {
+  border-top: 1px solid #ddd;
+  height: 600px;
+  margin-top: 19px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.map-container iframe, .map-container object, .map-container embed {
+  height: 88%;
+  left: 0;
+  margin-left: 17%;
+  margin-top: 5%;
+  position: relative;
+  top: 0;
+  width: 67%;
+}
+
+.circuit-desc {
+  margin-top:62px;
+}
+
+.circuit-desc h3 {
+  background-color: #444;
+  color: #fff;
+  display: inline;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  padding: 10px 12px 2px;
+  text-transform: uppercase;
+}
+
+.circuit-desc .wrapper {
+  border-top: 1px solid #ddd;
+  padding: 10px 73px 5px;
+}
+
+.circuit-desc .wrapper p {
+  color: #444;
+  font-family: "Gotham-Book";
+  font-size: 16px;
+  margin-bottom: 20px;
 }

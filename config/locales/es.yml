@@ -5,6 +5,7 @@ es:
       category: "Categoría"
       championship: "Campeonato"
       pilot: "Piloto"
+      circuit: "Circuito"
       race: "Fecha"
       step: "Series"
       pilot_step: "Piloto en la serie"
@@ -27,6 +28,13 @@ es:
         two: "Vicecamepón"
         three: "Tercero"
         category: "Categoría"
+      circuit:
+        name: "Nombre"
+        large: "Largo"
+        location: "Localidad"
+        description: "Características"
+        map_position: "Posición en mapa"
+        logo: "Pista"
       pilot:
         categories: "Categoría/s"
         full_name: "Nombre completo"
