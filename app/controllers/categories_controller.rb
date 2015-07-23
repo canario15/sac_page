@@ -13,6 +13,34 @@ class CategoriesController < ApplicationController
     @championship = Championship.find_by_id(params[:championship_id])
   end
 
+  def championship_query
+    @championship = Championship.find_by_year(params[:year])
+    respond_to do |format|
+      if request.xhr?
+        if params[:type] == "2"
+          @races = @championship.races
+          format.html { render partial: 'championship_by_race', :layout => false}
+        else
+          format.html { render partial: 'championship_table', :layout => false}
+        end
+      else
+        format.html
+      end
+    end
+  end
+
+  def championship_by_year
+    @championships = Championship.where.not(one_id: nil)
+    @actual_championship =  Championship.order(:year).first
+    respond_to do |format|
+      if request.xhr?
+        format.html { render partial: 'champions_year', :layout => false}
+      else
+        format.html
+      end
+    end
+  end
+
   def show_gallery
     @category = Category.find_by_id(params[:id])
   end
@@ -34,7 +62,7 @@ class CategoriesController < ApplicationController
   end
 
   def method_name
-    
+
   end
 
 

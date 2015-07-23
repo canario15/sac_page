@@ -8,7 +8,7 @@ SacPage::Application.routes.draw do
 
   get '/noticias'                                     => 'pages#news',                              as: :news
   get '/noticias/:id'                                 => 'pages#notice',                            as: :notice
-  
+
   get '/categorias'                                   => 'pages#categories',                        as: :categories
   get '/categorias/:id'                               => 'categories#show',                         as: :category
   get '/categorias/:id/campeonatos'                   => 'categories#show_championships',           as: :category_championships
@@ -16,19 +16,21 @@ SacPage::Application.routes.draw do
   get '/categorias/:id/galeria'                       => 'categories#show_gallery',                 as: :category_gallery
   get '/categorias/:id/pilotos'                       => 'categories#show_pilots',                  as: :category_pilots
   get '/categorias/:id/reglamentos'                   => 'categories#show_regulation',              as: :category_regulation
-  
+
   get 'categorias/formula_sac/reglamentos'            => 'categories#regulation_formula_sac',       as: :regulation_formula_sac
   get 'categorias/turismo_pista_sac/reglamentos'      => 'categories#regulation_turismo_pista_sac', as: :regulation_turismo_pista_sac
   get 'categorias/karting_125/reglamentos'            => 'categories#regulation_karting_125',       as: :regulation_karting_125
 
   get '/galeria'                                      => 'pages#galleries',                         as: :galleries
   get '/nosotros'                                     => 'pages#about',                             as: :about
-  
+
   get '/contacto'                                     => 'pages#contact',                           as: :contact
   post 'send_contact_info'                            => 'pages#send_contact_info',                 as: :send_contact_info
 
 
 
+  get "/championship_by_year"                         => 'categories#championship_by_year',         as: :championship_by_year
+  get "/championship_query"                           => 'categories#championship_query',         as: :championship_query
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

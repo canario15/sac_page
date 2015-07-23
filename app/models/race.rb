@@ -48,4 +48,13 @@ class Race < ActiveRecord::Base
     end
   end
 
+  def pilot_score_in_race(pilot_id)
+    result = self.race_results.find_by(pilot_id: pilot_id)
+    unless result.nil?
+      score = result.score_for_champ
+    else
+      score = "-"
+    end
+  end
+
 end

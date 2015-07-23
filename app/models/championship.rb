@@ -28,5 +28,6 @@ class Championship < ActiveRecord::Base
   def race_done
     RaceResult.unscoped.where(championship_id: self.id).select(:race_id).distinct.count
   end
+
 end
 

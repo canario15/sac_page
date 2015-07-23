@@ -1,226 +1,217 @@
 <div class="categories-pages2">
   <div class="championship-data">
     <div class="breadcrumbs">
-      <a>TPS</a> / <a>Campeonato</a> / <a> <%= @championship.year %> </a>
+      <a>TPS</a> / <a id="champ_type">Campeonato</a> / <a id="champ_year"> <%= @championship.year %> </a>
     </div>
-    <div class="hd">
-      <div class="row">
-        <div class="col-lg-5 col-md-3 col-sm-9 col-xs-12">
-
-          <select id="type_query" tabindex="1" name="type_query">
-            <option value="1">Campeonato</option>
-            <option value="2">Puntos por Fecha</option>
-          </select>
-
-           <select id="year_query" tabindex="2" name="year_query">
-            <option value="2015">2015</option>
-            <option value="2014">2014</option>
-            <option value="2013">2013</option>
-          </select>
-        </div>
-
-        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 divider">
-          <div class="race-info">
-            <span class="disputadas">Disputadas</span>
-            <span class="num"><%= @championship.race_done %> <em>/</em> <%= @championship.races.count %><span>
-          </span></span></div>
-        </div>
-        <div class="col-lg-5 col-md-3 col-sm-4 col-xs-12">
-          <a class="champion-for-year" href="#">
-            <strong>Campeones por año</strong>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="table-responsive generic-tbl championship-tbl">
-      <table class="table2" id="table-hidden-content">
-        <thead>
-          <tr>
-            <th> POS.      </th>
-            <th> #         </th>
-            <th> PILOTO    </th>
-            <th> LOCALIDAD </th>
-           <!-- <th> EQUIPO    </th> -->
-            <th> AUTO      </th>
-            <th>           </th>
-            <th> PTOS.    </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @championship.championship_data.each_with_index do |result, i|%>
-            <tr bgcolor="">
-              <td class="pos"><%= i + 1 %><span>°</span></td>
-              <td><%= result.number %></td>
-              <td class="piloto first"><a href="#"> <%= result.last_name %>,  <%= result.first_name %> </a></td>
-              <td> <%= result.city %>      </td>
-            <!--  <td> <%= result.team %>      </td> -->
-              <td> <%= result.car %>       </td>
-              <td class="copas">
-                <% races_win = Pilot.win_races(@championship.id, result.pilot_id) %>
-                <% if races_win > 0 %>
-                  <em></em>
-                    <%= races_win %>
-                <% end -%>
-              </td>
-              <td class="pts"> <%= result.score %> </td>
-            </tr>
-          <% end -%>
-        </tbody>
-      </table>
-    </div><!-- /tabla campeonato -->
-
-
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="categories-pages">
-  <h1><%= "#{@championship.year} - #{@championship.name}" %></h1>
-  <div class="tables-container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th> Pos.      </th>
-          <th> #         </th>
-          <th> Piloto    </th>
-          <th> Localidad </th>
-          <th> Equipo    </th>
-          <th> Auto      </th>
-          <th> Puntos    </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @championship.championship_data.each_with_index do |result, i|%>
-          <tr>
-            <td> <%= i + 1 %>°           </td>
-            <td> <%= result.number %>    </td>
-            <td> <%= result.full_name %> </td>
-            <td> <%= result.city %>      </td>
-            <td> <%= result.team %>      </td>
-            <td> <%= result.car %>       </td>
-            <td> <%= result.score %>     </td>
-          </tr>
-        <% end -%>
-      </tbody>
-    </table>
-    <h3>Detalles por fecha</h3>
-    <div class="panel-group" id="accordion">
-      <% @championship.races.each_with_index do |race, i|%>
-        <div class="panel panel-default">
-          <div class="panel-blk panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
-                <%= "Fecha N°#{i+1} - #{race.date} - #{race.city} - #{race.name} " %>
-              </a>
-            </h4>
-          </div>
-           <div id="collapse<%=i%>" class="panel-collapse collapse">
-            <div class="panel-body">
-              <table class="table table-condensed small-table">
-                <thead>
-                  <tr>
-                    <th> Posición </th>
-                    <th> #        </th>
-                    <th> Piloto   </th>
-                    <th> Tiempo   </th>
-                    <th> Puntos   </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% race.steps.each do |step|%>
-                    <tr><td style="text-align:center" colspan="5"><%= step.name %></td></tr>
-                    <% step.pilot_steps.each do |ps|%>
-                      <tr>
-                        <td><%= ps.position%>°          </td>
-                        <td><%= ps.pilot_race.number %> </td>
-                        <td><%= ps.pilot_race.pilot %>  </td>
-                        <td><%= ps.time %>              </td>
-                        <td><%= ps.score %>             </td>
-                      </tr>
-                    <% end -%>
-                    <% unless step.observation.blank? %>
-                      <tr><td style="color:red;font-size:10px;" colspan="5">OBS: <%= step.observation %></td></tr>
-                    <% end -%>
-                  <% end -%>
-                </tbody>
-              </table>
-              <table class="table table-condensed">
-                <thead>
-                <tr><td style="text-align:center" colspan="7"><h4>Clasificación Final</h4></td></tr>
-                  <tr>
-                    <th>Pos.</th>
-                    <th>#</th>
-                    <th>Piloto</th>
-                    <% race.steps.each do |step|%>
-                      <th><%= step.name %></th>
-                    <% end -%>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% race.race_results.each do |race_result| %>
-                    <tr>
-                      <td><%= "#{race_result.position}" %>°</td>
-                      <td><%= "#{race_result.pilot_race.number}" %></td>
-                      <td><%= "#{race_result.pilot_race.pilot}" %></td>
-                      <% race.steps.each do |step|%>
-                        <% pist = step.pilot_steps.where(pilot_race_id: race_result.pilot_race.id).first %>
-                        <% unless pist.blank? %>
-                          <td><%= pist.score %></td>
-                        <% else %>
-                          <td> 0 </td>
-                        <% end -%>
-                      <% end -%>
-                      <td><%= race_result.score %></td>
-                    </tr>
-                  <% end -%>
-                </tbody>
-                <% unless race.observation.blank? %>
-                  <tr><td style="color:red;font-size:10px;" colspan="7">OBS: <%= race.observation %></td></tr>
-                <% end -%>
-              </table>
+    <div id="full_data_championship">
+      <div class="hd">
+        <div class="row">
+          <div class="col-lg-6 col-md-3 col-sm-9 col-xs-12">
+            <div class="select-group">
+              <select id="type_query" class="select-prp" tabindex="2" name="type_query">
+                <option value="1">Campeonato</option>
+                <option value="2">Puntos por Fecha</option>
+              </select>
+              <select id="year_query" class="select-prp" tabindex="1" name="year_query">
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+              </select>
+              <input type="hidden" id="type_query_selected" value="1" />
+              <input type="hidden" id="year_query_selected" value="2015" />
+              <input type="hidden" id="category" value= <%=@championship.category.id %> />
             </div>
           </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 divider">
+            <div class="race-info">
+              <span class="disputadas">Disputadas</span>
+              <span class="num"><%= @championship.race_done %> <em>/</em> <%= @championship.races.count %><span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
+            <a id="champ_year_btn" class="champion-for-year" href="#">
+              <strong>Campeones por año</strong>
+            </a>
+          </div>
         </div>
-      <% end -%>
+      </div>
+      <div id="two_details">
+        <div class="table-responsive generic-tbl championship-tbl main-table">
+          <table class="table2" id="table-hidden-content">
+            <thead>
+              <tr>
+                <th> POS.      </th>
+                <th> NÚMERO    </th>
+                <th> PILOTO    </th>
+                <th> LOCALIDAD </th>
+               <!-- <th> EQUIPO    </th> -->
+                <th> AUTO      </th>
+                <th>           </th>
+                <th> PTOS.    </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @championship.championship_data.each_with_index do |result, i|%>
+                <tr bgcolor="">
+                  <td class="pos"><%= i + 1 %><span>°</span></td>
+                  <td><%= result.number %></td>
+                  <td class="piloto first"><a href="#"> <%= result.last_name %>,  <%= result.first_name %> </a></td>
+                  <td> <%= result.city %>      </td>
+                <!--  <td> <%= result.team %>      </td> -->
+                  <td> <%= result.car %>       </td>
+                  <td class="copas">
+                    <% races_win = Pilot.win_races(@championship.id, result.pilot_id) %>
+                    <% if races_win > 0 %>
+                      <em></em>
+                        <%= races_win %>
+                    <% end -%>
+                  </td>
+                  <td class="pts"> <%= result.score %> </td>
+                </tr>
+              <% end -%>
+            </tbody>
+          </table>
+        </div><!-- /tabla campeonato -->
+        <div id="detail_races">
+          <p style="color:#e52b2b;font-size:33px;text-align:center;" >DETALLE FECHAS-SERIES </p>
+          <div class="panel-group" id="accordion">
+            <% @championship.races.each_with_index do |race, i|%>
+              <div class="panel panel-default no-bkg">
+                <div class="panel-blk panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
+                      <%= "Fecha N°#{i+1} - #{race.date} - #{race.city} - #{race.name} " %>
+                    </a>
+                  </h4>
+                </div>
+                 <div id="collapse<%=i%>" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div class="table-responsive generic-tbl championship-tbl panels-table">
+                      <table class="table2" id="table-hidden-content">
+                        <thead>
+                          <tr>
+                            <th > POS.   </th>
+                            <th> NÚMERO </th>
+                            <th> PILOTO </th>
+                            <th> TIEMPO </th>
+                            <th> PUNTOS </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% race.steps.each do |step|%>
+                            <tr><td style="text-align:center;color:#fff;background:#aaa;" colspan="5"><%= step.name %></td></tr>
+                            <% step.pilot_steps.each do |ps|%>
+                              <tr bgcolor="">
+                                <td class="pos"><%= ps.position %><span>°</span></td>
+                                <td><%= ps.pilot_race.number %></td>
+                                <td class="piloto first"><a href="#"> <%= ps.pilot_race.pilot %> </a></td>
+                                <td> <%= ps.time %>      </td>
+                                <td class="pts"> <%= ps.score %> </td>
+                              </tr>
+                            <% end -%>
+                            <% unless step.observation.blank? %>
+                              <tr><td style="color:#e52b2b;font-size:20px;" colspan="5">OBS: <%= step.observation %></td></tr>
+                            <% end -%>
+                          <% end -%>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="table-responsive generic-tbl championship-tbl panels-table final-table">
+                      <p style="color:#e52b2b;font-size:33px;text-align:center;" >Clasificación Final</p>
+                      <table class="table2" id="table-hidden-content">
+                        <thead>
+                          <tr>
+                            <th style="text-align:center" > POS.      </th>
+                            <th style="text-align:center" > NÚMERO    </th>
+                            <th style="text-align:center" > PILOTO    </th>
+                            <% race.steps.each do |step|%>
+                              <th style="text-align:center" ><%= step.name %></th>
+                            <% end -%>
+                            <th style="text-align:center" > PTOS.    </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% race.race_results.each do |race_result| %>
+                            <tr bgcolor="">
+                              <td class="pos" style="text-align:center"><%= race_result.position %><span>°</span></td>
+                              <td style="text-align:center"><%= race_result.pilot_race.number %></td>
+                              <td class="piloto first" ><a href="#"> <%= race_result.pilot_race.pilot %> </a></td>
+                              <% race.steps.each do |step|%>
+                                <% pist = step.pilot_steps.where(pilot_race_id: race_result.pilot_race.id).first %>
+                                <% unless pist.blank? %>
+                                  <td style="text-align:center"><%= pist.score %></td>
+                                <% else %>
+                                  <td style="text-align:center" > 0 </td>
+                                <% end -%>
+                              <% end -%>
+                              <td class="pts" style="text-align:center" > <%= race_result.score %> </td>
+                            </tr>
+                          <% end -%>
+                        </tbody>
+                        <% unless race.observation.blank? %>
+                          <tr><td style="color:#e52b2b;font-size:20px;" colspan="7">OBS: <%= race.observation %></td></tr>
+                        <% end -%>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end -%>
+          </div>
+        </div><!-- fin dtails ravces -->
+      </div><!-- fin two details -->
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $("#type_query").selectbox({
+        onChange: function (val, inst) {
+          var year = val;
+          $("#type_query_selected").val(val);
+          $.ajax({
+            type: "GET",
+            data: {type: val, year: $("#year_query_selected").val(), category_id: $("#category").val() },
+            url: "/championship_query",
+            success: function (data) {
+              $("#two_details").html(data);
+              $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
+            }
+          });
+        },
+        effect: "slide"
+      });
+
+      $("#year_query").selectbox({
+        onChange: function (val, inst) {
+          var year = val;
+          $("#year_query_selected").val(year);
+          $.ajax({
+            type: "GET",
+            data: {year: year, type: $("#type_query_selected").val(), category_id: $("#category").val() },
+            url: "/championship_query",
+            success: function (data) {
+              $("#two_details").html(data);
+              $("#champ_year").text(year);
+              $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
+            }
+          });
+        },
+        effect: "slide"
+      });
+
+      $("#champ_year_btn").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+          type: "GET",
+          url: "/championship_by_year",
+          success: function (data) {
+            $(".breadcrumbs").html("<a>TPS</a> / <a>Campeones por año </a> ");
+            $("#full_data_championship").html(data);
+            $("#detail_races").remove();
+          }
+        });
+      });
+    });
+</script>

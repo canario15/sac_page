@@ -139,7 +139,7 @@ thead th {
   background: white;
   border-radius: 20px;
   color: #FFFFFF;
-  padding: 0 31px;
+  padding: 0 31px 18px;
   float: left;
   width: 100%;
 }
@@ -148,7 +148,7 @@ thead th {
   color: #878787;
   font-family: "bebasneue_regular" !important;
   font-size: 30px;
-  padding-bottom: 25px;
+  padding-bottom: 8px;
 }
 
 .table2 {
@@ -173,7 +173,6 @@ thead th {
 .table2 th {
   text-align: left;
 }
-
 
 .generic-tbl .pos {
   background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -828px rgba(0, 0, 0, 0);
@@ -243,7 +242,6 @@ thead th {
     padding: 20px;
 }
 
-
 .championship-data .race-info {
   margin-top: -10px;
 }
@@ -272,13 +270,43 @@ em, dfn {
     font-style: italic;
 }
 
+
+.wrapper-breakdown {
+    padding: 0 !important;
+}
+
+.breakdown > div {
+    background-color: #ededed;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    float: left;
+    padding: 0 10px;
+    width: 16.66%;
+}
+
+.breakdown > div span {
+    display: block;
+    font-size: 20px;
+    width: 100%;
+}
+
+.breakdown > div strong {
+    color: #ec2a22;
+    display: block;
+    font-size: 30px;
+    text-align: right;
+    width: 100%;
+}
+
 a.champion-for-year {
   background-color: #e52b2b;
   border: 0 none;
+  border-radius: 15px;
   color: #fff;
   font-family: "bebasneue_regular";
   font-size: 26px;
-  margin-left: 106px;
+  margin-left: 45px;
   margin-top: 1px;
   padding: 15px 15px 11px;
   position: absolute;
@@ -295,12 +323,19 @@ a.champion-for-year {
   text-decoration: none;
 }
 
+#back-btn{
+  margin-left: 485px;
+}
 .campeonato-info .sbHolder {
-   width: 200px;
+   width: 205pxpx;
 }
 
 .campeonato-info .sbOptions {
-  width: 200px;
+  width: 205px;
+}
+
+.select-group {
+  margin-top: 12px;
 }
 
 .sbOptions a:hover , .sbOptions a:focus, .sbOptions a.sbFocus {
@@ -309,69 +344,37 @@ a.champion-for-year {
 
 
 
+.panel-heading {
+  padding: 10px 15px !important;
+  background-color: #333 !important;
+}
 
+.panel-title a {
+  color: #aaa !important;
+  font-family: "bebasneue_regular" !important;
+  font-size: 25px;
+  text-decoration: none !important;
+}
 
+.panel-title a:hover {
+  color: white !important;
+}
 
+.no-bkg {
+  background: none;
+}
 
+.panel-collapse{
+  border: 1px solid #333;
+}
 
+.panels-table {
+  padding-bottom: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.final-table thead{
+  font-size: 23px !important;
+}
 
 
 
