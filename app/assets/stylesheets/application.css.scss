@@ -65,33 +65,131 @@ thead th {
     background: none!important;
 }
 
-/************************ CONACT PAGE *****************************************************/
 
-.contact-page {
-  background: url(asset-path("checkered-flag-opa1000.png")) repeat scroll 0 0 rgba(0, 0, 0, 0);
+/***************************************************************** NEWS PAGE *****************************************************/
+
+.news-page {
+  background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
   color: #FFFFFF;
-  height: 531px;
-  padding: 10px;
+  padding: 5px;
 }
 
-.contact-form button {
-  float: right;
-  width: 115px;
+.page-title {
+  text-align: center;
 }
 
-.contact-rigth {
-  color: #FF0000;
-  float: right;
-  margin-right: 61px;
-  margin-top: 25px;
+.page-title h1{
+  /*font-family: "Gotham-Bold";*/
+  color:blue
 }
-/************************ CATEGORY PAGE *****************************************************/
+
+.news-panel {
+  border-bottom: 1px solid #E5E5E5;
+  margin-left: 5%;
+  padding: 20px;
+  width: 90%;
+}
+
+.news-panel p {
+  color: #878787;
+}
+
+.news-panel h3 {
+  color: #e52b2b;
+}
+
+.news-panel img {
+  float: left;
+  margin-bottom: -1px;
+  margin-right: 2%;
+  margin-top: 20px;
+}
+
+.fb-share-btn {
+  float: right;
+}
+.btn-share {
+  margin-top: 0px!important;
+}
+
+.left-img img {
+  float: right;
+  margin-left: 2%;
+  margin-bottom: -1px;
+  margin-top: 20px;
+}
+
+.news-panel a {
+  color: #e52b2b;
+  text-decoration:none;
+}
+
+.news-panel a:focus {
+  color: #e52b2b;
+  text-decoration:underline;
+}
+
+.news-panel a:hover {
+  color: #e52b2b;
+  text-decoration:underline;
+}
+
+.news-panel span {
+  color: #C0C0C0;
+}
+
+
+/*pagination*/
+.apple_pagination {
+  background: #f1f1f1!important;
+  border: 1px solid #878787!important;
+  text-align: center!important;
+  padding: 1em!important;
+  cursor: default!important;
+  margin-top: -2px!important;
+  border-radius: 0 0 20px 20px!important;
+}
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em !important;
+}
+.apple_pagination .disabled {
+  color: #aaaaaa!important;
+}
+.apple_pagination .current {
+  font-style: normal!important;
+  font-weight: bold!important;
+  background-color: #bebebe!important;
+  display: inline-block!important;
+  width: 1.4em!important;
+  height: 1.4em!important;
+  line-height: 1.5!important;
+  -moz-border-radius: 1em!important;
+  -webkit-border-radius: 1em!important;
+  border-radius: 1em!important;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px!important;
+}
+.apple_pagination a {
+  text-decoration: none!important;
+  color: black!important;
+}
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline!important;
+}
+
+
+/**************************************************** CATEGORY PAGE *****************************************************/
+.category-page {
+  background: url(asset-path('checkered-flag2.png'));
+  border-radius: 20px;
+  color: #878787;
+  padding: 5px 5px 23px;
+  text-align: center;
+}
 
 .category-panel {
- 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.59);
   border-radius: 20px;
-  color: #CACD34;
+  color: #878787;
   float: left;
   margin-left: 25px;
   padding: 5px;
@@ -103,23 +201,24 @@ thead th {
 }
 
 .category-panel:hover {
- 	background: url(asset-path('cuadros_baderatrans.png'));
+  background:#e52b2b;
+  color: white;
 }
 
 .categories-desc p{
-  color:white!important;
+  color:878787!important;
 }
 
 .categories-pages {
-  background: url(asset-path('checkered-flag-opa1000.png'));
+  background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
-  color: #FFFFFF;
-  padding: 5px;
+  color: #878787;
+  padding: 5px 34px 23px;
   float: left;
   width: 100%;
 }
 .categories-pages p {
-  color: white;
+  color: #878787;
 }
 
 .categories-links {
@@ -128,10 +227,20 @@ thead th {
   text-align: center;
 }
 
+.categories-links a {
+  text-decoration:none;
+  color: #e52b2b;
+}
+
+.categories-links a:hover {
+  color: #e52b2b;
+}
+
 .small-table {
   width: 50% !important;
   margin-left: 25%;
 }
+
 .panel-blk {
   background-color: #000000 !important;
   border-color: #CACD34 !important;
@@ -390,6 +499,9 @@ a.champion-for-year {
   font-size: 23px !important;
 }
 
+/***********GALLERY*************/
+
+
 /***********PILOT*************/
 
 .pilots-container {
@@ -460,21 +572,62 @@ a.champion-for-year {
   background: url(asset-path('cuadros_baderatrans.png'));
 }
 
+/***********REGULATIONS*************/
 
-/************************ ABOUT PAGE *****************************************************/
-.about-page {
-  background: url(asset-path('checkered-flag-opa1000.png'));
+
+/********************************************************************* GALLERIES PAGE *****************************************************/
+
+.gallery-cont {
+  background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
-  color: #FFFFFF;
+  color: black;
   padding: 5px;
+}
+
+#gallery {
+  color: black;
+}
+
+.nanogallery_theme_default .nanoGalleryNavigationbarContainer {
+  margin:5px auto;
+  padding:5px 0;
+  /*background-color:#f09;*/
+  display: block;
+}
+
+.gallery-cont .nanogallery_theme_default .nanoGalleryNavigationbar {
+  border-top: 1px solid black;
+  border-bottom: 1px solid  black;
+}
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************** ABOUT PAGE *****************************************************/
+.about-page {
+  background: url(asset-path('checkered-flag2.png'));
+  border-radius: 20px;
+  color: #878787;
+  padding: 5px 5px 23px;
   text-align: center;
+}
+
+.about-page h3 {
+  color: #e52b2b;
 }
 
 .com-dir {
   width: 100%;
 }
+
 .com-dir p{
-  color: #FFFFFF;
+  color: #878787;
   margin-top: 3%;
 }
 
@@ -483,7 +636,7 @@ a.champion-for-year {
   float: left;
 }
 .com-voc p{
-  color: #FFFFFF;
+  color: #878787;
   margin-top: 3%;
 }
 
@@ -491,135 +644,46 @@ a.champion-for-year {
   width: 50%;
   float: left;
 }
+
 .com-fis p{
-  color: #FFFFFF;
+  color: #878787;
   margin-top: 3%;
 }
 
 .profile {
-  margin-left: 5%;
   float: left;
+  margin-left: 17%;
   text-align: center;
 }
 
 .vice {
-  margin-top: 7%;
-  margin-left: 23%;
+  margin-left: 8%;
+  margin-top: 10%;
 }
 
 .secre {
-  margin-top: 7%;
+  margin-top: 10%;
 }
 
-/************************ NEWS PAGE *****************************************************/
 
-.news-page {
-  background: url(asset-path('checkered-flag-opa1000.png'));
+/****************************************************************************** CONACT PAGE *****************************************************/
+
+.contact-page {
+  background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
-  color: #FFFFFF;
-  padding: 5px;
+  color: #878787;
+  height: 531px;
+  padding: 5px 5px 23px;
 }
 
-.news-panel {
-  border-bottom: 1px solid #E5E5E5;
-  margin-left: 5%;
-  padding: 20px;
-  width: 90%;
-}
-
-.news-panel p {
-  color: #FFFFFF;
-}
-
-.news-panel h3 {
-  color: #CACD34;
-  text-decoration: underline;
-}
-
-.news-panel img {
-  float: left;
-  margin-bottom: -1px;
-  margin-right: 2%;
-  margin-top: 20px;
-}
-
-.fb-share-btn {
+.contact-form button {
   float: right;
-}
-.btn-share {
-  margin-top: 0px!important;
+  width: 115px;
 }
 
-.left-img img {
+.contact-rigth {
+  color: #FF0000;
   float: right;
-  margin-left: 2%;
-  margin-bottom: -1px;
-  margin-top: 20px;
-}
-
-.news-panel a {
-  color: #CACD34;
-}
-
-.news-panel a:focus {
-  color: #CACD34;
-}
-
-.news-panel a:hover {
-  color: #CACD34;
-}
-
-.news-panel span {
-  color: #C0C0C0;
-}
-
-/************************ GALLERIES PAGE *****************************************************/
-
-.gallery-cont {
-  background: url(asset-path('checkered-flag-opa1000.png'));
-  border-radius: 20px;
-  color: #FFFFFF;
-  padding: 5px;
-}
-
-#gallery {
-  color: #FFFFFF;
-}
-
-
-/*pagination*/
-.apple_pagination {
-  background: #f1f1f1!important;
-  border: 1px solid #e5e5e5!important;
-  text-align: center!important;
-  padding: 1em!important;
-  cursor: default!important;
-  margin-top: -2px!important;
-  border-radius: 0 0 20px 20px!important;
-}
-.apple_pagination a, .apple_pagination span {
-  padding: 0.2em 0.3em !important;
-}
-.apple_pagination .disabled {
-  color: #aaaaaa!important;
-}
-.apple_pagination .current {
-  font-style: normal!important;
-  font-weight: bold!important;
-  background-color: #bebebe!important;
-  display: inline-block!important;
-  width: 1.4em!important;
-  height: 1.4em!important;
-  line-height: 1.5!important;
-  -moz-border-radius: 1em!important;
-  -webkit-border-radius: 1em!important;
-  border-radius: 1em!important;
-  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px!important;
-}
-.apple_pagination a {
-  text-decoration: none!important;
-  color: black!important;
-}
-.apple_pagination a:hover, .apple_pagination a:focus {
-  text-decoration: underline!important;
+  margin-right: 61px;
+  margin-top: 25px;
 }

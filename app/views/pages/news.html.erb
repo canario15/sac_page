@@ -1,5 +1,7 @@
 <div class="news-page">
-	<h1>Noticias</h1>
+	<div class="page-title">
+		<h1>Noticias</h1>
+	</div>
 	<% @notices.each_with_index do |notice,i| %>
 		<div class="news-panel <%= "left-img" if !i.even? %>">
 			<%= image_tag notice.photo(:medium), width: 200 %>
