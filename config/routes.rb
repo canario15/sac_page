@@ -12,7 +12,7 @@ SacPage::Application.routes.draw do
   get '/categorias'                                   => 'pages#categories',                        as: :categories
   get '/categorias/:id'                               => 'categories#show',                         as: :category
   get '/categorias/:id/campeonatos'                   => 'categories#show_championships',           as: :category_championships
-  get '/categorias/:id/campeonatos/:championship_id'  => 'categories#championship',                 as: :championship
+
   get '/categorias/:id/galeria'                       => 'categories#show_gallery',                 as: :category_gallery
   get '/categorias/:id/pilotos'                       => 'categories#show_pilots',                  as: :category_pilots
   get '/categorias/:id/reglamentos'                   => 'categories#show_regulation',              as: :category_regulation

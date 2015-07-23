@@ -7,10 +7,7 @@ class CategoriesController < ApplicationController
 
   def show_championships
     @category = Category.find_by_id(params[:id])
-  end
-
-  def championship
-    @championship = Championship.find_by_id(params[:championship_id])
+    @championship = @category.last_championship
   end
 
   def championship_query
