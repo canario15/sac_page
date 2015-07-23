@@ -64,6 +64,152 @@
 thead th {
     background: none!important;
 }
+/*************************************************************HOME********************************************************************/
+
+
+
+/****************NEXT RACE*/
+.en-carrera {
+  background-color: #222;
+}
+
+.race-feature .volanta {
+  float: left;
+  width: 505px;
+}
+
+.row-cust {
+  margin-left: 1px!important;
+}
+
+.race-feature .volanta .category {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -139px rgba(0, 0, 0, 0);
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 32px;
+  text-align: center;
+  width: 84px;
+}
+.category-kart-fsac {
+  background:#d90000;
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 32px;
+  text-align: center;
+  width: 101px;
+  border-right: 2px solid white;
+}
+
+.fsac-c {
+  width:163px;
+}
+
+.race-feature .volanta .date {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll -83px -139px rgba(0, 0, 0, 0);
+  color: #212121;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 32px;
+  padding: 0 15px 0 0;
+  text-align: center;
+  width: 154px;;
+}
+
+.menu-race-feature {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-race-feature li {
+  background: url(asset-path("sprites-separators.png"))  no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color: #8c8c8c;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 22px;
+  list-style: outside none none;
+  padding: 10px 13px 0;
+}
+
+.menu-race-feature li.first {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.menu-race-feature li a {
+  color: #8c8c8c;
+}
+
+.menu-race-feature li a.circuito {
+  background: url(asset-path("sprites-iconos.png")) no-repeat scroll 0 -112px rgba(0, 0, 0, 0);
+  padding: 0 0 0 65px;
+  text-decoration:none;
+}
+
+.en-carrera .sponsorship {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll -418px 0 rgba(0, 0, 0, 0);
+  height: 199px;
+  line-height: 199px;
+  text-align: center;
+}
+
+.sponsorship img {
+  margin-left: 61px;
+  width: 188px;
+}
+
+.en-carrera .venue {
+  padding: 20px 0 20px 10px;
+}
+
+.en-carrera .venue h2 {
+  color: #fff;
+  font-family: "Gotham-Bold";
+  font-size: 35px;
+  letter-spacing: -1px;
+  line-height: 33px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.en-carrera .venue .date {
+  color: #db0000;
+  font-family: "bebasneue_regular";
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 42px;
+}
+
+.countdown {
+  padding: 20px 0;
+}
+.countdown .cont-num {
+  float: left;
+  margin: 0 12px 0 0;
+  text-align: center;
+  width: 77px;
+}
+.countdown .cont-num .num {
+  background-color: #2b2b2b;
+  color: #fff;
+  font-family: "bebasneue_regular";
+  font-size: 62px;
+}
+.countdown .cont-num span {
+  color: #999;
+  font-family: "bebasneue_regular";
+  font-size: 16px;
+}
+.countdown.lite {
+  padding: 10px 0;
+}
+.countdown.lite .cont-num {
+  margin: 0 5px 0 0;
+  width: 50px;
+}
+.countdown.lite .cont-num .num {
+  background-color: #999;
+  font-size: 32px;
+}
 
 
 /***************************************************************** NEWS PAGE *****************************************************/
@@ -198,11 +344,13 @@ thead th {
   cursor: pointer;
   height: 218px;
   margin-bottom: 23px;
+  border: 1px solid #878787;
 }
 
 .category-panel:hover {
-  background:#e52b2b;
-  color: white;
+  color: black;
+  border: 1px solid black;
+  background: url(asset-path('checkered-flag2.png'));
 }
 
 .categories-desc p{
@@ -221,19 +369,34 @@ thead th {
   color: #878787;
 }
 
+.categories-pages .links {
+  margin-top:17px;
+}
+
 .categories-links {
   display: inline-flex;
   margin-left: 8%;
   text-align: center;
+
 }
 
 .categories-links a {
-  text-decoration:none;
-  color: #e52b2b;
+  background-color: #e52b2b;
+  border: 1px solid  #e52b2b;
+  border-radius: 15px;
+  color: #fff;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  padding: 15px 15px 11px;
+  text-decoration: none;
+  width: 156px;
 }
 
 .categories-links a:hover {
   color: #e52b2b;
+  background-color: white;
+  border: 1px solid  #e52b2b;
+  text-decoration: none;
 }
 
 .small-table {
@@ -426,7 +589,7 @@ em, dfn {
 
 a.champion-for-year {
   background-color: #e52b2b;
-  border: 0 none;
+  border: 1px solid  #e52b2b;
   border-radius: 15px;
   color: #fff;
   font-family: "bebasneue_regular";
@@ -441,6 +604,7 @@ a.champion-for-year {
   text-decoration: none;
   color: #e52b2b!important;
   background-color: white;
+  border: 1px solid  #e52b2b;
 }
 
 .champion-for-year:visited {
@@ -511,7 +675,7 @@ a.champion-for-year {
 .pilot-module{
   float:left;
   margin-bottom: 31px;
-  margin-left: 28px;
+  margin-left: 15px;
 }
 
 .data-pilot {
