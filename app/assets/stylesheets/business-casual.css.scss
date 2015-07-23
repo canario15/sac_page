@@ -4,6 +4,16 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+.navbar-default {
+  background: black !important;
+  border: medium none;
+  height: 92px;
+  margin-top: 66px;
+  }
+
+
+
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url(asset-path('bg.jpg')) no-repeat center center fixed;
@@ -50,6 +60,7 @@ hr {
 .navbar-nav {
     text-transform: uppercase;
     font-weight: 400;
+    font-family: "bebasneue_regular";
     letter-spacing: 3px;
 }
 
@@ -176,7 +187,6 @@ footer p {
     .navbar-nav {
         display: table;
         float: none;
-        margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
     }
