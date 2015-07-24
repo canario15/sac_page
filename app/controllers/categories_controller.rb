@@ -49,6 +49,7 @@ class CategoriesController < ApplicationController
   end
 
   def pilot
+    @actual_championship = Championship.actual_championship
     @category = Category.find_by_id(params[:category_id])
     @pilot = @category.pilots.find(params[:id])
   end

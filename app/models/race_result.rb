@@ -7,7 +7,7 @@ class RaceResult < ActiveRecord::Base
 
   before_save :set_championship
 
-  def set_championship
+  def set_championship_and_category
     race = Race.find(race_id)
     self.championship_id = race.championship_id
     self.category_id = race.championship.category_id

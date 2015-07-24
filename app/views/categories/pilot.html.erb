@@ -26,12 +26,13 @@
                 <div class="team">EQUIPO: <span><%= @pilot.team %></span></div>
               </div>
               <div class="stats-current">
-                <h3>Campeonato 2015</h3>
+                <h3>Campeonato <%= !@actual_championship.year.nil? ? @actual_championship.year : "-" %></h3>
                 <ul>
-                  <li><span>Posición</span><strong>0</strong></li>
-                  <li><span>Puntos</span><strong>0</strong></li>
-                  <li><span>Asistencias</span><strong>0</strong></li>
-                  <li><span>Mejor resultado</span><strong>0</strong></li>
+                  <% actual_data = @actual_championship.data_of_pilot_in_championship(@pilot.id) %>
+                  <li><span>Posición</span><strong><%= actual_data[:pos] %></strong></li>
+                  <li><span>Puntos</span><strong><%= actual_data[:score] %></strong></li>
+                  <li><span>Asistencias</span><strong><%= actual_data[:assists] %></strong></li>
+                  <li><span>Mejor resultado</span><strong><%= actual_data[:best_place] %></strong></li>
                 </ul>
               </div><!-- /stats-current -->
             </div>
@@ -44,15 +45,18 @@
                   <img class="lazy" data-original="/assets/facundo-ardusso-casco.png" src="/assets/facundo-ardusso-casco.png" style="display: block;">
                   <div class="debut">
                     Debut <%= @category.name %>:
-                    <span><%= l(@pilot.first_race.date, :format => :long)  %>, <%= @pilot.first_race.city %></span>
+                    <% fr = @pilot.first_race(@category.id) %>
+                    <% unless fr.nil? -%>
+                      <span><%= l(fr.date, :format => :long)  %>, <%=  fr.city %></span>
+                    <% end -%>
                   </div>
                 </div>
                 <ul>
-                  <li><span>Campeonatos</span><strong><%= @pilot.count_champion %></strong></li>
-                  <li><span>Carreras</span><strong><%= @pilot.count_races %></strong></li>
-                  <li><span>Podios</span><strong><%= @pilot.podios %></strong></li>
-                  <li><span>Victorias</span><strong><%= @pilot.all_win_races %></strong></li>
-                  <li><span>Pole position</span><strong><%= @pilot.poles %></strong></li>
+                  <li><span>Campeonatos</span><strong><%= @pilot.count_champion(@category.id) %></strong></li>
+                  <li><span>Carreras</span><strong><%= @pilot.count_races(@category.id) %></strong></li>
+                  <li><span>Podios</span><strong><%= @pilot.podios(@category.id) %></strong></li>
+                  <li><span>Victorias</span><strong><%= @pilot.all_win_races(@category.id) %></strong></li>
+                  <li><span>Pole position</span><strong><%= @pilot.poles(@category.id) %></strong></li>
                 </ul>
               </div><!-- /stats-past -->
             </div>

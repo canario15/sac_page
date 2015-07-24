@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724073149) do
+ActiveRecord::Schema.define(version: 20150724173519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150724073149) do
     t.integer "pilot_id"
     t.integer "race_id"
     t.integer "number"
+    t.integer "category_id"
   end
 
   add_index "pilot_races", ["pilot_id"], name: "index_pilot_races_on_pilot_id", using: :btree

@@ -29,5 +29,25 @@ class Championship < ActiveRecord::Base
     RaceResult.unscoped.where(championship_id: self.id).select(:race_id).distinct.count
   end
 
+  def self.actual_championship
+    Championship.order(:year).first
+  end
+
+  def data_of_pilot_in_championship(pilot_id)
+    data = { score: "0", pos: "0", best_place: "", assists: "" }
+    championship_data.each_with_index do |result, i|
+      if result.pilot_id == pilot_id
+        data[:score] = result.score
+        data[:pos]   = i + 1
+      end
+    end
+    races = Championship.first.races.map {|r| r.id}
+    data[:assists] = PilotRace.where(pilot_id: pilot_id, race_id: races, category_id: category_id).count
+    best_result = RaceResult.where(category_id: category_id, championship_id: self.id, pilot_id: pilot_id).order(:position).first
+    data[:best_place] = !best_result.nil? ? best_result.position : "0"
+
+    return data
+  end
+
 end
 

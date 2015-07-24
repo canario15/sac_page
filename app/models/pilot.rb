@@ -39,40 +39,28 @@ class Pilot < ActiveRecord::Base
     races_win =  RaceResult.where(championship_id: championship_id, score_for_champ: 15, pilot_id: pilot_id ).count
   end
 
-
-
-  #HAY QUE HACER ESTO AGREGANDO FILTRO LA CATEGORIA LA PUTA MADREEEEEEEEEEEEEEEEEE
-
-  def count_races
-    pilot_races.count
+  def count_races(category_id)
+    pilot_races.where(category_id: category_id).count
   end
 
-  def all_win_races
-    race_results.where(position: 1).count
+  def all_win_races(category_id)
+    race_results.where(position: 1, category_id: category_id ).count
   end
 
-  def podios
-    race_results.where(position: [1,2,3]).count
+  def podios(category_id)
+    race_results.where(position: [1,2,3], category_id: category_id ).count
   end
 
-  def poles
-    PilotRace.joins(:pilot_steps).where("pilot_races.pilot_id = #{id} AND pilot_steps.score = 1").count
+  def count_champion(category_id)
+    Championship.where(one_id: id, category_id: category_id).count
   end
 
-  def count_champion
-    Championship.where(one_id: id).count
+  def poles(category_id)
+    PilotRace.joins(:pilot_steps).where("pilot_races.pilot_id = #{id} AND pilot_steps.score = 1 AND pilot_races.category_id = #{category_id}").count
   end
 
-  def first_race
-    PilotRace.joins(:race).where(pilot_id: id).select("races.*").order("races.date ASC").first
+  def first_race(category_id)
+    PilotRace.joins(:race).where(pilot_id: id, category_id: category_id).select("races.*").order("races.date ASC").first
   end
-
-
-
-  #campeonato actual
-    #posicion
-    #puntos
-    #asistencias
-    #mejor resultado
 
 end
