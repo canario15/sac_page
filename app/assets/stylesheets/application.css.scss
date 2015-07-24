@@ -30,12 +30,12 @@
   src: url(/assets/GothamBlackRegular.ttf) format("truetype");
 }
 
-
 .my-logo {
   float: left;
   margin-left: -57px;
   margin-top: -56px;
 }
+
 .menu-cont {
   margin-top: 15px;
 }
@@ -45,10 +45,12 @@
 }
 
 .navbar-nav a {
-  color: white !important;
-  text-decoration: none;
+   text-decoration: none;
 }
 
+.selected_menu {
+  color: red !important;
+}
 .navbar-nav a:hover {
   color: red !important;
   text-decoration: underline;
@@ -69,6 +71,23 @@
 thead th {
     background: none!important;
 }
+
+.page-title {
+  margin-top: 0;
+  width: 100%;
+  margin-bottom:21px;
+  text-align: center;
+}
+
+.page-title h1{
+  text-transform: uppercase;
+  color: #5145aa;
+  font-family: "GothamBlackRegular";
+  font-size: 43px;
+  letter-spacing: -1px;
+  line-height: 50px;
+}
+
 /*************************************************************HOME********************************************************************/
 
 
@@ -226,17 +245,8 @@ thead th {
   padding: 5px;
 }
 
-.page-title {
-  text-align: center;
-}
-
-.page-title h1{
-  /*font-family: "Gotham-Bold";*/
-  color:blue
-}
-
 .news-panel {
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #797979;
   margin-left: 5%;
   padding: 20px;
   width: 90%;
@@ -366,7 +376,7 @@ thead th {
   background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
   color: #878787;
-  padding: 5px 34px 23px;
+  padding: 0 31px 18px;
   float: left;
   width: 100%;
 }
@@ -380,7 +390,7 @@ thead th {
 
 .categories-links {
   display: inline-flex;
-  margin-left: 8%;
+  margin-left: 4%;
   text-align: center;
 
 }
@@ -518,6 +528,7 @@ thead th {
   font-size: 22px;
   margin: 30px 0;
   text-transform: uppercase;
+  text-align: left;
 }
 
 .breadcrumbs a {
@@ -867,8 +878,10 @@ a.champion-for-year {
   background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
   color: #878787;
-  padding: 5px 5px 23px;
+  padding: 0 31px 18px;
   text-align: center;
+  float: left;
+  width: 100%;
 }
 
 .circuit-list {
@@ -987,6 +1000,8 @@ a.btn-red-small:visited {
 
 .circuit-map {
   margin-left: 540px;
+  border: 1px solid #e55151;
+  width: 502px!important;
 }
 
 .como-llegar  {

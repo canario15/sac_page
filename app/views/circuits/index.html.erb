@@ -1,11 +1,11 @@
 <div class="circuit-page">
-  <div class="page-title">
-    <h1> Circuitos </h1>
+  <div class="breadcrumbs">
+    <a><%= @category.name %></a> / <a id="champ_type"> Circuitos</a>
   </div>
   <ul class="row circuit-list">
     <% @circuits.each do |circuit| %>
       <li class="col-sm-4 col-xs-12 link-to-circuit" style="width:32%;">
-        <%= link_to show_circuit_path(circuit), class: "link-to-circuit" do %>
+        <%= link_to show_circuit_path(@category.id, circuit.id), class: "link-to-circuit" do %>
           <div class="info-circuit">
             <div class="hd">
               <h2><%= circuit.name %></h2>

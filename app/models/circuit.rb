@@ -1,7 +1,12 @@
 class Circuit < ActiveRecord::Base
 
+  belongs_to :category
+
   has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/default-circuit.png"
   validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
+
+  has_attached_file :truck, :styles => { :large=> "500x500", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/default-circuit.png"
+  validates_attachment_content_type :truck, :content_type => /\Aimage\/.*\Z/
 
 end
 

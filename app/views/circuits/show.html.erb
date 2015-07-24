@@ -1,8 +1,7 @@
 <div class="circuit-show circuit-page">
   <div class="breadcrumbs">
-    <a>TPS</a> / <a id="champ_type"> Circuitos</a> / <a> <%= @circuit.name %> </a>
+    <a><%= @category.name %></a> / <a id="champ_type"> Circuitos</a> / <a> <%= @circuit.name %> </a>
   </div>
-
   <div class="info-circuit-show">
     <h2><%= @circuit.name %></h2>
     <p><%= @circuit.location %></p>
@@ -13,7 +12,7 @@
   </div>
 
   <div class="circuit-map">
-    <%= image_tag '12698_big.jpg', width: 500 %>
+    <%= image_tag @circuit.truck, width: 500 %>
   </div>
 
   <div class="como-llegar">

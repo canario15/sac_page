@@ -8,7 +8,7 @@ ActiveAdmin.register Circuit do
 
   menu :label => "Circuitos"
 
-  permit_params :name, :location, :description, :large, :logo, :map_position
+  permit_params :name, :location, :description, :large, :logo, :map_position, :category_id, :truck
 
   form do |f|
     f.inputs "Circuito" do
@@ -16,8 +16,10 @@ ActiveAdmin.register Circuit do
       f.input :location
       f.input :large
       f.input :description
+      f.input :category
       f.input :map_position
       f.input :logo
+      f.input :truck
     end
     f.actions
   end
@@ -26,6 +28,7 @@ ActiveAdmin.register Circuit do
     column :name
     column :location
     column :large
+    column :category
     actions
   end
 
@@ -35,8 +38,12 @@ ActiveAdmin.register Circuit do
       row :location
       row :large
       row :description
+      row :category
       row :logo do
-        image_tag(ad.logo.url(:logo))
+        image_tag(ad.logo.url(:medium))
+      end
+      row :truck do
+        image_tag(ad.truck.url(:medium))
       end
     end
   end

@@ -34,7 +34,9 @@ es:
         location: "Localidad"
         description: "Características"
         map_position: "Posición en mapa"
-        logo: "Pista"
+        truck: "Pista"
+        categroy: "Categoría"
+        logo: "Logo"
       pilot:
         categories: "Categoría/s"
         full_name: "Nombre completo"

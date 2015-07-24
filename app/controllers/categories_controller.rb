@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
 
+  before_filter :set_hover
 
   def show
     @category = Category.find_by_id(params[:id])
@@ -62,6 +63,10 @@ class CategoriesController < ApplicationController
 
   end
 
+
+  def set_hover
+    @hover_menu = CONSTANT_MENU_CATEGORIY_ID
+  end
 
 
 end

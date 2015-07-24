@@ -9,12 +9,12 @@ SacPage::Application.routes.draw do
   get '/noticias'                                     => 'pages#news',                              as: :news
   get '/noticias/:id'                                 => 'pages#notice',                            as: :notice
 
-  get '/circuitos'                                    => 'circuits#index',                          as: :circuits
-  get '/circuitos/:id'                                => 'circuits#show',                           as: :show_circuit
-
   get '/categorias'                                   => 'pages#categories',                        as: :categories
   get '/categorias/:id'                               => 'categories#show',                         as: :category
   get '/categorias/:id/campeonatos'                   => 'categories#show_championships',           as: :category_championships
+
+  get '/categorias/:category_id/circuitos'            => 'circuits#index',                          as: :circuits
+  get '/categorias/:category_id/circuitos/:id'        => 'circuits#show',                           as: :show_circuit
 
   get '/categorias/:id/galeria'                       => 'categories#show_gallery',                 as: :category_gallery
   get '/categorias/:id/pilotos'                       => 'categories#show_pilots',                  as: :category_pilots
@@ -29,8 +29,6 @@ SacPage::Application.routes.draw do
 
   get '/contacto'                                     => 'pages#contact',                           as: :contact
   post 'send_contact_info'                            => 'pages#send_contact_info',                 as: :send_contact_info
-
-
 
   get "/championship_by_year"                         => 'categories#championship_by_year',         as: :championship_by_year
   get "/championship_query"                           => 'categories#championship_query',           as: :championship_query
