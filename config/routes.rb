@@ -16,8 +16,10 @@ SacPage::Application.routes.draw do
   get '/categorias/:category_id/circuitos'            => 'circuits#index',                          as: :circuits
   get '/categorias/:category_id/circuitos/:id'        => 'circuits#show',                           as: :show_circuit
 
+  get '/categorias/:category_id/pilotos'              => 'categories#show_pilots',                  as: :category_pilots
+  get '/categorias/:category_id/pilotos/:id'          => 'categories#pilot',                        as: :pilot
+
   get '/categorias/:id/galeria'                       => 'categories#show_gallery',                 as: :category_gallery
-  get '/categorias/:id/pilotos'                       => 'categories#show_pilots',                  as: :category_pilots
   get '/categorias/:id/reglamentos'                   => 'categories#show_regulation',              as: :category_regulation
 
   get 'categorias/formula_sac/reglamentos'            => 'categories#regulation_formula_sac',       as: :regulation_formula_sac

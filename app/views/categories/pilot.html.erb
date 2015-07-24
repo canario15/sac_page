@@ -1,0 +1,90 @@
+<div class="categories-pages">
+  <div class="breadcrumbs">
+    <a><%= @category.name %></a> / <a id="champ_type"> Pilotos</a> / <a><%= @pilot.full_name %></a>
+  </div>
+
+  <div class="driver-profile">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <figure class="cont-driver">
+          <img data-original="/assets/facundo-ardusso.png" class="lazy img-responsive" src="/assets/facundo-ardusso.png" style="display: block;">
+        </figure>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="data-block">
+              <div class="gral-data">
+                <span><%= @pilot.age %> años.</span>
+                <%= @pilot.city %>
+              </div>
+              <div class="tc-data clearfix">
+                <span><%= @pilot.number %></span>
+                <div class="logo divider">
+                  <img class="lazy" data-original="/assets/logo_vw.png" src="/assets/logo_vw.png" style="display: inline;width:50px;">
+                </div>
+                <div class="team">EQUIPO: <span><%= @pilot.team %></span></div>
+              </div>
+              <div class="stats-current">
+                <h3>Campeonato 2015</h3>
+                <ul>
+                  <li><span>Posición</span><strong>0</strong></li>
+                  <li><span>Puntos</span><strong>0</strong></li>
+                  <li><span>Asistencias</span><strong>0</strong></li>
+                  <li><span>Mejor resultado</span><strong>0</strong></li>
+                </ul>
+              </div><!-- /stats-current -->
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="data-block">
+              <div class="stats-past">
+                <div class="hd clearfix">
+                  <span>Sus números históricos</span>
+                  <img class="lazy" data-original="/assets/facundo-ardusso-casco.png" src="/assets/facundo-ardusso-casco.png" style="display: block;">
+                  <div class="debut">
+                    Debut <%= @category.name %>:
+                    <span><%= l(@pilot.first_race.date, :format => :long)  %>, <%= @pilot.first_race.city %></span>
+                  </div>
+                </div>
+                <ul>
+                  <li><span>Campeonatos</span><strong><%= @pilot.count_champion %></strong></li>
+                  <li><span>Carreras</span><strong><%= @pilot.count_races %></strong></li>
+                  <li><span>Podios</span><strong><%= @pilot.podios %></strong></li>
+                  <li><span>Victorias</span><strong><%= @pilot.all_win_races %></strong></li>
+                  <li><span>Pole position</span><strong><%= @pilot.poles %></strong></li>
+                </ul>
+              </div><!-- /stats-past -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="car-details">
+      <h3>El auto</h3>
+      <div class="wrapper">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <figure class="auto"><img class="lazy img-responsive" data-original="/assets/facundo-ardusso-auto.png" src="/assets/facundo-ardusso-auto.png" style="display: block;"></figure>
+          </div>
+
+          <div class="col-lg-6 col-md-6  col-sm-12">
+            <ul class="clearfix" id="wrapper-gallery">
+
+              <li><a title="El auto de Facundo Ardusso" href="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_1/big/facundo-ardusso.jpg" data-title-id="caption-lb" rel="group" class="fancyboxImgFichaAuto"><img class="lazy" data-original="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_1/small/facundo-ardusso.jpg" src="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_1/small/facundo-ardusso.jpg" style="display: inline;"></a></li>
+
+              <li><a title="El auto de Facundo Ardusso" href="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_2/big/facundo-ardusso.jpg" data-title-id="caption-lb" rel="group" class="fancyboxImgFichaAuto"><img class="lazy" data-original="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_2/small/facundo-ardusso.jpg" src="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_2/small/facundo-ardusso.jpg" style="display: inline;"></a></li>
+
+              <li><a title="El auto de Facundo Ardusso" href="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_3/big/facundo-ardusso.jpg" data-title-id="caption-lb" rel="group" class="fancyboxImgFichaAuto"><img class="lazy" data-original="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_3/small/facundo-ardusso.jpg" src="http://actc.org.ar/upload/autos/2029/imgs_v3/imgfotoauto_3/small/facundo-ardusso.jpg" style="display: inline;"></a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div><!-- /car-details -->
+  </div><!-- /driver-profile -->
+
+</div>
+

@@ -44,23 +44,24 @@ class CategoriesController < ApplicationController
   end
 
   def show_pilots
-    @category = Category.find_by_id(params[:id])
+    @category = Category.find_by_id(params[:category_id])
     @pilots = @category.pilots
+  end
+
+  def pilot
+    @category = Category.find_by_id(params[:category_id])
+    @pilot = @category.pilots.find(params[:id])
   end
 
   def show_regulation
     @category = Category.find_by_id(params[:id])
-
   end
+
 
   def regulation_turismo_pista_sac
   end
 
   def regulation_karting_125
-  end
-
-  def method_name
-
   end
 
 

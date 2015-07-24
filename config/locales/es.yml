@@ -35,7 +35,7 @@ es:
         description: "Características"
         map_position: "Posición en mapa"
         truck: "Pista"
-        categroy: "Categoría"
+        category: "Categoría"
         logo: "Logo"
       pilot:
         categories: "Categoría/s"
@@ -45,6 +45,7 @@ es:
         team: "Equipo"
         car: "Auto"
         city: "Ciudad"
+        birth_date: "Fecha Nacimiento"
       pilot_step:
         step: "Serie"
         pilot: "Piloto"

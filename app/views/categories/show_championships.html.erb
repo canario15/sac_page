@@ -56,7 +56,9 @@
                 <tr bgcolor="">
                   <td class="pos"><%= i + 1 %><span>°</span></td>
                   <td><%= result.number %></td>
-                  <td class="piloto first"><a href="#"> <%= result.last_name %>,  <%= result.first_name %> </a></td>
+                  <td class="piloto first">
+                    <%= link_to "#{result.last_name}, #{result.first_name} ",pilot_path(@category.id, result.pilot_id) %>
+                  </td>
                   <td> <%= result.city %>      </td>
                 <!--  <td> <%= result.team %>      </td> -->
                   <td> <%= result.car %>       </td>
@@ -105,7 +107,10 @@
                               <tr bgcolor="">
                                 <td class="pos"><%= ps.position %><span>°</span></td>
                                 <td><%= ps.pilot_race.number %></td>
-                                <td class="piloto first"><a href="#"> <%= ps.pilot_race.pilot %> </a></td>
+                                <td class="piloto first">
+                                   <%= link_to "#{ ps.pilot_race.pilot } ", pilot_path(@category.id, ps.pilot_race.pilot.id) %>
+                                  <a href="#">  </a>
+                                </td>
                                 <td> <%= ps.time %>      </td>
                                 <td class="pts"> <%= ps.score %> </td>
                               </tr>
@@ -136,7 +141,9 @@
                             <tr bgcolor="">
                               <td class="pos" style="text-align:center"><%= race_result.position %><span>°</span></td>
                               <td style="text-align:center"><%= race_result.pilot_race.number %></td>
-                              <td class="piloto first" ><a href="#"> <%= race_result.pilot_race.pilot %> </a></td>
+                              <td class="piloto first" >
+                                <%= link_to "#{ race_result.pilot_race.pilot } ", pilot_path(@category.id, race_result.pilot_race.pilot.id) %>
+                              </td>
                               <% race.steps.each do |step|%>
                                 <% pist = step.pilot_steps.where(pilot_race_id: race_result.pilot_race.id).first %>
                                 <% unless pist.blank? %>
