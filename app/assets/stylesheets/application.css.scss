@@ -381,7 +381,7 @@ thead th {
   background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
   color: #878787;
-  padding: 0 31px 18px;
+  padding: 0 31px 32px;
   float: left;
   width: 100%;
 }
@@ -390,7 +390,8 @@ thead th {
 }
 
 .categories-pages .links {
-  margin-top:17px;
+  margin-left: 14px;
+  margin-top: 31px;
 }
 
 .categories-links {
@@ -431,38 +432,17 @@ thead th {
 }
 
 .panel-group .panel {
-    border-radius: 4px!important;
-    margin-bottom: 18px!important;
+  border-radius: 4px!important;
+  margin-bottom: 18px!important;
 }
 .panel-default {
-    border-color: #FFFFFF!important;
+  border-color: #FFFFFF!important;
 }
 
 .panel {
   background: url(asset-path('checkered-flag2.png'));
 }
 
-.links-container {
-  margin-top: 25px;
-}
-
-.link-files {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.59);
-  border-radius: 20px;
-  color: #CACD34;
-  cursor: pointer;
-  float: left;
-  height: 211px;
-  margin-bottom: 23px;
-  margin-left: 25px;
-  padding: 5px;
-  text-align: center;
-  width: 21%;
-}
-
-.link-files:hover {
-  background: url(asset-path('cuadros_baderatrans.png'));
-}
 
 /***********CHAMPIONSHIPS*************/
 
@@ -473,6 +453,15 @@ thead th {
   padding: 0 31px 18px;
   float: left;
   width: 100%;
+}
+
+.special-p {
+  color: #999;
+  display: inline;
+  font-family: "Gotham-Book";
+  font-size: 22px;
+  margin: 30px 0;
+  text-align: left;
 }
 
 .generic-tbl {
@@ -561,6 +550,7 @@ thead th {
 .breadcrumbs a {
   color: #444;
   font-family: "Gotham-Bold";
+  text-decoration:none;
 }
 
 .breadcrumbs a:hover {
@@ -568,10 +558,14 @@ thead th {
   color: #e55151;
 }
 
+.breadcrumbs .last-it {
+  color: #e55151;
+}
+
 
 .championship-data .hd {
-    background-color: #eee;
-    padding: 20px;
+  background-color: #eee;
+  padding: 20px;
 }
 
 .championship-data .race-info {
@@ -706,11 +700,7 @@ a.champion-for-year {
   font-size: 23px !important;
 }
 
-/***********GALLERY*************/
-
-
 /***********PILOT*************/
-
 
 .pilots-container {
   margin-top: 2%;
@@ -779,341 +769,251 @@ a.links-to-pilot {
 
 /***show pilot*****/
 
+.caption {
+  width:100%;
+  margin-bottom: 25px;
+  margin-top: 42px;
+}
+
+.caption h1 {
+  font-family: "GothamBlackRegular"!important;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 42px;
+  text-transform: uppercase;
+}
+
+.caption h1 span {
+  background-color: #333;
+  box-decoration-break: clone;
+  color: #e55151;
+  display: inline;
+  padding: 14px 10px 8px;
+}
+
 .driver-profile {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .driver-profile .cont-driver img {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .driver-profile .data-block {
-    padding: 20px 0 30px;
+  padding: 20px 0 30px;
 }
 
 .driver-profile .data-block .gral-data {
-    color: #777;
-    font-family: "Gotham-Book";
-    font-size: 22px;
-    line-height: 22px;
+  color: #777;
+  font-family: "Gotham-Book";
+  font-size: 22px;
+  line-height: 22px;
 }
 
 .driver-profile .gral-data span {
-    color: #333;
-    font-family: "Gotham-Bold";
+  color: #333;
+  font-family: "Gotham-Bold";
 }
 
 .driver-profile .data-block .gral-data {
-    color: #777;
-    font-family: "Gotham-Book";
-    font-size: 22px;
-    line-height: 22px;
+  color: #777;
+  font-family: "Gotham-Book";
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.model-car{
+  color: #333;
+  display: inline-block;
+  float: left;
+  font-family: "Gotham-Book";
+  font-size: 21px;
+  margin-bottom: 9px;
+  margin-top: 3px;
+  padding-left: 10px;
+  width: 225px;;
+}
+
+.model-car span {
+  display: block;
+  font-family: "Gotham-Bold";
+  line-height: 21px;
 }
 
 .driver-profile .tc-data {
-    margin: 25px 0;
+  margin: 25px 0;
 }
 
 .driver-profile .tc-data > span {
-    background-color: #e55151;
-    color: #fff;
-    float: left;
-    font-family: "bebasneue_regular";
-    font-size: 50px;
-    line-height: 60px;
-    padding: 4px 14px 0 9px;
-    text-align: center;
+  background-color: #e55151;
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 50px;
+  line-height: 60px;
+  padding: 4px 14px 0 9px;
+  text-align: center;
 }
 
 .driver-profile .tc-data .divider {
-    border-right: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 .driver-profile .tc-data .logo {
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 15px;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
 }
 
 .driver-profile .tc-data .team {
-    color: #333;
-    display: inline-block;
-    float: left;
-    font-family: "Gotham-Book";
-    font-size: 21px;
-    padding-left: 10px;
-    width: 225px;
+  color: #333;
+  display: inline-block;
+  float: left;
+  font-family: "Gotham-Book";
+  font-size: 21px;
+  padding-left: 10px;
+  width: 225px;
 }
 
 .driver-profile .tc-data .team > span {
-    display: block;
-    font-family: "Gotham-Bold";
-    line-height: 21px;
+  display: block;
+  font-family: "Gotham-Bold";
+  line-height: 21px;
 }
 
 .driver-profile .stats-current h3 {
-    background-color: #444;
-    color: #fff;
-    display: inline;
-    font-family: "bebasneue_regular";
-    font-size: 26px;
-    padding: 8px 11px 0;
-    text-transform: uppercase;
+  background-color: #444;
+  color: #fff;
+  display: inline;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  padding: 8px 11px 0;
+  text-transform: uppercase;
 }
 
 .driver-profile .stats-current ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
 }
 
 .driver-profile .stats-current li {
-    border-top: 1px solid #ddd;
-    padding: 7px 0;
+  border-top: 1px solid #ddd;
+  padding: 7px 0;
 }
 
 .driver-profile .stats-current li > span {
-    color: #555;
-    display: inline-block;
-    font-family: "bebasneue_regular";
-    font-size: 25px;
-    text-transform: uppercase;
-    width: 85%;
+  color: #555;
+  display: inline-block;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  text-transform: uppercase;
+  width: 85%;
 }
 
 .driver-profile .stats-current li > strong {
-    color: #e55151;
-    display: inline-block;
-    font-family: "bebasneue_regular";
-    font-size: 25px;
-    width: 15%;
+  color: #e55151;
+  display: inline-block;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  width: 15%;
+}
+
+.custom-pad {
+  padding-top: 57px !important;
 }
 
 .stats-past .hd {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .stats-past .hd > span {
-    color: #444;
-    display: block;
-    font-family: "bebasneue_regular";
-    font-size: 26px;
-    padding-bottom: 15px;
-    text-transform: uppercase;
+  color: #444;
+  display: block;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .stats-past .hd img {
-    float: left;
+  float: left;
 }
 
 .stats-past .hd .debut {
-    color: #e7504d;
-    float: left;
-    font-family: "Gotham-Book";
-    font-size: 16px;
-    line-height: 21px;
-    padding: 0 0 0 20px;
-    width: 231px;
+  color: #e7504d;
+  float: left;
+  font-family: "Gotham-Book";
+  font-size: 16px;
+  line-height: 21px;
+  padding: 0 0 0 20px;
+  width: 231px;
 }
 
 .stats-past .hd .debut > span {
-    display: block;
-    font-family: "Gotham-Bold";
+  display: block;
+  font-family: "Gotham-Bold";
 }
 
 .stats-past ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
 }
 
 .stats-past ul li {
-    padding-bottom: 12px;
+  padding-bottom: 12px;
 }
 
 .stats-past ul li > span {
-    color: #444;
-    display: inline-block;
-    font-family: "Gotham-Bold";
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 80%;
+  color: #444;
+  display: inline-block;
+  font-family: "Gotham-Bold";
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 80%;
 }
 
 .stats-past ul li > strong {
-    color: #878787;
-    display: inline-block;
-    font-family: "Gotham-Book";
-    font-size: 18px;
-    width: 20%;
+  color: #878787;
+  display: inline-block;
+  font-family: "Gotham-Book";
+  font-size: 18px;
+  width: 20%;
 }
 
 .car-details {
-    margin: 40px 0 0;
+  margin: 40px 0 0;
 }
 
 .car-details h3 {
-    background-color: #444;
-    color: #fff;
-    display: inline;
-    font-family: "bebasneue_regular";
-    font-size: 26px;
-    padding: 8px 10px 1px;
-    text-transform: uppercase;
+  background-color: #444;
+  color: #fff;
+  display: inline;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  padding: 8px 10px 1px;
+  text-transform: uppercase;
 }
 
 .car-details .wrapper {
-    background-color: #eee;
-    padding: 20px;
+  background-color: white;
+  padding: 20px;
 }
 
 .car-details .auto img {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
-.car-details ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-}
-
-.car-details ul li {
-    float: left;
-    padding-right: 8px;
-    padding-top: 12px;
-}
-
-.car-details a {
-    display: inline-block;
-    overflow: hidden;
-    width: 160px;
-}
-.car-details a img {
-    height: 110px;
-    transition: all 0.5s ease 0s;
-}
-
-/***********REGULATIONS*************/
-
-
-/********************************************************************* GALLERIES PAGE *****************************************************/
-
-.gallery-cont {
-  background: url(asset-path('checkered-flag2.png'));
-  border-radius: 20px;
-  color: black;
-  padding: 5px;
-}
-
-#gallery {
-  color: black;
-}
-
-.nanogallery_theme_default .nanoGalleryNavigationbarContainer {
-  margin:5px auto;
-  padding:5px 0;
-  /*background-color:#f09;*/
-  display: block;
-}
-
-.gallery-cont .nanogallery_theme_default .nanoGalleryNavigationbar {
-  border-top: 1px solid black;
-  border-bottom: 1px solid  black;
+.car-img-cont {
+  margin-left: 214px;
 }
 
 
-
-
-
-
-
-
-
-
-/***************************************************************************** ABOUT PAGE *****************************************************/
-.about-page {
-  background: url(asset-path('checkered-flag2.png'));
-  border-radius: 20px;
-  color: #878787;
-  padding: 5px 5px 23px;
-  text-align: center;
-}
-
-.about-page h3 {
-  color: #e52b2b;
-}
-
-.com-dir {
-  width: 100%;
-}
-
-.com-dir p{
-  color: #878787;
-  margin-top: 3%;
-}
-
-.com-voc {
-  width: 50%;
-  float: left;
-}
-.com-voc p{
-  color: #878787;
-  margin-top: 3%;
-}
-
-.com-fis {
-  width: 50%;
-  float: left;
-}
-
-.com-fis p{
-  color: #878787;
-  margin-top: 3%;
-}
-
-.profile {
-  float: left;
-  margin-left: 17%;
-  text-align: center;
-}
-
-.vice {
-  margin-left: 8%;
-  margin-top: 10%;
-}
-
-.secre {
-  margin-top: 10%;
-}
-
-
-/****************************************************************************** CONACT PAGE *****************************************************/
-
-.contact-page {
-  background: url(asset-path('checkered-flag2.png'));
-  border-radius: 20px;
-  color: #878787;
-  height: 531px;
-  padding: 5px 5px 23px;
-}
-
-.contact-form button {
-  float: right;
-  width: 115px;
-}
-
-.contact-rigth {
-  color: #FF0000;
-  float: right;
-  margin-right: 61px;
-  margin-top: 25px;
-}
-
-
-/****************************************************************************CIRCUITS*******************************************************/
-
+/***********CIRCUITS******************/
 
 /***** INDEX ****/
 
@@ -1304,3 +1204,209 @@ a.btn-red-small:visited {
   font-size: 16px;
   margin-bottom: 20px;
 }
+
+
+/************REGULATION************/
+.links-container {
+  margin-top: 25px;
+}
+
+.link-files {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: #CACD34;
+  cursor: pointer;
+  float: left;
+  height: 211px;
+  margin-bottom: 23px;
+  margin-left: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 21%;
+}
+
+.link-files:hover {
+  background: white;
+  border: 1px solid #dc1919;
+  color: #dc1919!important;
+}
+
+
+/***********GALLERY************/
+.albun-cont{
+  margin-top:53px;
+}
+
+.small-block-grid-2 > li {
+  padding: 0 0.625em 1.25em;
+  width: 25%;
+  display: inline;
+  float: left;
+  height: auto;
+}
+
+ul.polaroids a:after {
+  content: attr(title);
+}
+
+ul.polaroids a {
+  background: none repeat scroll 0 0 #fff;
+  color: #333;
+  display: inline;
+  float: left;
+  font-family: "Marker Felt",sans-serif;
+  font-size: 18px;
+  margin: 0 0 27px 30px;
+  padding: 10px 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  transform: rotate(-2deg);
+}
+
+ul.polaroids img {
+  display: block;
+  margin-bottom: 12px;
+  width: 190px;
+}
+
+ul.polaroids a:hover {
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+
+.photo-galery-container {
+  padding: 31px 20px 0 10px;
+
+}
+.video-galery-container {
+  padding: 31px 20px 0 10px;
+}
+.albun-wraper {
+  width:100%;
+}
+
+.albun-wraper h3 {
+  background-color: #444;
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  margin: 0;
+  padding: 9px 14px 2.5px;
+}
+
+.tit-1 {
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  width: 100%;
+}
+
+
+/********************************************************************* GALLERIES PAGE *****************************************************/
+
+.gallery-cont {
+  background: url(asset-path('checkered-flag2.png'));
+  border-radius: 20px;
+  color: black;
+  padding: 5px;
+}
+
+#gallery {
+  color: black;
+}
+
+.nanogallery_theme_default .nanoGalleryNavigationbarContainer {
+  margin:5px auto;
+  padding:5px 0;
+  /*background-color:#f09;*/
+  display: block;
+}
+
+.gallery-cont .nanogallery_theme_default .nanoGalleryNavigationbar {
+  border-top: 1px solid black;
+  border-bottom: 1px solid  black;
+}
+
+
+/***************************************************************************** ABOUT PAGE *****************************************************/
+.about-page {
+  background: url(asset-path('checkered-flag2.png'));
+  border-radius: 20px;
+  color: #878787;
+  padding: 5px 5px 23px;
+  text-align: center;
+}
+
+.about-page h3 {
+  color: #e52b2b;
+}
+
+.com-dir {
+  width: 100%;
+}
+
+.com-dir p{
+  color: #878787;
+  margin-top: 3%;
+}
+
+.com-voc {
+  width: 50%;
+  float: left;
+}
+.com-voc p{
+  color: #878787;
+  margin-top: 3%;
+}
+
+.com-fis {
+  width: 50%;
+  float: left;
+}
+
+.com-fis p{
+  color: #878787;
+  margin-top: 3%;
+}
+
+.profile {
+  float: left;
+  margin-left: 17%;
+  text-align: center;
+}
+
+.vice {
+  margin-left: 8%;
+  margin-top: 10%;
+}
+
+.secre {
+  margin-top: 10%;
+}
+
+
+/****************************************************************************** CONACT PAGE *****************************************************/
+
+.contact-page {
+  background: url(asset-path('checkered-flag2.png'));
+  border-radius: 20px;
+  color: #878787;
+  height: 531px;
+  padding: 5px 5px 23px;
+}
+
+.contact-form button {
+  float: right;
+  width: 115px;
+}
+
+.contact-rigth {
+  color: #FF0000;
+  float: right;
+  margin-right: 61px;
+  margin-top: 25px;
+}
+
+

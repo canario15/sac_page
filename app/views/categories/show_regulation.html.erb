@@ -1,6 +1,127 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <a><%= @category.name %></a> / <a id="champ_type">Reglamentos</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it">Reglamentos</a>
+  </div>
+  <div class="links-container">
+    <% if @category.id == 1 %>
+      <%= link_to "/REGLAMENTO_MECANICO_TURISMO_PISTA_SAC_2015.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-rmtps.png', height: 150 %>
+          <p>Reglamento Mecánico 2015</p>
+        </div>
+      <% end -%>
+
+      <%= link_to "/REGLAMENTO_GENERAL_TURISMO_PISTA_2015.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-rdtps.png', height: 150 %>
+          <p>Reglamento Deportivo General 2015</p>
+        </div>
+      <% end -%>
+
+      <%= link_to "/REGLAMENTO_DEPORTIVO_NACIONAL.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-rdn.png', height: 150 %>
+          <p>Reglamento Deportivo Nacional</p>
+        </div>
+      <% end -%>
+
+      <%= link_to "/CÓDIGO_DEPORTIVO_INTERNACIONAL.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-cdi.png', height: 150 %>
+          <p>Código Deportivo Nacional (CDI)</p>
+        </div>
+      <% end -%>
+
+      <%= link_to "/SOLICITUD_LICENCIA_PILOTO_Y_CONCURRENTE_2015.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-sl2015.png', height: 150 %>
+          <p>Solicitud Licencia Piloto y Concurrente 2015</p>
+        </div>
+      <% end -%>
+
+      <%= link_to "/FORMULARIO_ELEMENTOS_DE_SEGURIDAD_PERSONAL_Y_VEHÍCULO.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-es2015.png', height: 150 %>
+          <p>Eementos de seguridad piloto y  vehículo</p>
+        </div>
+      <% end -%>
+
+      <%= link_to "/SEGURIDAD_EN_EL_AUTOMOVILISMO.pdf", :target => "_blank" do %>
+        <div class="link-files" >
+          <%= image_tag 'prv-sea.png', height: 150 %>
+          <p>Seguridad en el automovilimso</p>
+        </div>
+      <% end -%>
+    <%else %>
+      <% if @category.id == 2 %>
+
+        <%= link_to "/REGLAMENTO_MECANICO_KARTING_2015.pdf", :target => "_blank" do %>
+          <div class="link-files" >
+            <%= image_tag 'prv-rmk.png', height: 150 %>
+            <p>Reglamento Mecánico 2015</p>
+          </div>
+        <% end -%>
+
+        <%= link_to "/REGLAMENTO_GENERAL_KARTING_2015.pdf", :target => "_blank" do %>
+          <div class="link-files" >
+            <%= image_tag 'prv-rdk.png', height: 150 %>
+            <p>Reglamento Deportivo General</p>
+          </div>
+        <% end -%>
+      <% else %>
+        <% if @category.id == 3 %>
+
+          <%= link_to "/REGLAMENTO_MECANICO_FORMULA_SAC_2015.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-rmfs.png', height: 150 %>
+              <p>Reglamento Mecánico 2015</p>
+            </div>
+          <% end -%>
+
+          <%= link_to "/REGLAMENTO_GENERAL_FORMULA_SAC_2015.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-rdfs.png', height: 150 %>
+              <p>Reglamento Deportivo General 2015</p>
+            </div>
+          <% end -%>
+
+          <%= link_to "/REGLAMENTO_DEPORTIVO_NACIONAL.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-rdn.png', height: 150 %>
+              <p>Reglamento Deportivo Nacional</p>
+            </div>
+          <% end -%>
+
+          <%= link_to "/CÓDIGO_DEPORTIVO_INTERNACIONAL.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-cdi.png', height: 150 %>
+              <p>Código Deportivo Nacional (CDI)</p>
+            </div>
+          <% end -%>
+
+          <%= link_to "/SOLICITUD_LICENCIA_PILOTO_Y_CONCURRENTE_2015.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-sl2015.png', height: 150 %>
+              <p>Solicitud Licencia Piloto y Concurrente 2015</p>
+            </div>
+          <% end -%>
+
+          <%= link_to "/FORMULARIO_ELEMENTOS_DE_SEGURIDAD_PERSONAL_Y_VEHÍCULO.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-es2015.png', height: 150 %>
+              <p>Eementos de seguridad piloto y  vehículo</p>
+            </div>
+          <% end -%>
+
+          <%= link_to "/SEGURIDAD_EN_EL_AUTOMOVILISMO.pdf", :target => "_blank" do %>
+            <div class="link-files" >
+              <%= image_tag 'prv-sea.png', height: 150 %>
+              <p>Seguridad en el automovilimso</p>
+            </div>
+          <% end -%>
+        <% end -%>
+      <% end -%>
+    <% end -%>
   </div>
 
 </div>
