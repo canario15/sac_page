@@ -8,15 +8,17 @@
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="item active">
-            <%= image_tag 'slide-1.jpg', class: "img-responsive img-full" %>
-          </div>
-          <div class="item">
-            <%= image_tag 'slide-2.jpg', class: "img-responsive img-full" %>
-          </div>
-          <div class="item">
-            <%= image_tag 'slide-3.jpg', class: "img-responsive img-full" %>
-          </div>
+          <% @last_news.each_with_index do |notice, i|%>
+            <div class="<%= i == 0 ? 'item active' : 'item' %>" >
+              <%= link_to notice_path(notice) do %>
+                <%= image_tag notice.photo(:carr), class: "carro-img" %>
+                <div class="carousel-caption">
+                  <h1><span><%= notice.title %></span></h1>
+                  <p><%= truncate(notice.context, length: 200) %></p>
+                </div>
+              <% end -%>
+            </div>
+          <% end -%>
         </div>
         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
           <span class="icon-prev"></span>
@@ -28,70 +30,3 @@
     </div>
   </div>
 </div>
-
-<div class="race-feature" id="race-feature">
-  <div class="en-carrera">
-    <div class="row no-margin row-cust">
-      <div class="col-lg-9 col-md-9">
-        <div class="row">
-          <div class="volanta clearfix">
-            <div class="category-kart-fsac">KARTING</div>
-            <div class="category-kart-fsac fsac-c ">FORMULA SAC</div>
-            <div class="category">TPS</div>
-            <div class="date">LA PRóXIMA</div>
-          </div>
-          <ul class="menu-race-feature clearfix pull-left">
-            <li class="first">
-              <%= link_to "El circuito", show_circuit_path(1, 1), class: "circuito"%>
-            </li>
-          </ul>
-        </div>
-        <div class="row">
-          <div class="col-lg-5 col-md-5 col-sm-4">
-            <div class="venue">
-              <h2><%= @actual_championship.next_race.city %></h2>
-              <div href="#" class="date">
-                <%= @actual_championship.next_race.date.day %>.
-                <%= @actual_championship.next_race.date.month %>.
-                <%= @actual_championship.next_race.date.year.to_s.last(2) %>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-7 col-md-7 col-sm-8">
-            <div class="countdown clearfix" id="countdown">
-              <div class="cont-num">
-                <div class="num days" id="days">0</div>
-                <span>Días</span>
-              </div>
-              <div class="cont-num">
-                <div class="num hours" id="hours">0</div>
-                <span>Horas</span>
-              </div>
-              <div class="cont-num">
-                <div class="num minutes" id="mins">0</div>
-                <span>Minutos</span>
-              </div>
-              <div class="cont-num">
-                <div class="num seconds" id="secs">0</div>
-                <span>Segundos</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 visible-lg col-md-3 visible-md no-padding">
-        <div class="sponsorship">
-          <%= image_tag 'logo.png', class: "main-logo", width: 100 %>
-        </div>
-      </div>
-    </div>
-  </div><!-- /en-carrera (countdown) -->
-</div>
-
-
-<script type="text/javascript">
-  $("#countdown").countdown({
-    date: "8 August 2015 10:00:00", // Change this to your desired date to countdown to
-    format: "on"
-  });
-</script>

@@ -3,6 +3,9 @@
     <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it">Multimedia</a>
   </div>
   <div class="albun-cont">
+   <div class="tit-1">
+      <h3>ALBUNES</h3>
+    </div>
     <ul class="polaroids  small-block-grid-2">
       <% @category.albuns.each do |albun| %>
         <li>
@@ -13,4 +16,24 @@
        <% end -%>
     </ul>
   </div>
+  <div class="gent-cont">
+    <div class="tit-1">
+      <h3>Gentileza</h3>
+    </div>
+    <div class="images">
+      <%= link_to "https://www.facebook.com/fede.gonzalez.737" , title: "H7 Produciones" do %>
+        <%= image_tag "/assets/h7.jpg", class: "h7"  %>
+      <% end -%>
+      <%= link_to "https://www.facebook.com/maria.delossantos.9081" , title: "A Ojo De Leopardo" do %>
+        <%= image_tag "/assets/a_ojo_de_leopardo.png", class: "oleo"  %>
+      <% end -%>
+      <%= link_to "http://www.skypilot.uy/" , title: "Skypilot" do %>
+        <%= image_tag "/assets/sky_pilot.png", class: "spilot" %>
+      <% end -%>
+      <%= link_to "https://www.facebook.com/motoramaoficial" , title: "Motorama" do %>
+        <%= image_tag "/assets/motorama.png", class: "motora" %>
+      <% end -%>
+    </div>
+  </div>
+
 </div>

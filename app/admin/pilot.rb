@@ -12,7 +12,7 @@ ActiveAdmin.register Pilot do
     f.inputs "Piloto" do
       f.input :first_name
       f.input :last_name
-      f.input :birth_date
+      f.input :birth_date,  :as => :datepicker
       f.input :city
       f.input :car
       f.input :team

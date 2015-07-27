@@ -2,7 +2,8 @@ class PagesController < ApplicationController
 
 	def home
     @hover_menu = CONSTANT_MENU_HOME_ID
-    @actual_championship = Championship.actual_championship(1)
+    @last_news = Notice.last(3)
+
   end
 
   def news
