@@ -9,7 +9,7 @@ ActiveAdmin.register Championship do
 
   config.sort_order = 'year_desc'
 
-  permit_params :name, :category_id, :year, :one_id, :two_id, :three_id, races_attributes: [:id, :city, :date, :name, :_destroy]
+  permit_params :name, :category_id, :circuit_id, :year, :one_id, :two_id, :three_id, races_attributes: [:id, :city, :date, :name, :_destroy]
 
   form do |f|
     f.inputs "Campeonato" do
@@ -23,6 +23,7 @@ ActiveAdmin.register Championship do
         r.input :city
         r.input :date, as: :datepicker
         r.input :name
+        r.input :circuit
       end
     end
     f.actions
@@ -51,6 +52,8 @@ ActiveAdmin.register Championship do
           r.column "Fecha", :date
           r.column "Ciudad", :city
           r.column "Nombre", :name
+          r.column "Circuito", :circuit
+          r.column "Cerrada", :done
           r.column("Ver") {|pr|  link_to("Ver", admin_race_path(pr)) }
           r.column("Editar") {|pr|  link_to("Editar", edit_admin_race_path(pr)) }
         end

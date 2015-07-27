@@ -18,6 +18,9 @@ ActiveAdmin.register Pilot do
       f.input :team
       f.input :categories, :as => :check_boxes
       f.input :avatar
+      f.input :car_pic
+      f.input :helmet_pic
+      f.input :complete_pic
     end
     f.actions
   end
@@ -45,6 +48,15 @@ ActiveAdmin.register Pilot do
       end
       row :avatar do
         image_tag(ad.avatar.url(:medium))
+      end
+      row :car_pic do
+        image_tag(ad.car_pic.url(:thumb))
+      end
+      row :helmet_pic do
+        image_tag(ad.helmet_pic.url())
+      end
+      row :complete_pic do
+        image_tag(ad.complete_pic.url(:thumb))
       end
     end
   end

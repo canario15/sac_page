@@ -12,7 +12,6 @@ class Championship < ActiveRecord::Base
 
 	default_scope order('year DESC')
 
-
   def championship_data
     Championship.find_by_sql("select rr.pilot_id, pr.number, p.first_name, p.last_name, p.city, p.team,  p.car, SUM (rr.score_for_champ) as score
             from race_results rr, races r, pilots p, pilot_races pr
@@ -29,9 +28,10 @@ class Championship < ActiveRecord::Base
     RaceResult.unscoped.where(championship_id: self.id).select(:race_id).distinct.count
   end
 
-  def self.actual_championship
-    Championship.order(:year).first
+  def self.actual_championship(category_id)
+    Championship.where(category_id: category_id).order(:year).first
   end
+
 
   def data_of_pilot_in_championship(pilot_id)
     data = { score: "0", pos: "0", best_place: "", assists: "" }
@@ -45,8 +45,11 @@ class Championship < ActiveRecord::Base
     data[:assists] = PilotRace.where(pilot_id: pilot_id, race_id: races, category_id: category_id).count
     best_result = RaceResult.where(category_id: category_id, championship_id: self.id, pilot_id: pilot_id).order(:position).first
     data[:best_place] = !best_result.nil? ? best_result.position : "0"
-
     return data
+  end
+
+  def next_race
+    races.where(done: nil).order(:date).first
   end
 
 end

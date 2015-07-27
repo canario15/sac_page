@@ -1,6 +1,6 @@
 <div class="circuit-page">
   <div class="breadcrumbs">
-    <a><%= @category.name %></a> / <a id="champ_type"> Circuitos</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a class="last-it"> Circuitos</a>
   </div>
   <ul class="row circuit-list">
     <% @circuits.each do |circuit| %>

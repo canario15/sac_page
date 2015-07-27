@@ -7,14 +7,20 @@ ActiveAdmin.register Race do
 
   menu false
 
-  permit_params :city, :date, :name, :observation, steps_attributes: [:id, :number, :name, :_destroy], pilot_races_attributes: [:id, :number, :pilot_id, :race_id]
+  permit_params :city, :date, :name, :observation, :circuit_id, steps_attributes: [:id, :number, :name, :_destroy], pilot_races_attributes: [:id, :number, :pilot_id, :race_id]
+
+  action_item only: :show do
+    link_to 'Cerrar Fecha', "#", class: "close_race"
+  end
+
 
   form do |f|
     f.inputs "Fecha" do
       f.input :championship, :input_html => { :disabled => true }
-      f.input :date, :input_html => { :disabled => true }
-      f.input :city, :input_html => { :disabled => true }
-      f.input :name, :input_html => { :disabled => true }
+      f.input :date
+      f.input :city
+      f.input :circuit
+      f.input :name
       f.has_many :steps, allow_destroy: true  do |r|
         r.input :number
         r.input :name
@@ -36,14 +42,17 @@ ActiveAdmin.register Race do
     column :date
     column :city
     column :name
+    column :circuit
     actions
   end
 
   show :title => :date do |ad|
     attributes_table do
+      row :id
       row :championship
       row :date
       row :city
+      row :circuit
       row :name
       row "Series" do
         table_for(ad.order_steps) do |r|
@@ -71,6 +80,7 @@ ActiveAdmin.register Race do
           re.column("") {|pr|  link_to("setear", edit_admin_race_result_path(pr)) }
         end
       end
+      row :done
       row :observation
     end
 

@@ -1,6 +1,6 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <a><%= @category.name %></a> / <a id="champ_type"> Pilotos</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a class="last-it">Pilotos</a>
   </div>
   <div class="pilots-container">
     <% @pilots.each do |pilot| %>

@@ -8,6 +8,10 @@ class Circuit < ActiveRecord::Base
   has_attached_file :truck, :styles => { :large=> "500x500", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/default-circuit.png"
   validates_attachment_content_type :truck, :content_type => /\Aimage\/.*\Z/
 
+  def to_s
+     name
+  end
+
 end
 
 # MAPAS CIRCUITOS

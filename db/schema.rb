@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724173519) do
+ActiveRecord::Schema.define(version: 20150727030353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 20150724173519) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "albuns", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.date     "date_albun"
+    t.integer  "category_id"
+    t.string   "front_pic_file_name"
+    t.string   "front_pic_content_type"
+    t.integer  "front_pic_file_size"
+    t.datetime "front_pic_updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -133,6 +144,18 @@ ActiveRecord::Schema.define(version: 20150724173519) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birth_date"
+    t.string   "car_pic_file_name"
+    t.string   "car_pic_content_type"
+    t.integer  "car_pic_file_size"
+    t.datetime "car_pic_updated_at"
+    t.string   "helmet_pic_file_name"
+    t.string   "helmet_pic_content_type"
+    t.integer  "helmet_pic_file_size"
+    t.datetime "helmet_pic_updated_at"
+    t.string   "complete_pic_file_name"
+    t.string   "complete_pic_content_type"
+    t.integer  "complete_pic_file_size"
+    t.datetime "complete_pic_updated_at"
   end
 
   create_table "race_results", force: true do |t|
@@ -155,6 +178,8 @@ ActiveRecord::Schema.define(version: 20150724173519) do
     t.date    "date"
     t.string  "name"
     t.text    "observation"
+    t.boolean "done"
+    t.integer "circuit_id"
   end
 
   add_index "races", ["championship_id"], name: "index_races_on_championship_id", using: :btree

@@ -5,7 +5,7 @@ class RaceResult < ActiveRecord::Base
 
   default_scope order(score: :desc, score_for_champ: :desc)
 
-  before_save :set_championship
+  before_save :set_championship_and_category
 
   def set_championship_and_category
     race = Race.find(race_id)

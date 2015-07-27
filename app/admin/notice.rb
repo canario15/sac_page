@@ -22,7 +22,7 @@ ActiveAdmin.register Notice do
     column :title
     column :created_at
     column :context do |notice|
-        truncate(notice.context, omision: "...", length: 100)
+      truncate(notice.context, omision: "...", length: 100)
     end
     actions
   end
@@ -34,8 +34,8 @@ ActiveAdmin.register Notice do
       row :created_at
       row :context
       row :photo do
-          image_tag(ad.photo.url(:small))
-        end
+        image_tag(ad.photo.url(:small))
+      end
     end
   end
 

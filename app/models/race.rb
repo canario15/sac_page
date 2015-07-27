@@ -4,6 +4,7 @@ class Race < ActiveRecord::Base
   has_many :pilot_races
   has_many :steps
   has_many :race_results
+  belongs_to :circuit
 
   accepts_nested_attributes_for :steps, :allow_destroy => true
   accepts_nested_attributes_for :pilot_races, :allow_destroy => true

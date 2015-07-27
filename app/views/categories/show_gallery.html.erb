@@ -1,5 +1,16 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <a><%= @category.name %></a> / <a id="champ_type">Galerias</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it">Multimedia</a>
+  </div>
+  <div class="albun-cont">
+    <ul class="polaroids  small-block-grid-2">
+      <% @category.albuns.each do |albun| %>
+        <li>
+          <%= link_to category_gallery_albun_path(@category.id, albun.id) , title: "#{albun.name} - #{albun.date_albun}" do %>
+            <%= image_tag albun.front_pic, title: "#{albun.name} - #{albun.date_albun}" %>
+          <% end -%>
+        </li>
+       <% end -%>
+    </ul>
   </div>
 </div>

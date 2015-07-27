@@ -1,7 +1,8 @@
 es:
   activerecord:
     models:
-      Notice: "Noticia"
+      albun: "Albun"
+      notice: "Noticia"
       category: "Categoría"
       championship: "Campeonato"
       pilot: "Piloto"
@@ -13,6 +14,12 @@ es:
       race_result: "Resultado fecha"
 
     attributes:
+      albun:
+        name: "Nombre"
+        code: "Código Flickr"
+        date_albun: "Fecha"
+        front_pic: "Tapa del Albun"
+        category: "Categoría"
       notice:
         title: "Tíulo"
         context: "Texto"
@@ -46,6 +53,9 @@ es:
         car: "Auto"
         city: "Ciudad"
         birth_date: "Fecha Nacimiento"
+        car_pic: "Foto del Auto"
+        helmet_pic: "Foto del Casco"
+        complete_pic: "Foto completa"
       pilot_step:
         step: "Serie"
         pilot: "Piloto"
@@ -62,6 +72,8 @@ es:
         date: "Fecha"
         name: "Nombre"
         observation: "Observaciones"
+        circuit: "Circuito"
+        done: "Cerrada"
       step:
         race: "Fecha"
         number: "Numero de carrera"

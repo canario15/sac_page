@@ -1,4 +1,7 @@
 <div class="categories-pages">
+	<div class="breadcrumbs">
+    <%= link_to "Categorias", categories_path() %> /  <a class="last-it" > <%= @category.name %> </a>
+  </div>
 	<div class="page-title">
 		<h1> <%= @category.name %> </h1>
 	</div>
@@ -20,13 +23,13 @@
 			<% end -%>
 		</div>
 		<div class="categories-links">
-			<%= link_to category_gallery_path(@category) do %>
-				<strong>GALERÍA</strong>
+			<%= link_to category_regulation_path(@category) do %>
+				<strong>REGLAMENTOS</strong>
 			<% end -%>
 		</div>
 		<div class="categories-links">
-			<%= link_to category_regulation_path(@category) do %>
-				<strong>REGLAMENTOS</strong>
+			<%= link_to category_gallery_path(@category) do %>
+				<strong>MULTIMEDIA</strong>
 			<% end -%>
 		</div>
 	</div>

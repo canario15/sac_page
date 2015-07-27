@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   end
 
   def championship_query
-    @championship = Championship.find_by_year(params[:year])
+    @championship = Championship.where(year: params[:year], category_id: params[:category_id]).first
     respond_to do |format|
       if request.xhr?
         if params[:type] == "2"
@@ -28,8 +28,8 @@ class CategoriesController < ApplicationController
   end
 
   def championship_by_year
-    @championships = Championship.where.not(one_id: nil)
-    @actual_championship =  Championship.order(:year).first
+    @championships = Championship.where(category_id: params[:category_id]).where.not(one_id: nil)
+    @actual_championship =  Championship.actual_championship(params[:category_id])
     respond_to do |format|
       if request.xhr?
         format.html { render partial: 'champions_year', :layout => false}
@@ -40,7 +40,12 @@ class CategoriesController < ApplicationController
   end
 
   def show_gallery
-    @category = Category.find_by_id(params[:id])
+    @category = Category.find_by_id(params[:category_id])
+  end
+
+  def show_albun
+    @albun = Albun.find(params[:id])
+    @category = @albun.category
   end
 
   def show_pilots
@@ -49,8 +54,8 @@ class CategoriesController < ApplicationController
   end
 
   def pilot
-    @actual_championship = Championship.actual_championship
     @category = Category.find_by_id(params[:category_id])
+    @actual_championship = Championship.actual_championship(params[:category_id])
     @pilot = @category.pilots.find(params[:id])
   end
 
@@ -64,7 +69,6 @@ class CategoriesController < ApplicationController
 
   def regulation_karting_125
   end
-
 
   def set_hover
     @hover_menu = CONSTANT_MENU_CATEGORIY_ID

@@ -1,7 +1,7 @@
 <div class="categories-pages2">
   <div class="championship-data">
     <div class="breadcrumbs">
-      <a><%= @championship.category.name %></a> / <a id="champ_type">Campeonatos</a> / <a id="champ_year"> <%= @championship.year %> </a>
+      <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a id="champ_text">Campeonatos</a> <p class="special-p">/</p> <a  class="last-it" id="champ_year"> <%= @championship.year %> </a>
     </div>
     <div id="full_data_championship">
       <div class="hd">
@@ -212,9 +212,14 @@
         e.preventDefault();
         $.ajax({
           type: "GET",
+          data: { category_id: $("#category").val() },
           url: "/championship_by_year",
           success: function (data) {
-            $(".breadcrumbs").html("<a>TPS</a> / <a>Campeones por año </a> ");
+            $("#champ_text").remove();
+            $("#champ_year").text("Campeones por año");
+            $(".special-p").remove();
+
+            //$(".breadcrumbs").html("<a>TPS</a> / <a>Campeones por año </a> ");
             $("#full_data_championship").html(data);
             $("#detail_races").remove();
           }
