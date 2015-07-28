@@ -13,99 +13,100 @@
 		<div class="container" id="main_cointainer">
 			<%= yield %>
 		</div>
-		<div class="race-feature container" id="race-feature">
-		  <div class="en-carrera">
-		    <div class="row no-margin row-cust">
-		      <div class="col-lg-9 col-md-9">
-		        <div class="row">
-		          <div class="volanta clearfix">
-		            <div class="category-kart-fsac">KARTING</div>
-		            <div class="category-kart-fsac fsac-c ">FORMULA SAC</div>
-		            <div class="category">TPS</div>
-		            <div class="date">LA PRóXIMA</div>
-		          </div>
-		          <ul class="menu-race-feature clearfix pull-left">
-		            <li class="first">
-		              <%= link_to "El circuito", show_circuit_path(1, 1), class: "circuito"%>
-		            </li>
-		          </ul>
-		        </div>
-		        <div class="row">
-		          <div class="col-lg-5 col-md-5 col-sm-4">
-		            <div class="venue">
-		              <h2><%= @actual_championship.next_race.city %></h2>
-		              <div href="#" class="date">
-		                <%= @actual_championship.next_race.date.day %>.
-		                <%= @actual_championship.next_race.date.month %>.
-		                <%= @actual_championship.next_race.date.year.to_s.last(2) %>
-					          <%= link_to("#", class: "fb-share-btn2 countdown-F-btn", :"data-name" => "Cuenta regresiva para la próxima fecha SAC",
-				                                          :"data-caption" => "",
-				                                          :"data-link" => request.original_url,
-				                                          :"data-picture" => asset_url("logo.png"),
-				                                          :"data-description" => "Toda la información de la próxima fecha de Turismo Pista SAC, Karting 125cg y Fórmula SAC" ) do %>
-				    					<%= image_tag 'facebookicon.png', class: "btn-share", width: 200 %>
-										<% end -%>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-lg-7 col-md-7 col-sm-8">
-		            <div class="countdown clearfix" id="countdown">
-		              <div class="cont-num">
-		                <div class="num days" id="days">0</div>
-		                <span>Días</span>
-		              </div>
-		              <div class="cont-num">
-		                <div class="num hours" id="hours">0</div>
-		                <span>Horas</span>
-		              </div>
-		              <div class="cont-num">
-		                <div class="num minutes" id="mins">0</div>
-		                <span>Minutos</span>
-		              </div>
-		              <div class="cont-num">
-		                <div class="num seconds" id="secs">0</div>
-		                <span>Segundos</span>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		      <div class="col-lg-3 visible-lg col-md-3 visible-md no-padding">
-		        <div class="sponsorship">
-		          <%= image_tag 'logo.png', class: "main-logo", width: 100 %>
-		        </div>
-		      </div>
-		    </div>
-		  </div><!-- /en-carrera (countdown) -->
-		</div>
-		<script type="text/javascript">
-		  $("#countdown").countdown({
-		    date: "8 August 2015 10:00:00", // Change this to your desired date to countdown to
-		    format: "on"
-		  });
-		  $('.fb-share-btn2').on( 'click', function(e) {
-		    e.preventDefault();
-		    info = $('.fb-share-btn2');
-		    FB.ui( {
-		      method: 'feed',
-		      name: info.data("name"),
-		      link: info.data("link"),
-		      picture: info.data("picture"),
-		      description: info.data("description"),
-		      caption: info.data("caption")
-		    },
-		    function( response ) {
-		      if ( response !== null && typeof response.post_id !== 'undefined' ) {
-		        console.log( response );
-		        // ajax call to save response
-		        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
-		          console.log( result );
-		        }, 'json' );
-		      }
-		    });
-		  });
-		</script>
-
+		<% unless @actual_championship.nil? and @actual_championship.next_race.nil? %>
+			<div class="race-feature container" id="race-feature">
+			  <div class="en-carrera">
+			    <div class="row no-margin row-cust">
+			      <div class="col-lg-9 col-md-9">
+			        <div class="row">
+			          <div class="volanta clearfix">
+			            <div class="category-kart-fsac">KARTING</div>
+			            <div class="category-kart-fsac fsac-c ">FORMULA SAC</div>
+			            <div class="category">TPS</div>
+			            <div class="date">LA PRóXIMA</div>
+			          </div>
+			          <ul class="menu-race-feature clearfix pull-left">
+			            <li class="first">
+			              <%= link_to "El circuito", show_circuit_path(1, 1), class: "circuito"%>
+			            </li>
+			          </ul>
+			        </div>
+			        <div class="row">
+			          <div class="col-lg-5 col-md-5 col-sm-4">
+			            <div class="venue">
+			              <h2><%= @actual_championship.next_race.city %></h2>
+			              <div href="#" class="date">
+			                <%= @actual_championship.next_race.date.day %>.
+			                <%= @actual_championship.next_race.date.month %>.
+			                <%= @actual_championship.next_race.date.year.to_s.last(2) %>
+						          <%= link_to("#", class: "fb-share-btn2 countdown-F-btn", :"data-name" => "Cuenta regresiva para la próxima fecha SAC",
+					                                          :"data-caption" => "",
+					                                          :"data-link" => request.original_url,
+					                                          :"data-picture" => asset_url("logo.png"),
+					                                          :"data-description" => "Toda la información de la próxima fecha de Turismo Pista SAC, Karting 125cg y Fórmula SAC" ) do %>
+					    					<%= image_tag 'facebookicon.png', class: "btn-share", width: 200 %>
+											<% end -%>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="col-lg-7 col-md-7 col-sm-8">
+			            <div class="countdown clearfix" id="countdown">
+			              <div class="cont-num">
+			                <div class="num days" id="days">0</div>
+			                <span>Días</span>
+			              </div>
+			              <div class="cont-num">
+			                <div class="num hours" id="hours">0</div>
+			                <span>Horas</span>
+			              </div>
+			              <div class="cont-num">
+			                <div class="num minutes" id="mins">0</div>
+			                <span>Minutos</span>
+			              </div>
+			              <div class="cont-num">
+			                <div class="num seconds" id="secs">0</div>
+			                <span>Segundos</span>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			      <div class="col-lg-3 visible-lg col-md-3 visible-md no-padding">
+			        <div class="sponsorship">
+			          <%= image_tag 'logo.png', class: "main-logo", width: 100 %>
+			        </div>
+			      </div>
+			    </div>
+			  </div><!-- /en-carrera (countdown) -->
+			</div>
+			<script type="text/javascript">
+			  $("#countdown").countdown({
+			    date: "8 August 2015 10:00:00", // Change this to your desired date to countdown to
+			    format: "on"
+			  });
+			  $('.fb-share-btn2').on( 'click', function(e) {
+			    e.preventDefault();
+			    info = $('.fb-share-btn2');
+			    FB.ui( {
+			      method: 'feed',
+			      name: info.data("name"),
+			      link: info.data("link"),
+			      picture: info.data("picture"),
+			      description: info.data("description"),
+			      caption: info.data("caption")
+			    },
+			    function( response ) {
+			      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+			        console.log( response );
+			        // ajax call to save response
+			        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+			          console.log( result );
+			        }, 'json' );
+			      }
+			    });
+			  });
+			</script>
+		<% end -%>
 
 		<%= render partial: "/layouts/footer" %>
 	</body>
