@@ -14,15 +14,16 @@
       <div class="pilot-module">
         <%= link_to pilot_path(@category.id, pilot.id), class: "links-to-pilot" do %>
           <figure class="fig-pilot">
-            <%= image_tag pilot.avatar, width: 250  %>
+            <%= image_tag pilot.avatar  %>
           </figure>
+
           <div class="data-pilot">
-            <h2> <%= pilot.last_name %>,<br> <%= pilot.first_name %> </h2>
             <div class="car-data">
               <span><%= pilot.number %></span>
-              <div class="logo">
-                <%= image_tag 'logo_vw.png', class: "", width: 40 %>
-              </div>
+              <h2> <%= pilot.last_name %>,<br> <%= pilot.first_name %> </h2>
+            </div>
+            <div class="info-pilot-img">
+              <%= image_tag 'logo_vw.png', class: "", width: 47 %>
               <div class="team">
                 <%= pilot.car %>
               </div>

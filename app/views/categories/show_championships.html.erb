@@ -28,6 +28,15 @@
               <span class="disputadas">Disputadas</span>
               <span class="num"><%= @championship.race_done %> <em>/</em> <%= @championship.races.count %><span>
             </div>
+            <div class="shre-social-cont">
+              <%= link_to("#", class: "fb-share-btn regulation-F-btn", :"data-name" => "Campeonato #{@category.name} #{ @championship.year}",
+                                            :"data-caption" => "",
+                                            :"data-link" => request.original_url,
+                                            :"data-picture" => asset_url(@category.logo.url(:medium)),
+                                            :"data-description" => "Tabla del campeonato #{@category.name} #{ @championship.year} y estadisticas" ) do %>
+                <%= image_tag 'cristalfacebook.png', class: "btn-share", width: 80 %>
+              <% end -%>
+            </div>
           </div>
           <div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
             <a id="champ_year_btn" class="champion-for-year" href="#">
@@ -174,56 +183,79 @@
 <script type="text/javascript">
   $(function() {
     $("#type_query").selectbox({
-        onChange: function (val, inst) {
-          var year = val;
-          $("#type_query_selected").val(val);
-          $.ajax({
-            type: "GET",
-            data: {type: val, year: $("#year_query_selected").val(), category_id: $("#category").val() },
-            url: "/championship_query",
-            success: function (data) {
-              $("#two_details").html(data);
-              $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
-            }
-          });
-        },
-        effect: "slide"
-      });
-
-      $("#year_query").selectbox({
-        onChange: function (val, inst) {
-          var year = val;
-          $("#year_query_selected").val(year);
-          $.ajax({
-            type: "GET",
-            data: {year: year, type: $("#type_query_selected").val(), category_id: $("#category").val() },
-            url: "/championship_query",
-            success: function (data) {
-              $("#two_details").html(data);
-              $("#champ_year").text(year);
-              $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
-            }
-          });
-        },
-        effect: "slide"
-      });
-
-      $("#champ_year_btn").click(function(e) {
-        e.preventDefault();
+      onChange: function (val, inst) {
+        var year = val;
+        $("#type_query_selected").val(val);
         $.ajax({
           type: "GET",
-          data: { category_id: $("#category").val() },
-          url: "/championship_by_year",
+          data: {type: val, year: $("#year_query_selected").val(), category_id: $("#category").val() },
+          url: "/championship_query",
           success: function (data) {
-            $("#champ_text").remove();
-            $("#champ_year").text("Campeones por año");
-            $(".special-p").remove();
-
-            //$(".breadcrumbs").html("<a>TPS</a> / <a>Campeones por año </a> ");
-            $("#full_data_championship").html(data);
-            $("#detail_races").remove();
+            $("#two_details").html(data);
+            $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
           }
         });
+      },
+      effect: "slide"
+    });
+
+    $("#year_query").selectbox({
+      onChange: function (val, inst) {
+        var year = val;
+        $("#year_query_selected").val(year);
+        $.ajax({
+          type: "GET",
+          data: {year: year, type: $("#type_query_selected").val(), category_id: $("#category").val() },
+          url: "/championship_query",
+          success: function (data) {
+            $("#two_details").html(data);
+            $("#champ_year").text(year);
+            $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
+          }
+        });
+      },
+      effect: "slide"
+    });
+
+    $("#champ_year_btn").click(function(e) {
+      e.preventDefault();
+      $.ajax({
+        type: "GET",
+        data: { category_id: $("#category").val() },
+        url: "/championship_by_year",
+        success: function (data) {
+          $("#champ_text").remove();
+          $("#champ_year").text("Campeones por año");
+          $(".special-p").remove();
+
+          //$(".breadcrumbs").html("<a>TPS</a> / <a>Campeones por año </a> ");
+          $("#full_data_championship").html(data);
+          $("#detail_races").remove();
+        }
       });
     });
+
+    $('.fb-share-btn').on( 'click', function(e) {
+      e.preventDefault();
+      info = $('.fb-share-btn');
+      FB.ui( {
+        method: 'feed',
+        name: info.data("name"),
+        link: info.data("link"),
+        picture: info.data("picture"),
+        description: info.data("description"),
+        caption: info.data("caption")
+      },
+      function( response ) {
+        if ( response !== null && typeof response.post_id !== 'undefined' ) {
+          console.log( response );
+          // ajax call to save response
+          $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+            console.log( result );
+          }, 'json' );
+        }
+      });
+    });
+
+  });
 </script>

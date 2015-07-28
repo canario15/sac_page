@@ -1,14 +1,17 @@
 <div class="news-page">
-  <div class="page-title">
-	 <h1><%= @notice.title %></h1>
+  <div class="breadcrumbs">
+    <%= link_to "Noticias", news_path() %> /  <a class="last-it" > <%= @notice.title %> </a>
   </div>
-	<div class="notice-panel">
-		<%= image_tag @notice.photo(:original), width: 500 %>
-		<span><%= l(@notice.created_at, :format => :short) %></span>
-		<p><%= @notice.context %></p>
-    <%= link_to("#", class: "fb-share-btn", :"data-name" => @notice.title, :"data-caption" => l(@notice.created_at, :format => :short), :"data-link" => request.original_url, :"data-picture" => asset_url(@notice.photo.url(:medium)), :"data-description" => truncate(@notice.context, length: 544) ) do %>
-      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
-    <% end -%>
+  <%= link_to("#", class: "fb-share-btn notice-F-btn", :"data-name" => @notice.title, :"data-caption" => l(@notice.created_at, :format => :short), :"data-link" => request.original_url, :"data-picture" => asset_url(@notice.photo.url(:medium)), :"data-description" => truncate(@notice.context, length: 544) ) do %>
+    <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+  <% end -%>
+  <div class="page-title">
+   <h1><%= @notice.title %></h1>
+  </div>
+  <div class="notice-panel">
+    <%= image_tag @notice.photo(:original), width: 500 %>
+    <span><%= l(@notice.created_at, :format => :short) %></span>
+    <p><%= @notice.context %></p>
     <br></br>
   </div>
   <br>
