@@ -30,6 +30,9 @@
 			            <li class="first">
 			              <%= link_to "El circuito", show_circuit_path(1, 1), class: "circuito"%>
 			            </li>
+			            <li>
+			            	<%= link_to "Previa", race_path(1,@actual_championship.next_race.id), class: "anticipo"%>
+			            </li>
 			          </ul>
 			        </div>
 			        <div class="row">
@@ -108,7 +111,6 @@
 			  });
 			</script>
 		<% end -%>
-
 		<%= render partial: "/layouts/footer" %>
 	</body>
 </html>

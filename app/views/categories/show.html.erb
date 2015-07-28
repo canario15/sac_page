@@ -14,31 +14,36 @@
 	</div>
 	<p> <%= @category.description %> </p>
 	<div class="links">
-		<div class="categories-links">
-			<%= link_to category_championships_path(@category) do %>
-				<strong>CAMPEONATOS</strong>
-			<% end -%>
-		</div>
-		<div class="categories-links">
-			<%= link_to category_pilots_path(@category) do %>
-				<strong>PILOTOS</strong>
-			<% end -%>
-		</div>
-		<div class="categories-links">
-			<%= link_to circuits_path(@category) do %>
-				<strong>CIRCUITOS</strong>
-			<% end -%>
-		</div>
-		<div class="categories-links">
-			<%= link_to category_regulation_path(@category) do %>
-				<strong>REGLAMENTOS</strong>
-			<% end -%>
-		</div>
-		<div class="categories-links">
-			<%= link_to category_gallery_path(@category) do %>
-				<strong>MULTIMEDIA</strong>
-			<% end -%>
-		</div>
+    <div class="categories-links">
+      <%= link_to category_calendar_path(@category) do %>
+        <strong>CALENDARIO</strong>
+      <% end -%>
+    </div>
+    <div class="categories-links">
+      <%= link_to category_championships_path(@category) do %>
+        <strong>CAMPEONATOS</strong>
+      <% end -%>
+    </div>
+    <div class="categories-links">
+      <%= link_to category_pilots_path(@category) do %>
+        <strong>PILOTOS</strong>
+      <% end -%>
+    </div>
+    <div class="categories-links">
+      <%= link_to circuits_path(@category) do %>
+        <strong>CIRCUITOS</strong>
+      <% end -%>
+    </div>
+    <div class="categories-links">
+      <%= link_to category_regulation_path(@category) do %>
+        <strong>REGLAMENTOS</strong>
+      <% end -%>
+    </div>
+    <div class="categories-links">
+      <%= link_to category_gallery_path(@category) do %>
+        <strong>MULTIMEDIA</strong>
+      <% end -%>
+    </div>
 	</div>
 </div>
 

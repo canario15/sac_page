@@ -63,11 +63,16 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_id(params[:id])
   end
 
-
-  def regulation_turismo_pista_sac
+  def show_calendar
+    @category = Category.find_by_id(params[:category_id])
+    @actual_championship = Championship.actual_championship(@category.id)
+    @races = @actual_championship.races
   end
 
-  def regulation_karting_125
+  def race
+    @category = Category.find_by_id(params[:category_id])
+    @actual_championship = Championship.actual_championship(@category.id)
+    @race = Race.find(params[:id])
   end
 
   def set_hover

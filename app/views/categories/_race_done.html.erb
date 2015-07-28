@@ -1,0 +1,136 @@
+<div class="race-feature" id="race-feature">
+  <div class="en-carrera en-carrera-2">
+    <div class="row no-margin">
+      <div class="col-lg-4 col-md-4 col-xs-12 micol-1">
+        <div class="row row-podio">
+          <div class="volanta clearfix">
+            <div class="category"><%= @category.short_name%></div>
+            <div class="date">
+              <%= @race.date.day %>.
+              <%= @race.date.month %>.
+              <%= @race.date.year.to_s.last(2) %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="venue">
+              <h2><%= @race.name %></h2>
+              <h4><%= @race.city %></h4>
+              <%= link_to show_circuit_path(@category.id, @race.circuit.id) do %>
+                <%= @race.circuit %>
+                <%= image_tag @race.circuit.logo, width: 100 %>
+              <% end -%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-xs-12 micol-2 no-padding">
+        <div class="podio clearfix pull-right">
+
+          <div class="podio-wrapper pos-2">
+            <div class="cont-img hidden-xs">
+              <div class="piloto">
+                <%= image_tag @race.race_results[1].pilot.avatar  %>
+              </div>
+            </div>
+            <div class="info-wrapper clearfix">
+              <div class="pos">2°</div>
+              <div class="name">
+                <%= @race.race_results[1].pilot.last_name %>,<br> <%= @race.race_results[1].pilot.first_name %>
+              </div>
+            </div>
+          </div>
+
+          <div class="podio-wrapper pos-1">
+            <div class="cont-img hidden-xs">
+              <div class="piloto">
+                <%= image_tag @race.race_results[0].pilot.avatar  %>
+              </div>
+            </div>
+            <div class="info-wrapper clearfix">
+              <div class="pos">1°</div>
+              <div class="name">
+                <%= @race.race_results[0].pilot.last_name %> ,<br> <%= @race.race_results[0].pilot.first_name %>
+              </div>
+            </div>
+          </div>
+
+          <div class="podio-wrapper pos-3">
+            <div class="cont-img hidden-xs">
+              <div class="piloto">
+                <%= image_tag @race.race_results[2].pilot.avatar  %>
+              </div>
+            </div>
+            <div class="info-wrapper clearfix">
+              <div class="pos">3°</div>
+              <div class="name">
+                <%= @race.race_results[2].pilot.last_name %> , <br><%= @race.race_results[2].pilot.first_name %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div><!-- /en-carrera (podio) -->
+</div>
+<div class="table-responsive generic-tbl results-tbl">
+  <div class="tabel-title-final-con">
+    <div class="tabel-title-final">
+      <%= image_tag "bandera-a-cuadros.png"  %>
+      <strong>Resultado Final</strong>
+    </div>
+    <div class="export-file">
+      <strong>Exportar:</strong>
+      <a href="" target="blank_" class="btn-grey-xsmall">XLS</a>
+      <a href="" target="blank_" class="btn-grey-xsmall">PDF</a>
+    </div>
+  </div>
+  <br class="clearBoth" />
+  <div class="carrera-on-line-verificado">
+    Verificado por Técnica: <%= image_tag "on_aprobacion.png"  %>
+    Verificado por Deportiva: <%= image_tag "on_aprobacion.png"  %>
+  </div>
+  <div class="table-responsive generic-tbl championship-tbl panels-table final-table">
+    <table class="table2" id="table-hidden-content">
+      <thead>
+        <tr>
+          <th style="text-align:center" > POS.      </th>
+          <th style="text-align:center" > NÚMERO    </th>
+          <th style="text-align:center" > PILOTO    </th>
+          <% @race.steps.each do |step|%>
+            <th style="text-align:center" ><%= step.name %></th>
+          <% end -%>
+          <th style="text-align:center" > PTOS.    </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @race.race_results.each do |race_result| %>
+          <tr bgcolor="">
+            <td class="pos" style="text-align:center"><%= race_result.position %><span>°</span></td>
+            <td style="text-align:center"><%= race_result.pilot_race.number %></td>
+            <td class="piloto first" >
+              <%= link_to "#{ race_result.pilot_race.pilot } ", pilot_path(@category.id, race_result.pilot_race.pilot.id) %>
+            </td>
+            <% @race.steps.each do |step|%>
+              <% pist = step.pilot_steps.where(pilot_race_id: race_result.pilot_race.id).first %>
+              <% unless pist.blank? %>
+                <td style="text-align:center"><%= pist.score %></td>
+              <% else %>
+                <td style="text-align:center" > 0 </td>
+              <% end -%>
+            <% end -%>
+            <td class="pts" style="text-align:center" > <%= race_result.score %> </td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  </div>
+  <% unless @race.observation.blank? %>
+    <div class="incidences">
+      <strong>Observaciones</strong>
+      <p> <%= @race.observation %> </p>
+    </div><!-- /incidencias -->
+  <% end -%>
+</div>

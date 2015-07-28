@@ -21,10 +21,12 @@
   font-family: "bebasneue_regular";
   src: url(/assets/bebasneue_regular.otf) format("truetype");
 }
+
 @font-face {
   font-family: "Gotham-Bold";
   src: url(/assets/Gotham-Bold.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "GothamBlackRegular";
   src: url(/assets/GothamBlackRegular.ttf) format("truetype");
@@ -50,12 +52,13 @@
 }
 
 .navbar-nav a {
-   text-decoration: none;
+  text-decoration: none;
 }
 
 .selected_menu {
   color: red !important;
 }
+
 .navbar-nav a:hover {
   color: red !important;
   text-decoration: underline;
@@ -74,7 +77,7 @@
 }
 
 thead th {
-    background: none!important;
+  background: none!important;
 }
 
 .page-title {
@@ -112,9 +115,11 @@ thead th {
   opacity: 1;
   width: 25%;
 }
+
 .carousel-control:hover, .carousel-control:focus {
   opacity: 1;
 }
+
 .carousel-caption {
   height: 273px !important;
   left: 26px !important;
@@ -124,6 +129,7 @@ thead th {
   width: 492px !important;
   z-index: 10 !important;
 }
+
 .carousel-caption h1 {
   color: #fff;
   font-family: "GothamBlackRegular";
@@ -133,6 +139,7 @@ thead th {
   text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   text-transform: uppercase;
 }
+
 .carousel-caption h1 span {
   background-color: rgba(217, 0, 0, 0.7);
   box-decoration-break: clone;
@@ -141,6 +148,7 @@ thead th {
   padding: 16px 10px 8px;
 
 }
+
 .carousel-caption p {
   background-color: rgba(238, 238, 238, 0.9);
   color: #111;
@@ -150,6 +158,7 @@ thead th {
   padding: 11px 11px 11px 100px;
   text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
+
 .arrow-left, .arrow-right {
   height: 40px;
   position: absolute;
@@ -157,10 +166,12 @@ thead th {
   width: 23px;
   z-index: 999999;
 }
+
 .arrow-left {
   background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
   left: 0;
 }
+
 .arrow-right {
   background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -54px rgba(0, 0, 0, 0);
   right: 0;
@@ -195,6 +206,7 @@ thead th {
   text-align: center;
   width: 84px;
 }
+
 .category-kart-fsac {
   background:#d90000;
   color: #fff;
@@ -250,6 +262,12 @@ thead th {
   text-decoration:none;
 }
 
+.menu-race-feature li a.anticipo {
+  background: url(asset-path("sprites-iconos.png")) no-repeat scroll 0 -1083px rgba(0, 0, 0, 0);
+  padding: 7px 0 0 27px;
+  text-decoration:none;
+}
+
 .en-carrera .sponsorship {
   background: url(asset-path("sprites-buttons.png")) no-repeat scroll -418px 0 rgba(0, 0, 0, 0);
   height: 199px;
@@ -275,6 +293,7 @@ thead th {
   margin: 0;
   text-transform: uppercase;
 }
+
 .en-carrera .venue .date {
   color: #db0000;
   font-family: "bebasneue_regular";
@@ -299,27 +318,19 @@ thead th {
   text-align: center;
   width: 77px;
 }
+
 .countdown .cont-num .num {
   background-color: #2b2b2b;
   color: #fff;
   font-family: "bebasneue_regular";
   font-size: 62px;
+  padding: 13px 0 0;
 }
+
 .countdown .cont-num span {
   color: #999;
   font-family: "bebasneue_regular";
   font-size: 16px;
-}
-.countdown.lite {
-  padding: 10px 0;
-}
-.countdown.lite .cont-num {
-  margin: 0 5px 0 0;
-  width: 50px;
-}
-.countdown.lite .cont-num .num {
-  background-color: #999;
-  font-size: 32px;
 }
 
 
@@ -333,8 +344,6 @@ thead th {
   float:left;
   width:100%;
 }
-
-
 
 .news-panel {
   border-bottom: 1px solid #797979;
@@ -356,15 +365,16 @@ thead th {
   margin-bottom: -1px;
   margin-right: 2%;
 }
+
 .notice-F-btn {
   margin-top:-77px;
   margin-right:-15px;
 }
 
-
 .fb-share-btn {
   float: right;
 }
+
 .btn-share {
   margin-top: 0px!important;
 }
@@ -395,8 +405,6 @@ thead th {
   color: #C0C0C0;
 }
 
-
-
 /*pagination*/
 .apple_pagination {
   background: #f1f1f1!important;
@@ -407,12 +415,15 @@ thead th {
   margin-top: -2px!important;
   border-radius: 0 0 20px 20px!important;
 }
+
 .apple_pagination a, .apple_pagination span {
   padding: 0.2em 0.3em !important;
 }
+
 .apple_pagination .disabled {
   color: #aaaaaa!important;
 }
+
 .apple_pagination .current {
   font-style: normal!important;
   font-weight: bold!important;
@@ -434,13 +445,13 @@ thead th {
   text-decoration: underline!important;
 }
 
-
 .notice-panel {
   border-bottom: 1px solid #797979;
   margin-left: 5%;
   width: 90%;
   min-height: 300px;
 }
+
 .notice-panel span {
   color: #878787;
 }
@@ -496,6 +507,7 @@ thead th {
   float: left;
   width: 100%;
 }
+
 .categories-pages p {
   color: #878787;
 }
@@ -507,7 +519,7 @@ thead th {
 
 .categories-links {
   display: inline-flex;
-  margin-left: 4%;
+  margin-left: 1%;
   text-align: center;
 
 }
@@ -546,6 +558,7 @@ thead th {
   border-radius: 4px!important;
   margin-bottom: 18px!important;
 }
+
 .panel-default {
   border-color: #FFFFFF!important;
 }
@@ -554,6 +567,408 @@ thead th {
   background: url(asset-path('checkered-flag2.png'));
 }
 
+/***********CALENDAR*************/
+
+.info-circuit2{
+  min-height:562px!important;
+}
+
+.calendar .info-circuit .date {
+  color: #878787;
+  font-family: "bebasneue_regular";
+  font-size: 40px;
+  font-weight:bold;
+}
+
+.calendar .info-circuit .date span {
+  background-color: #333;
+  color: #fff;
+  padding: 9px 11px 2px 10px;
+  text-align:center;
+  margin-right:16px;
+}
+
+.calendar .info-circuit .pos {
+  list-style-type:none;
+}
+
+.calendar .info-circuit .pos > li {
+  padding-bottom: 5px;
+}
+
+.calendar .info-circuit .pos > li > span, .calendar .info-circuit .pos > li > a {
+  display: inline-block;
+}
+
+.calendar .info-circuit .pos > li > span {
+  color: #e7504d;
+  font-family: "bebasneue_regular";
+  font-size: 20px;
+  line-height: 23px;
+  width: 10%;
+}
+
+.calendar .info-circuit .pos > li > a {
+  color: #555;
+  font-family: "Gotham-Bold";
+  font-size: 17px;
+  font-weight:900;
+  line-height: 14px;
+  text-transform: uppercase;
+  width: 80%;
+  text-decoration:nonce;
+}
+
+.calendar .info-circuit .more-txt {
+  background: none repeat scroll 0 0 #e55151;
+  bottom: 10px;
+  color: #fff;
+  font-family: "Gotham-Book";
+  height: 27px;
+  padding: 3px 5px;
+  position: absolute;
+  right: 126px;
+  text-transform: none;
+  text-decoration:none;
+  transition: none 0s ease 0s ;
+  width: 67px;
+}
+
+.calendar .info-circuit .more-txt:hover {
+  background: none repeat scroll 0 0 #333;
+  color: #fff;
+}
+
+.nav-race {
+  text-align:center;
+}
+
+.btn-red-small {
+  background-color: #e55151;
+  color: #fff !important;
+  font-family: "bebasneue_regular";
+  font-size: 20px;
+  padding: 5px 8px 3px;
+  text-decoration:none!important;
+}
+
+a.btn-red-small:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+a.btn-red-small:visited {
+  color: #fff !important;
+  text-decoration: none!important;
+}
+
+.countdown.lite {
+  padding: 10px 29px;
+}
+.countdown.lite .cont-num {
+  margin: 0 5px 0 0;
+  width: 50px;
+}
+.countdown.lite .cont-num .num {
+  background-color: #999;
+  font-size: 32px;
+  padding: 6px 0 0;
+}
+
+/****RACE****/
+.en-carrera-2 {
+  margin-top:0!important;
+}
+
+.en-carrera-2 .venue {
+  padding: 10px 0 5px 9px;
+}
+
+.en-carrera-2 .venue h2 {
+  color: #fff;
+  font-family: "Gotham-Bold";
+  font-size: 29px;
+  letter-spacing: -1px;
+  line-height: 33px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.en-carrera-2 .venue h4 {
+  color: red;
+  font-family: "Gotham-Bold";
+  font-size: 25px;
+  letter-spacing: -1px;
+  line-height: 33px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.en-carrera-2 .venue a {
+  color: red;
+  font-family: "Gotham-Bold";
+  font-size: 20px;
+  text-decoration:none;
+}
+
+.en-carrera-2 .venue img {
+  margin-left:92px;
+}
+
+.row-podio {
+  margin-left:-0.5px!important;
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+.micol-1 {
+  width:28.333%!important
+}
+
+.micol-2 {
+  width:70.29%!important
+}
+
+.podio .podio-wrapper {
+  border-right: 1px solid #000;
+  float: left;
+  width: 256px;
+  height:275px;
+}
+
+.podio .podio-wrapper .cont-img {
+  background-color: #000;
+  position: relative;
+}
+
+.podio .podio-wrapper .cont-img .piloto {
+  height: 220px;
+  position: relative;
+}
+
+.podio .podio-wrapper .cont-img .piloto img {
+  display: block;
+  position: absolute;
+  left: 50px;
+  z-index: 998;
+  width:152px;
+}
+
+.podio .podio-wrapper.pos-2, .podio .podio-wrapper.pos-3, .podio .podio-wrapper.pos-1 {
+  position: relative;
+}
+
+.podio .podio-wrapper.pos-2 .cont-img .piloto img {
+  top: 30px;
+}
+
+.podio .podio-wrapper.pos-1 .cont-img .piloto img {
+  top: 5px;
+}
+
+.podio .podio-wrapper.pos-3 .cont-img .piloto img {
+  top: 45px;
+}
+
+.podio .podio-wrapper .info-wrapper {
+  bottom: 0;
+  position: absolute;
+  width: 256px;
+  z-index: 999;
+}
+
+.podio .podio-wrapper.pos-2 .info-wrapper {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -522px #d21107;
+  height: 70px;
+}
+
+.podio .podio-wrapper.pos-1 .info-wrapper {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -619px #d21107;
+  height: 95px;
+}
+
+.podio .podio-wrapper.pos-3 .info-wrapper {
+  background: url(asset-path("sprites-buttons.png")) no-repeat scroll 0 -746px #d21107;
+  height: 55px;
+}
+
+.podio .podio-wrapper .info-wrapper .pos {
+  color: #fff;
+  float: left;
+  font-family: "Roboto",sans-serif;
+  font-size: 29px;
+  margin: 0 15px 0 5px;
+}
+
+.podio .podio-wrapper .info-wrapper .name {
+  color: #fff;
+  float: left;
+  font-family: "Gotham-Bold";
+  font-size: 22px;
+  line-height: 24px;
+  padding: 3px 20px 10px 0;
+  text-transform: uppercase;
+  width: 180px;
+}
+
+.tabel-title-final-con{
+  width:100%;
+  margin-top: 52px;
+}
+
+.tabel-title-final{
+  width:73%;
+  float:left;
+}
+
+.export-file {
+  width:27%;
+  float:left;
+}
+
+.export-file .btn-grey-xsmall {
+  background-color: #aaa;
+  border-radius: 5px;
+  color: white !important;
+  font-family: "Roboto",sans-serif;
+  font-size: 24px;
+  margin-left: 16px;
+  padding: 0px 11px;
+  text-decoration: none !important;
+}
+
+.carrera-on-line-verificado {
+  background-color: #666;
+  color: #fff;
+  text-align: center;
+}
+
+.incidences p {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size:26px;
+}
+
+/***next-race-data****/
+
+.race-profile h3 {
+  background-color: #444;
+  color: #fff;
+  display: inline;
+  font-family: "bebasneue_regular";
+  font-size: 26px;
+  padding: 8px 11px 0;
+  text-transform: uppercase;
+}
+
+.race-profile .list-item-race {
+  float: left;
+  margin-left: 88px;
+  margin-top: 28px;
+  width: 40%;
+}
+
+.race-profile .data-race ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+.race-profile .data-race li {
+  border-bottom: 1px solid #ddd;
+  padding: 14px 0 7px 5px;
+}
+
+.race-profile .data-race li > span {
+  color: #555;
+  display: inline-block;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  text-transform: uppercase;
+  width: 58%;
+}
+
+.race-profile .data-race li > strong {
+  color: #e55151;
+  display: inline-block;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  width: 40%;
+}
+
+.circuit-drow {
+  float: left;
+  margin-left: 69px;
+  margin-top: 16px;
+  width: 41%;
+}
+.enter {
+  margin-top: 36px;
+}
+
+.enter .tit-1 h3 {
+  background-color: #444;
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  margin: 0;
+  padding: 9px 14px 2.5px;
+}
+
+.md-latest-news {
+  margin-left:290px;
+  margin-top:28px;
+  width: 45%;
+}
+
+.md-latest-news ul {
+  clear: both;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+.md-latest-news ul li {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.md-latest-news ul li a {
+  color: #444;
+  font-family: "Gotham-Bold";
+  font-size: 18px;
+  line-height: 19px;
+  text-decoration:none;
+}
+.md-latest-news ul li a:hover {
+  color: #e55151;
+}
+.crono {
+  margin-top:32px;
+}
+
+.crono .tit-1 h3 {
+  background-color: #444;
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 25px;
+  margin: 0;
+  padding: 9px 14px 2.5px;
+}
+
+.crono-table {
+  margin-left: 92px;
+  margin-top: 28px;
+  width: 80%;
+  font-size:21px!important;
+}
+.crono-table thead{
+  color:white!important;
+}
 
 /***********CHAMPIONSHIPS*************/
 
@@ -620,6 +1035,7 @@ thead th {
   font-size: 23px;
   line-height: 22px;
 }
+
 .generic-tbl .piloto a {
   color: #444;
   font-family: "Gotham-Bold";
@@ -672,7 +1088,6 @@ thead th {
 .breadcrumbs .last-it {
   color: #e55151;
 }
-
 
 .championship-data .hd {
   background-color: #eee;
@@ -734,11 +1149,11 @@ em, dfn {
 }
 
 .breakdown > div strong {
-    color: #ec2a22;
-    display: block;
-    font-size: 30px;
-    text-align: right;
-    width: 100%;
+  color: #ec2a22;
+  display: block;
+  font-size: 30px;
+  text-align: right;
+  width: 100%;
 }
 
 a.champion-for-year {
@@ -891,7 +1306,6 @@ a.champion-for-year {
 .team {
   color: white;
 }
-
 
 a.links-to-pilot {
   text-decoration: none!important;
@@ -1185,8 +1599,8 @@ a.links-to-pilot {
   border: 1px solid #ccc;
   border-radius: 25px;
   margin-bottom: 30px;
-  min-height: 434px;
-  padding: 15px;
+  min-height: auto;
+  padding: 12px;
   position: relative;
 }
 
@@ -1197,7 +1611,7 @@ a.links-to-pilot {
 
 
 .info-circuit .hd {
-  min-height: 100px;
+  min-height: 130px;
   text-align:left;
 }
 
@@ -1222,30 +1636,7 @@ a.links-to-pilot {
 .info-circuit figure {
   min-height: 170px;
   padding-bottom: 15px;
-  margin-top: 37px;
-}
-
-.btn-red-small {
-  background-color: #e55151;
-  color: #fff !important;
-  font-family: "bebasneue_regular";
-  font-size: 20px;
-  padding: 2px 7px;
-  text-decoration:none!important;
-}
-
-a.btn-red-small:hover {
-  background-color: #666;
-  color: #fff;
-}
-
-a.btn-red-small:visited {
-  color: #fff !important;
-  text-decoration: none!important;
-}
-
-.nav-race {
-  text-align:center;
+  margin-top: -6px;
 }
 
 /***** SHOW ****/
@@ -1434,8 +1825,6 @@ a.btn-red-small:visited {
 .spilot{
   width:218px;
 }
-
-
 
 .polaroids {
   margin-top: 20px;

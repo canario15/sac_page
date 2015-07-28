@@ -1,0 +1,100 @@
+<div class="categories-pages">
+  <div class="breadcrumbs">
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it">Calendario</a>
+  </div>
+  <%= link_to("#", class: "fb-share-btn regulation-F-btn", :"data-name" => "Calendario #{@category.name} #{@actual_championship.year}",
+                                            :"data-caption" => "",
+                                            :"data-link" => request.original_url,
+                                            :"data-picture" => asset_url(@category.logo.url(:medium)),
+                                            :"data-description" => "Todos las fechas y circuitos de la categoría #{@category.name}" ) do %>
+      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+  <% end -%>
+
+  <div class="calendar">
+    <ul class="row circuit-list">
+      <% @races.each do |race| %>
+        <li class="col-sm-4 col-xs-12 link-to-circuit" style="width:32%;">
+          <div class="info-circuit info-circuit2">
+            <div class="date"><span><%= race.date.day %></span><%= I18n.t("date.month_names")[race.date.month] %></div>
+            <div class="hd">
+              <h2><%= race.circuit.name %></h2>
+              <p><%= race.circuit.location %></p>
+            </div>
+            <figure class="cont-circuit">
+              <%= image_tag race.circuit.logo, width: 260  %>
+            </figure>
+            <% if race.done == true %>
+              <ul class="pos">
+                <li><span>1°</span><%= link_to race.race_results[0].pilot.full_name , pilot_path(@category.id, race.race_results[0].pilot_id ) %></li>
+                <li><span>2°</span><%= link_to race.race_results[1].pilot.full_name , pilot_path(@category.id, race.race_results[1].pilot_id ) %></li>
+                <li><span>3°</span><%= link_to race.race_results[2].pilot.full_name , pilot_path(@category.id, race.race_results[2].pilot_id ) %></li>
+              </ul>
+              <%= link_to "Ver más", race_path(@category.id,race.id), class: "more-txt" %>
+            <% else %>
+              <% if race == @actual_championship.next_race %>
+                <div class="nav-race">
+                  <%= link_to "El circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-red-small" %>
+                  <%= link_to "Previa", race_path(@category.id,race.id), class: "btn-red-small" %>
+                </div>
+                <div class="countdown lite clearfix" id="countboxlite">
+                  <div class="cont-num">
+                    <div class="num" id="days"></div>
+                    <span>Días</span>
+                  </div>
+                  <div class="cont-num">
+                    <div class="num" id="hours"></div>
+                    <span>Horas</span>
+                  </div>
+                  <div class="cont-num">
+                    <div class="num" id="mins"></div>
+                    <span>Minutos</span>
+                  </div>
+                  <div class="cont-num">
+                    <div class="num" id="secs"></div>
+                    <span>Segundos</span>
+                  </div>
+                </div>
+              <% else %>
+                <div class="nav-race">
+                  <%= link_to "circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-red-small" %>
+                </div>
+              <% end -%>
+            <% end -%>
+          </div>
+        </li>
+      <% end -%>
+    </ul>
+    <div class="clearfix visible-lg visible-md"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      description: info.data("description"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+
+  $("#countboxlite").countdown({
+    date: "8 August 2015 10:00:00", // Change this to your desired date to countdown to
+    format: "on"
+  });
+
+</script>

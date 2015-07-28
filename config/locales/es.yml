@@ -27,6 +27,7 @@ es:
         created_at: "Fecha"
       category:
         name: "Nombre"
+        short_name: "Siglas"
         description: "Descripción"
       championship:
         name: "Nombre"

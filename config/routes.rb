@@ -22,8 +22,12 @@ SacPage::Application.routes.draw do
   get '/categorias/:category_id/pilotos/:id'          => 'categories#pilot',                        as: :pilot
 
   get '/categorias/:category_id/galerias'             => 'categories#show_gallery',                 as: :category_gallery
-  get '/categorias/:category_id/galerias/:id'          => 'categories#show_albun',                   as: :category_gallery_albun
+  get '/categorias/:category_id/galerias/:id'         => 'categories#show_albun',                   as: :category_gallery_albun
+
   get '/categorias/:id/reglamentos'                   => 'categories#show_regulation',              as: :category_regulation
+
+  get '/categorias/:category_id/calendario'           => 'categories#show_calendar',                as: :category_calendar
+  get '/categorias/:category_id/calendario/fecha/:id' => 'categories#race',                         as: :race
 
   get '/galeria'                                      => 'pages#galleries',                         as: :galleries
 
