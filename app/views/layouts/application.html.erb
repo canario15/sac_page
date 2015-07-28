@@ -13,7 +13,7 @@
 		<div class="container" id="main_cointainer">
 			<%= yield %>
 		</div>
-		<% unless @actual_championship.nil? and @actual_championship.next_race.nil? %>
+		<% if !@actual_championship.nil? and !@actual_championship.next_race.nil? %>
 			<div class="race-feature container" id="race-feature">
 			  <div class="en-carrera">
 			    <div class="row no-margin row-cust">
