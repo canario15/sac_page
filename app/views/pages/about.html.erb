@@ -5,13 +5,15 @@
 	</div>
 
 	<div class="description-sac">
-		<p>Con 77 años de prolífica trayectoria, el Turismo Carretera recorre los autódromos de todo el país desplegando su particular y espectacular show deportivo, el cual convoca un promedio de 30.000 personas por carrera, provenientes de diferentes grupos geográficos y demográficos.
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		</p>
-		<p>Nuestro sentimiento por el Turismo Carretera es el mismo que el de las miles de familias argentinas, que concurren incondicionalmente a cada carrera, pudiendo así hacer nuestra labor con un compromiso diferente, como si lo viviéramos como un fanático más.
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		</p>
-		<p>El 5 de agosto cumplimos 78 años desde el primer Gran Premio de 1937 ganado por Angel Lo Valvo, que abrió la rica historia del Turismo Carretera, la categoría más antigua en actividad del mundo, tal cual lo certificó el Libro Guinnes de los Récords. Visitamos todas las provincias de la Argentina y hasta tuvimos el honor de llevar un Torino a la Antártida Argentina el 21 de septiembre de 2011 en un hecho histórico y marcado de plena Soberanía Nacional.
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		</p>
-		<p>Porque somos la más popular, la más convocante y la categoría más importante de Argentina es que seguimos marcando el camino a seguir. Siempre con trabajo, sacrificio y pensando en nuestro público que a través de siete décadas nos sigue acompañando. A todos los fanáticos del Turismo Carretera muchas gracias.</p>
+		<%= link_to("#", class: "fb-share-btn", :"data-name" => "Salto Automovil Club", :"data-caption" => "Institucional", :"data-link" => request.original_url, :"data-picture" => asset_url("logo.png"), :"data-description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only fntaining Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum...." ) do %>
+      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+    <% end -%>
 	</div>
 
 	<div class="directive">
@@ -122,3 +124,27 @@
 	</div>
 	<br class="clearBoth" />
 </div>
+
+<script type="text/javascript">
+    $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      description: info.data("description"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+</script>

@@ -1,6 +1,13 @@
 <div class="gallery-cont">
   <div class="page-title">
     <h1>Multimedia</h1>
+    <%= link_to("#", class: "fb-share-btn galleries-F-btn", :"data-name" => "Galerías multimedia SAC",
+                                            :"data-caption" => "",
+                                            :"data-link" => request.original_url,
+                                            :"data-picture" => asset_url("logo.png"),
+                                            :"data-description" => "Todas las fotos y videos de las categorias" ) do %>
+      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+    <% end -%>
   </div>
 	<div id="gallery"></div>
 </div>
@@ -14,5 +21,27 @@
     thumbnailGutterWidth: 20,
     thumbnailGutterHeight: 20,
     thumbnailLabel: { display: false },
+  });
+
+  $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      description: info.data("description"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
   });
 </script>

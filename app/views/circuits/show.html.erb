@@ -2,6 +2,13 @@
   <div class="breadcrumbs">
     <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <%= link_to "Circuitos", circuits_path(@category) %>/ <a class="last-it" > <%= @circuit.name %> </a>
   </div>
+  <%= link_to("#", class: "fb-share-btn circuits-F-btn", :"data-name" => "Datos del circuito #{@circuit.name}",
+                                          :"data-caption" => "Categoría #{@category.name}",
+                                          :"data-link" => request.original_url,
+                                          :"data-picture" => asset_url(@circuit.logo.url(:medium)),
+                                          :"data-description" => "Datos y características del circuito #{@circuit.name} donde se prenseta la categoría #{@category.name}") do %>
+    <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+  <% end -%>
   <div class="info-circuit-show">
     <h2><%= @circuit.name %></h2>
     <p><%= @circuit.location %></p>
@@ -46,3 +53,26 @@
 
 </div>
 
+<script type="text/javascript">
+    $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      description: info.data("description"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+</script>
