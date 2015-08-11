@@ -1,3 +1,13 @@
+<%= link_to("#", class: "fb-share-btn next-race-F-btn", :"data-name" => "Próxima fecha  #{@race.date} - #{@category.name}" ,
+                                            :"data-caption" => "",
+                                            :"data-link" => request.original_url,
+                                            :"data-picture" => asset_url(@race.race_previus.picture),
+                                            :"data-description" => "Próxima fecha #{@category.name} en #{@race.city}" ) do %>
+      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+<% end -%>
+<div class="photo-race">
+  <%= image_tag @race.race_previus.picture, width: 400 %>
+</div>
 <div class="race-profile">
   <div class="tit-1">
     <h3>Datos de la fecha</h3>
@@ -23,9 +33,8 @@
   </div>
   <div class="md-latest-news">
     <ul>
-      <li><a>Entrada General Hombres: $150.</a></li>
-      <li><a>Ingreso a Boxes: $150. </a></li>
-      <li><a>Entrada General Mujeres: $100. </a></li>
+      <li><a>Entrada General: $<%= @race.race_previus.ticket %>.</a></li>
+      <li><a>Ingreso a Boxes: $<%= @race.race_previus.ticket %>. </a></li>
       <li><a>Mayores de 65 años y Menores de 12 años Gratis. </a></li>
     </ul>
   </div>
@@ -43,142 +52,29 @@
   <div class="tit-1">
     <h3>Cronograma</h3>
   </div>
-  <div class="table-responsive generic-tbl results-tbl crono-table" style="display: block;">
-    <div class="">
-      <table class="table" id="table-hidden-content">
-        <thead>
-          <tr>
-            <th colspan="4">Sábado 08 de  Agosto de 2015</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="FilaOcultar">
-            <td>09:00 a 09:40 </td>
-            <td>2º Entrenamiento</td>
-            <td>TCP</td>
-            <td>2º Entrenamiento TC Pista Grupo B</td>
-          </tr>
-        </tbody>
-        <thead>
-          <tr>
-            <th colspan="4">Domingo 09 de  Agosto de 2015</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="TC">
-            <td>08:00 a 10:00 </td>
-            <td>Administrativa</td>
-            <td>TPS-FSAC-K125 </td>
-            <td>Verificaciones Administrativas y Técnicas</td>
-          </tr>
-          <tr class="TC">
-            <td>09:00 a 09:20 </td>
-            <td>1º Entrenamiento</td>
-            <td>FSAC</td>
-            <td>1º Entrenamiento Fórmula SAC </td>
-          </tr>
-          <tr class="TC">
-            <td>09:20 a 09:40 </td>
-            <td>1º Entrenamiento</td>
-            <td>TPS</td>
-            <td>1º Entrenamiento Turismo Pista SAC</td>
-          </tr>
-          <tr class="FilaOcultar">
-            <td>09:40 a 10:00 </td>
-            <td>1º Entrenamiento</td>
-            <td>K125</td>
-            <td>1º Entrenamiento Karting 125CG </td>
-          </tr>
-          <tr class="TC">
-            <td>10:00 a 10:20 </td>
-            <td>2º Entrenamiento</td>
-            <td>FSAC</td>
-            <td>2º Entrenamiento Fórmula SAC </td>
-          </tr>
-          <tr class="TC">
-            <td>10:20 a 10:40 </td>
-            <td>2º Entrenamiento</td>
-            <td>TPS</td>
-            <td>2º Entrenamiento Turismo Pista SAC</td>
-          </tr>
-          <tr class="TC">
-            <td>10:40 a 11:00 </td>
-            <td>2º Entrenamiento</td>
-            <td>K125</td>
-            <td>2º Entrenamiento Karting 125CG </td>
-          </tr>
-          <tr class="TC">
-            <td>11:00 a 11:30 </td>
-            <td>Clasificación</td>
-            <td>FSAC</td>
-            <td>Clasificación Entrenamiento Fórmula SAC</td>
-          </tr>
-          <tr class="TC">
-            <td>11:30 a 12:00 </td>
-            <td>Clasificación</td>
-            <td>TPS</td>
-            <td>Clasificación Turismo Pista SAC</td>
-          </tr>
-          <tr class="TC">
-            <td>12:00 a 13:30 </td>
-            <td colspan="3"> Descanso </td>
-          </tr>
-          <tr class="TC">
-            <td>13:30 </td>
-            <td>1º Serie</td>
-            <td>FSAC</td>
-            <td>1º Serie Fórmula SAC 10 vueltas</td>
-          </tr>
-          <tr class="TC">
-            <td>14:00 </td>
-            <td>1º Serie</td>
-            <td>TPS</td>
-            <td>1º Serie Turismo Pista SAC 10 vueltas</td>
-          </tr>
-          <tr class="TC">
-            <td>14:30</td>
-            <td>2º Serie</td>
-            <td>K125</td>
-            <td>1º Serie Karting 125CG 15 vueltas</td>
-          </tr>
-          <tr class="TC">
-            <td>15:00 </td>
-            <td>2º Serie</td>
-            <td>FSAC</td>
-            <td>2º Serie Fórmula SAC 10 vueltas</td>
-          </tr>
-          <tr class="TC">
-            <td>15:30 </td>
-            <td>2º Serie</td>
-            <td>TPS</td>
-            <td>2º Serie Turismo Pista SAC 10 vueltas </td>
-          </tr>
-          <tr class="TC">
-            <td>16:00</td>
-            <td>Final</td>
-            <td>K125</td>
-            <td>Final Karting 125CG 15 vueltas</td>
-          </tr>
-          <tr class="TC">
-            <td>16:30 </td>
-            <td>Final</td>
-            <td>FSAC</td>
-            <td>Final Fórmula SAC 12 vueltas</td>
-          </tr>
-          <tr class="TC">
-            <td>17:00 </td>
-            <td>Final</td>
-            <td>TPS</td>
-            <td>Final Turismo Pista SAC 12 vueltas </td>
-          </tr>
-          <tr class="TC">
-            <td>18:00 </td>
-            <td>Podio todas las categorías</td>
-            <td>TPS-FSAC-K125</td>
-            <td>Podio todas las categorías </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <%= @race.race_previus.crono.html_safe %>
 </div>
+<script type="text/javascript">
+  $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      description: info.data("description"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+
+</script>

@@ -1,3 +1,11 @@
+<%= link_to("#", class: "fb-share-btn rece-done-F-btn", :"data-name" => "Resultado de la fecha #{@race.date}  - #{@category.name}" ,
+                                            :"data-caption" => "",
+                                            :"data-link" => request.original_url,
+                                            :"data-picture" => asset_url(@category.logo.url(:medium)),
+                                            :"data-description" => "Resutlado de la cateogría #{@category.name}" ) do %>
+      <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+<% end -%>
+<br class="clearBoth" />
 <div class="race-feature" id="race-feature">
   <div class="en-carrera en-carrera-2">
     <div class="row no-margin">
@@ -134,3 +142,27 @@
     </div><!-- /incidencias -->
   <% end -%>
 </div>
+<script type="text/javascript">
+  $('.fb-share-btn').on( 'click', function(e) {
+    e.preventDefault();
+    info = $('.fb-share-btn');
+    FB.ui( {
+      method: 'feed',
+      name: info.data("name"),
+      link: info.data("link"),
+      picture: info.data("picture"),
+      description: info.data("description"),
+      caption: info.data("caption")
+    },
+    function( response ) {
+      if ( response !== null && typeof response.post_id !== 'undefined' ) {
+        console.log( response );
+        // ajax call to save response
+        $.post( 'http://www.saltoautomovilclub.herokuapp.com/', { 'meta': response }, function( result ) {
+          console.log( result );
+        }, 'json' );
+      }
+    });
+  });
+
+</script>

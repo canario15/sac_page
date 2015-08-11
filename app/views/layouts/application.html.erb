@@ -30,9 +30,11 @@
 			            <li class="first">
 			              <%= link_to "El circuito", show_circuit_path(1, 1), class: "circuito"%>
 			            </li>
+			            <% unless @actual_championship.next_race.race_previus.nil? %>
 			            <li>
 			            	<%= link_to "Previa", race_path(1,@actual_championship.next_race.id), class: "anticipo"%>
 			            </li>
+                  <% end -%>
 			          </ul>
 			        </div>
 			        <div class="row">
@@ -53,6 +55,9 @@
 			              </div>
 			            </div>
 			          </div>
+                <input type="hidden" id="day_count"   value= <%=@actual_championship.next_race.date.day    %> />
+                <input type="hidden" id="month_count" value= <%=@actual_championship.next_race.date.strftime('%B') %> />
+                <input type="hidden" id="year_count"  value= <%=@actual_championship.next_race.date.year   %> />
 			          <div class="col-lg-7 col-md-7 col-sm-8">
 			            <div class="countdown clearfix" id="countdown">
 			              <div class="cont-num">
@@ -85,7 +90,8 @@
 			</div>
 			<script type="text/javascript">
 			  $("#countdown").countdown({
-			    date: "8 August 2015 10:00:00", // Change this to your desired date to countdown to
+			    //date: "8 August 2015 10:00:00",
+			    date:  $("#day_count").val() +" "+$("#month_count").val()+" "+$("#year_count").val()+" "+"09:00:00",
 			    format: "on"
 			  });
 			  $('.fb-share-btn2').on( 'click', function(e) {

@@ -675,7 +675,12 @@ a.btn-red-small:visited {
   padding: 6px 0 0;
 }
 
-/****RACE****/
+/****RACE DONE****/
+.rece-done-F-btn {
+  margin-right: -17px;
+  margin-top: -98px;
+}
+
 .en-carrera-2 {
   margin-top:0!important;
 }
@@ -852,6 +857,20 @@ a.btn-red-small:visited {
 }
 
 /***next-race-data****/
+.next-race-F-btn {
+  margin-right: -17px;
+  margin-top: -98px;
+}
+
+.photo-race {
+  width:100%;
+  margin-bottom:54px;
+}
+
+.photo-race img {
+  width:800px;
+  margin-left:131px;
+}
 
 .race-profile h3 {
   background-color: #444;
@@ -1908,7 +1927,7 @@ ul.polaroids a:hover {
   background: url(asset-path('checkered-flag2.png'));
   border-radius: 20px;
   color: black;
-  padding: 5px;
+  padding: 16px 24px 47px;
 }
 
 .galleries-F-btn {

@@ -26,7 +26,7 @@ ActiveAdmin.register Race do
         r.input :name
       end
       f.has_many :pilot_races, allow_destroy: true  do |r|
-        r.input :pilot
+        r.input :pilot, :as => :select, :collection => (resource.championship.category ? resource.championship.category.pilots.collect {|pilot| [pilot.full_name, pilot.id]} : [])
         r.input :number
       end
       f.input :observation

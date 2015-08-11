@@ -26,7 +26,7 @@
           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 divider">
             <div class="race-info">
               <span class="disputadas">Disputadas</span>
-              <span class="num"><%= @championship.race_done %> <em>/</em> <%= @championship.races.count %><span>
+              <span class="num num-race"><%= @championship.race_done %> <em>/</em> <%= @championship.races.count %><span>
             </div>
             <div class="shre-social-cont">
               <%= link_to("#", class: "fb-share-btn regulation-F-btn", :"data-name" => "Campeonato #{@category.name} #{ @championship.year}",
@@ -192,7 +192,7 @@
           url: "/championship_query",
           success: function (data) {
             $("#two_details").html(data);
-            $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
+            $(".num-race").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
           }
         });
       },
@@ -210,7 +210,7 @@
           success: function (data) {
             $("#two_details").html(data);
             $("#champ_year").text(year);
-            $(".num").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
+            $(".num-race").html($("#race_done").val()+ " <em>/</em> " + $("#races_count").val() + "<span></span>");
           }
         });
       },

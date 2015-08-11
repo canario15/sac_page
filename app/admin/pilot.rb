@@ -2,7 +2,10 @@ ActiveAdmin.register Pilot do
   actions :index, :show, :edit, :update, :new, :create
 
   config.batch_actions = false
-  config.filters = false
+
+  config.per_page = 15
+
+  filter :categories, collection: proc { Category.all }, as: :select
 
   menu :label => "Pilotos"
 

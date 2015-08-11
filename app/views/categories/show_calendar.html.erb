@@ -34,8 +34,13 @@
               <% if race == @actual_championship.next_race %>
                 <div class="nav-race">
                   <%= link_to "El circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-red-small" %>
-                  <%= link_to "Previa", race_path(@category.id,race.id), class: "btn-red-small" %>
+                  <% unless @actual_championship.next_race.race_previus.nil? %>
+                    <%= link_to "Previa", race_path(@category.id,race.id), class: "btn-red-small" %>
+                  <% end -%>
                 </div>
+                <input type="hidden" id="day_count2"   value= <%=@actual_championship.next_race.date.day    %> />
+                <input type="hidden" id="month_count2" value= <%=@actual_championship.next_race.date.strftime('%B') %> />
+                <input type="hidden" id="year_count2"  value= <%=@actual_championship.next_race.date.year   %> />
                 <div class="countdown lite clearfix" id="countboxlite">
                   <div class="cont-num">
                     <div class="num days" id="days">0</div>
@@ -93,7 +98,7 @@
   });
 
   $("#countboxlite").countdown({
-    date: "8 August 2015 10:00:00", // Change this to your desired date to countdown to
+    date:  $("#day_count2").val() +" "+$("#month_count2").val()+" "+$("#year_count2").val()+" "+"09:00:00",
     format: "on"
   });
 

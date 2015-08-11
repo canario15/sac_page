@@ -12,6 +12,7 @@ es:
       pilot_step: "Piloto en la serie"
       pilot_race: "Pilotos Inscriptos"
       race_result: "Resultado fecha"
+      race_previus: "Previa de Carrera"
 
     attributes:
       albun:
@@ -75,6 +76,11 @@ es:
         observation: "Observaciones"
         circuit: "Circuito"
         done: "Cerrada"
+      race_previus:
+        race: "Fecha"
+        ticket: "Costo Entrada"
+        text: "Cronograma"
+        picture: "Afiche"
       step:
         race: "Fecha"
         number: "Numero de carrera"

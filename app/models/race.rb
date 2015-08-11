@@ -5,6 +5,7 @@ class Race < ActiveRecord::Base
   has_many :steps
   has_many :race_results
   belongs_to :circuit
+  has_one :race_previus
 
   accepts_nested_attributes_for :steps, :allow_destroy => true
   accepts_nested_attributes_for :pilot_races, :allow_destroy => true
@@ -13,6 +14,10 @@ class Race < ActiveRecord::Base
 
   after_create :create_or_update_race_restult
   after_update :create_or_update_race_restult
+
+  def to_s
+    "#{self.date} - #{self.name}"
+  end
 
   def order_steps
   	steps.order('number ASC')

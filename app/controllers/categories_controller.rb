@@ -51,6 +51,14 @@ class CategoriesController < ApplicationController
   def show_pilots
     @category = Category.find_by_id(params[:category_id])
     @pilots = @category.pilots
+
+    respond_to do |format|
+      if request.xhr?
+        format.json { render json: @pilots.to_json }
+      else
+        format.html
+      end
+    end
   end
 
   def pilot
