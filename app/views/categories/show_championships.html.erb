@@ -64,13 +64,20 @@
               <% @championship.championship_data.each_with_index do |result, i|%>
                 <tr bgcolor="">
                   <td class="pos"><%= i + 1 %><span>°</span></td>
-                  <td><%= result.number %></td>
+                  <td><%= Pilot.pilot_number_about_pilot_id(result.pilot_id, @championship.id) %></td>
                   <td class="piloto first">
                     <%= link_to "#{result.last_name}, #{result.first_name} ",pilot_path(@category.id, result.pilot_id) %>
                   </td>
                   <td> <%= result.city %>      </td>
-                <!--  <td> <%= result.team %>      </td> -->
-                  <td> <%= result.car %>       </td>
+                  <% if @championship.category.id == 2 %>
+                    <td> Kart 125cc </td>
+                  <% else %>
+                    <% if @championship.category.id == 3 %>
+                      <td> Fórmula VW </td>
+                    <% else %>
+                      <td> <%= result.car %> </td>
+                    <% end %>
+                  <% end -%>
                   <td class="copas">
                     <% races_win = Pilot.win_races(@championship.id, result.pilot_id) %>
                     <% if races_win > 0 %>

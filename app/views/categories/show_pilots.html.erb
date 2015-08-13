@@ -23,9 +23,21 @@
               <h2> <%= pilot.last_name %>,<br> <%= pilot.first_name %> </h2>
             </div>
             <div class="info-pilot-img">
-              <%= image_tag 'logo_vw.png', class: "", width: 47 %>
+              <% if @category.id == 2 %>
+                <%= image_tag 'cg_logo.png', class: "", width: 47 %>
+              <% else %>
+                <%= image_tag 'logo_vw.png', class: "", width: 47 %>
+              <% end -%>
               <div class="team">
-                <%= pilot.car %>
+                <% if @category.id == 2 %>
+                  Kart 125cc
+                <% else %>
+                  <% if @category.id == 3 %>
+                    <%= "Fórmula VW" %>
+                  <% else -%>
+                    <%= pilot.car %>
+                  <% end -%>
+                <% end -%>
               </div>
               <div class="team">
                 <%= pilot.team %>

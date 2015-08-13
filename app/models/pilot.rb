@@ -18,6 +18,8 @@ class Pilot < ActiveRecord::Base
 
   before_save :set_full_name
 
+  default_scope order('full_name ASC')
+
   def to_s
   	full_name
   end
@@ -27,12 +29,21 @@ class Pilot < ActiveRecord::Base
   end
 
   def number
-   data = PilotRace.where(pilot_id: self.id)
+   data = PilotRace.where(pilot_id: self.id).order(race_id: :desc)
    unless data.blank?
-    data.last.number
+    data.first.number
    else
     "#"
    end
+  end
+
+  def self.pilot_number_about_pilot_id(pilot_id,championship_id)
+    data = Race.joins(:pilot_races).where("pilot_races.pilot_id = #{pilot_id} AND races.championship_id = #{championship_id}").select("pilot_races.number")
+    unless data.blank?
+      data.first.number
+    else
+      "#"
+    end
   end
 
   def age
@@ -45,7 +56,7 @@ class Pilot < ActiveRecord::Base
   end
 
   def self.win_races(championship_id, pilot_id)
-    races_win =  RaceResult.where(championship_id: championship_id, score_for_champ: 15, pilot_id: pilot_id ).count
+    races_win =  RaceResult.where(championship_id: championship_id, position: 1, pilot_id: pilot_id ).count
   end
 
   def count_races(category_id)
@@ -65,11 +76,12 @@ class Pilot < ActiveRecord::Base
   end
 
   def poles(category_id)
-    PilotRace.joins(:pilot_steps).where("pilot_races.pilot_id = #{id} AND pilot_steps.score = 1 AND pilot_races.category_id = #{category_id}").count
+    #PilotRace.joins(:pilot_steps).where("pilot_races.pilot_id = #{id} AND pilot_steps.score = 1 AND pilot_races.category_id = #{category_id}").count
+    PilotRace.joins(:pilot_steps).where("pilot_races.pilot_id = #{id} AND pilot_steps.score = 1 AND pilot_races.category_id = #{category_id} AND pilot_steps.position = 1").count
   end
 
   def first_race(category_id)
-    PilotRace.joins(:race).where(pilot_id: id, category_id: category_id).select("races.*").order("races.date ASC").first
+    PilotRace.joins(:race).where(pilot_id: id, category_id: category_id).select("races.*").order("races.date DESC").last
   end
 
 end

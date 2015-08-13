@@ -32,7 +32,19 @@
                 <div class="logo divider">
                   <img class="lazy" data-original="/assets/logo_vw.png" src="/assets/logo_vw.png" style="display: inline;width:50px;">
                 </div>
-                <div class="model-car"><span> <%= @pilot.car %></span> </div>
+                <div class="model-car">
+                  <span>
+                    <% if @category.id == 2 %>
+                      Kart 125cc
+                    <% else %>
+                      <% if @category.id == 3 %>
+                        <%= "Fórmula VW" %>
+                      <% else -%>
+                        <%= @pilot.car %>
+                      <% end -%>
+                    <% end %>
+                  </span>
+                </div>
                 <div class="team"><span><%= @pilot.team %></span></div>
               </div>
               <div class="stats-current">
