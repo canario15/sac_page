@@ -30,6 +30,7 @@ SacPage::Application.routes.draw do
   get '/categorias/:category_id/calendario/fecha/:id' => 'categories#race',                         as: :race
 
   get '/galeria'                                      => 'pages#galleries',                         as: :galleries
+  get '/albun/:id'                                    => 'pages#albun',                             as: :albun
 
   get '/nosotros'                                     => 'pages#about',                             as: :about
 

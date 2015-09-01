@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729145230) do
+ActiveRecord::Schema.define(version: 20150831232202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150729145230) do
     t.string   "front_pic_content_type"
     t.integer  "front_pic_file_size"
     t.datetime "front_pic_updated_at"
+    t.boolean  "is_global"
   end
 
   create_table "categories", force: true do |t|
@@ -80,6 +81,16 @@ ActiveRecord::Schema.define(version: 20150729145230) do
     t.integer "two_id"
     t.integer "three_id"
     t.integer "category_id"
+    t.string  "sub_category"
+  end
+
+  create_table "circuit_pictures", force: true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "circuit_id"
+    t.string   "name"
   end
 
   create_table "circuits", force: true do |t|
@@ -99,6 +110,7 @@ ActiveRecord::Schema.define(version: 20150729145230) do
     t.string   "truck_content_type"
     t.integer  "truck_file_size"
     t.datetime "truck_updated_at"
+    t.string   "video_url"
   end
 
   create_table "notices", force: true do |t|

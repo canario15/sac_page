@@ -12,7 +12,11 @@ class CategoriesController < ApplicationController
   end
 
   def championship_query
-    @championship = Championship.where(year: params[:year], category_id: params[:category_id]).first
+    if params[:sub_category].blank?
+      @championship = Championship.where(year: params[:year], category_id: params[:category_id]).first
+    else
+      @championship = Championship.where(year: params[:year], category_id: params[:category_id], sub_category: params[:sub_category]).first
+    end
     respond_to do |format|
       if request.xhr?
         if params[:type] == "2"

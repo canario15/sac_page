@@ -9,7 +9,20 @@
       <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
     <% end -%>
   </div>
-	<div id="gallery"></div>
+	<div class="albun-cont">
+   <div class="tit-1">
+      <h3>ALBUNES</h3>
+    </div>
+    <ul class="polaroids  small-block-grid-2">
+      <% @albuns.each do |albun| %>
+        <li>
+          <%= link_to albun_path(albun) , title: "#{albun.name} - #{albun.date_albun}" do %>
+            <%= image_tag albun.front_pic, title: "#{albun.name} - #{albun.date_albun}" %>
+          <% end -%>
+        </li>
+       <% end -%>
+    </ul>
+  </div>
   <div class="gent-cont">
     <div class="tit-1">
       <h3>Gentileza</h3>
@@ -31,17 +44,6 @@
   </div>
 </div>
 <script type="text/javascript">
-	$("#gallery").nanoGallery({
-    kind: 'flickr',
-    userID: '126030921@N08',
-    photoset:'72157654027116563',
-    thumbnailWidth: 125,
-    thumbnailHeight: 125,
-    thumbnailGutterWidth: 20,
-    thumbnailGutterHeight: 20,
-    thumbnailLabel: { display: false },
-  });
-
   $('.fb-share-btn').on( 'click', function(e) {
     e.preventDefault();
     info = $('.fb-share-btn');

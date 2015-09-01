@@ -9,12 +9,13 @@ ActiveAdmin.register Championship do
 
   config.sort_order = 'year_desc'
 
-  permit_params :name, :category_id, :circuit_id, :year, :one_id, :two_id, :three_id, races_attributes: [:id, :city, :date, :name, :circuit_id, :_destroy]
+  permit_params :name, :category_id, :sub_category, :circuit_id, :year, :one_id, :two_id, :three_id, races_attributes: [:id, :city, :date, :name, :circuit_id, :_destroy]
 
   form do |f|
     f.inputs "Campeonato" do
       f.input :name
       f.input :category, :as => :select, :collection => Category.all.collect {|cat| [cat.name, cat.id] }
+      f.input :sub_category, :as => :select, :collection => ["Super A", "A"]
       f.input :year
       f.input :one
       f.input :two
@@ -32,6 +33,7 @@ ActiveAdmin.register Championship do
   index :title => "Campeonatos"  do
     column :name
     column :category
+    column :sub_category
     column :year
     column :one
     column :two
@@ -43,6 +45,7 @@ ActiveAdmin.register Championship do
     attributes_table do
       row :name
       row :category
+      row :sub_category
       row :year
       row :one
       row :two

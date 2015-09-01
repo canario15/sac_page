@@ -13,12 +13,37 @@
                 <option value="2">Puntos por Fecha</option>
               </select>
               <select id="year_query" class="select-prp" tabindex="1" name="year_query">
-                <option value="2015">2015</option>
-                <option value="2014">2014</option>
-                <option value="2013">2013</option>
+                <% @category.championships.map{|y| y.year}.uniq.each do |ch| %>
+                  <option value="<%= ch %>"><%= ch %></option>
+                <% end -%>
               </select>
+              <% if @category.id == 2 %>
+                <select id="sub_category_query" class="select-prp" tabindex="1" name="sub_category_query">
+                  <option value="Super A"> Súper A</option>
+                  <option value="A"> A </option>
+                </select>
+                <script type="text/javascript">
+                  $("#sub_category_query").selectbox({
+                    onChange: function (val, inst) {
+                      var sub_category = val;
+                      var year = $("#year_query_selected").val();
+                      $("#sub_category_query_selected").val(sub_category);
+                      $.ajax({
+                        type: "GET",
+                        data: {year: year, type: $("#type_query_selected").val(), category_id: $("#category").val(), sub_category: sub_category },
+                        url: "/championship_query",
+                        success: function (data) {
+                          $("#two_details").html(data);
+                        }
+                      });
+                    },
+                    effect: "slide"
+                  });
+                </script>
+              <% end -%>
+              <input type="hidden" id="sub_category_query_selected" value="Super A" />
               <input type="hidden" id="type_query_selected" value="1" />
-              <input type="hidden" id="year_query_selected" value="2015" />
+              <input type="hidden" id="year_query_selected" value="<%= @category.championships.first.year %>" />
               <input type="hidden" id="category" value= <%=@championship.category.id %> />
             </div>
           </div>
@@ -61,7 +86,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @championship.championship_data.each_with_index do |result, i|%>
+              <% Championship.championship_data(@championship.id).each_with_index do |result, i|%>
                 <tr bgcolor="">
                   <td class="pos"><%= i + 1 %><span>°</span></td>
                   <td><%= Pilot.pilot_number_about_pilot_id(result.pilot_id, @championship.id) %></td>
@@ -209,6 +234,11 @@
     $("#year_query").selectbox({
       onChange: function (val, inst) {
         var year = val;
+        if(year < "2015") {
+          $("#sub_category_query").selectbox("disable");
+        }else{
+          $("#sub_category_query").selectbox("enable");
+        }
         $("#year_query_selected").val(year);
         $.ajax({
           type: "GET",

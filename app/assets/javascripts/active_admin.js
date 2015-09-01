@@ -2,6 +2,8 @@
 
 $(function() {
 
+  $("#championship_sub_category_input").hide();
+
   $(".close_race").click(function(e) {
     e.preventDefault();
     $.ajax({
@@ -28,6 +30,11 @@ $(function() {
         $("select#championship_one_id").html(options);
         $("select#championship_two_id").html(options);
         $("select#championship_three_id").html(options);
+        if (category_id == 2 ) {
+          $("#championship_sub_category_input").show();
+        }else {
+          $("#championship_sub_category_input").hide();
+        }
       }
     });
   });

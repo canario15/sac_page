@@ -3,6 +3,7 @@ class RaceResult < ActiveRecord::Base
   belongs_to :pilot_race
   belongs_to :race
   belongs_to :pilot
+  belongs_to :championship
 
   default_scope order(score_for_champ: :desc, score: :desc, position: :asc)
 

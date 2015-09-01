@@ -18,6 +18,11 @@ class PagesController < ApplicationController
 
   def galleries
     @hover_menu = CONSTANT_MENU_GALERY_ID
+    @albuns = Albun.where(is_global: true)
+  end
+
+  def albun
+    @albun = Albun.find_by(id: params[:id])
   end
 
   def about

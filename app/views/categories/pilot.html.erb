@@ -30,12 +30,16 @@
               <div class="tc-data clearfix">
                 <span><%= @pilot.number %></span>
                 <div class="logo divider">
-                  <img class="lazy" data-original="/assets/logo_vw.png" src="/assets/logo_vw.png" style="display: inline;width:50px;">
+                  <% if @category.id == 2 %>
+                      <img class="lazy" data-original="/assets/cg_logo.png" src="/assets/cg_logo.png" style="display: inline;width:50px;">
+                    <% else %>
+                      <img class="lazy" data-original="/assets/logo_vw.png" src="/assets/logo_vw.png" style="display: inline;width:50px;">
+                    <% end %>
                 </div>
                 <div class="model-car">
                   <span>
                     <% if @category.id == 2 %>
-                      Kart 125cc
+                      <%= "Kart 125cc" %>
                     <% else %>
                       <% if @category.id == 3 %>
                         <%= "Fórmula VW" %>
@@ -50,7 +54,7 @@
               <div class="stats-current">
                 <h3>Campeonato <%= !@actual_championship.year.nil? ? @actual_championship.year : "-" %></h3>
                 <ul>
-                  <% actual_data = @actual_championship.data_of_pilot_in_championship(@pilot.id) %>
+                  <% actual_data = Championship.data_of_pilot_in_championship(@pilot.id, @category.id) %>
                   <li><span>Posición</span><strong><%= actual_data[:pos] %></strong></li>
                   <li><span>Puntos</span><strong><%= actual_data[:score] %></strong></li>
                   <li><span>Asistencias</span><strong><%= actual_data[:assists] %></strong></li>

@@ -3,16 +3,19 @@ ActiveAdmin.register Albun do
 
   config.batch_actions = false
   config.filters = false
+  config.sort_order = 'date_albun_desc'
+
 
   menu :label => "Albunes"
 
-  permit_params :name, :code, :date_albun, :front_pic, :category_id
+  permit_params :name, :code, :date_albun, :front_pic, :category_id, :is_global
 
   form do |f|
     f.inputs "Albun" do
       f.input :name
       f.input :date_albun
       f.input :category
+      f.input :is_global
       f.input :code
       f.input :front_pic
     end
@@ -23,6 +26,7 @@ ActiveAdmin.register Albun do
     column :name
     column :code
     column :category
+    column :is_global
     column :date_albun
     actions
   end
@@ -32,6 +36,7 @@ ActiveAdmin.register Albun do
       row :name
       row :code
       row :category
+      row :is_global
       row :date_albun
       row :front_pic do
         image_tag(ad.front_pic.url(:medium))

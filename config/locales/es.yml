@@ -7,6 +7,7 @@ es:
       championship: "Campeonato"
       pilot: "Piloto"
       circuit: "Circuito"
+      circuit_picture: "Imagen de Circuito"
       race: "Fecha"
       step: "Series"
       pilot_step: "Piloto en la serie"
@@ -21,6 +22,7 @@ es:
         date_albun: "Fecha"
         front_pic: "Tapa del Albun"
         category: "Categoría"
+        is_global: "Global"
       notice:
         title: "Tíulo"
         context: "Texto"
@@ -37,6 +39,7 @@ es:
         two: "Vicecamepón"
         three: "Tercero"
         category: "Categoría"
+        sub_category: "Sub Categoría"
       circuit:
         name: "Nombre"
         large: "Largo"
@@ -46,6 +49,11 @@ es:
         truck: "Pista"
         category: "Categoría"
         logo: "Logo"
+        video_url: "Código de video"
+      circuit_picture:
+        name: "Nombre"
+        circuit: "Circuito"
+        picture: "Imagen"
       pilot:
         categories: "Categoría/s"
         full_name: "Nombre completo"

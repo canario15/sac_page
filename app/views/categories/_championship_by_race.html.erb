@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @championship.championship_data.each_with_index do |result, i|%>
+      <% Championship.championship_data(@championship.id).each_with_index do |result, i|%>
         <tr bgcolor="">
           <td class="pos"><%= i + 1 %><span>°</span></td>
           <td><%= Pilot.pilot_number_about_pilot_id(result.pilot_id, @championship.id) %></td>

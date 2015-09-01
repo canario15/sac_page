@@ -8,7 +8,7 @@ ActiveAdmin.register Circuit do
 
   menu :label => "Circuitos"
 
-  permit_params :name, :location, :description, :large, :logo, :map_position, :category_id, :truck
+  permit_params :name, :location, :description, :large, :logo, :map_position, :video_url, :category_id, :truck
 
   form do |f|
     f.inputs "Circuito" do
@@ -18,6 +18,7 @@ ActiveAdmin.register Circuit do
       f.input :description
       f.input :category
       f.input :map_position
+      f.input :video_url
       f.input :logo
       f.input :truck
     end
