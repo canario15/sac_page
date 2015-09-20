@@ -54,7 +54,7 @@ class CategoriesController < ApplicationController
 
   def show_pilots
     @category = Category.find_by_id(params[:category_id])
-    @pilots = @category.pilots
+    @pilots = @category.pilots.where(active: true)
 
     respond_to do |format|
       if request.xhr?

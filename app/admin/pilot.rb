@@ -9,10 +9,11 @@ ActiveAdmin.register Pilot do
 
   menu :label => "Pilotos"
 
-  permit_params :number, :first_name, :last_name, :full_name, :car, :team, :avatar, :city, :birth_date, category_ids: []
+  permit_params :active, :first_name, :last_name, :full_name, :car, :team, :avatar, :city, :birth_date, category_ids: []
 
   form do |f|
     f.inputs "Piloto" do
+      f.input :active
       f.input :first_name
       f.input :last_name
       f.input :birth_date,  :as => :datepicker
@@ -36,11 +37,13 @@ ActiveAdmin.register Pilot do
     column "Categoría/s" do |pilot|
       (pilot.categories.map { |c| c.name }).join(", ")
     end
+    column :active
     actions
   end
 
   show :title => :full_name do |ad|
     attributes_table do
+      row :active
       row :full_name
       row :birth_date
       row :city

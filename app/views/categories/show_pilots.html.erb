@@ -19,7 +19,7 @@
 
           <div class="data-pilot">
             <div class="car-data">
-              <span><%= pilot.number %></span>
+              <span><%= pilot.number(@category.id) %></span>
               <h2> <%= pilot.last_name %>,<br> <%= pilot.first_name %> </h2>
             </div>
             <div class="info-pilot-img">

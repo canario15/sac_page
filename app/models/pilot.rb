@@ -28,12 +28,12 @@ class Pilot < ActiveRecord::Base
     self.full_name = first_name + " " + last_name
   end
 
-  def number
-   data = PilotRace.where(pilot_id: self.id).order(race_id: :desc)
+  def number(category_id)
+   data = PilotRace.where(pilot_id: self.id, category_id: category_id ).order(race_id: :desc)
    unless data.blank?
     data.first.number
    else
-    "#"
+    "-"
    end
   end
 

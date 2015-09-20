@@ -28,7 +28,7 @@
                 <%= @pilot.city %>
               </div>
               <div class="tc-data clearfix">
-                <span><%= @pilot.number %></span>
+                <span><%= @pilot.number(@category.id) %></span>
                 <div class="logo divider">
                   <% if @category.id == 2 %>
                       <img class="lazy" data-original="/assets/cg_logo.png" src="/assets/cg_logo.png" style="display: inline;width:50px;">

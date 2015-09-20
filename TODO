@@ -1,16 +1,20 @@
-cambiar share de calendar race para la done y la next
-
 pedir mas material de videos y fotos
+
 
 
 DATOS FALTANTES
 
+-Circuitos (salto paysandu rivera mercedes tacarembo)
+   -Nombres
+   -Localidad
+   -largo
+   -descripción
+   -5 fotos
+   -un video on board
+
 CATEGORIAS
-  -descripcion de cuantas categorias cuenta el club etc etc
   -TPS
     -descripcion categoria tps
-    -Campeonatos
-      -Datos de los campeonatos 20013-2014 hasta las series
     -Pilotos(de todos)
       -Datos
         -Nombre
@@ -21,23 +25,12 @@ CATEGORIAS
         -Equipo
         -Categoria/s
         -Foto parado con casco
-        -Foto de Gorro del club
+        -Foto con el Gorro del club
         -Foto del Casco
         -Foto del auto
-    -Circuitos (salto paysandu rivera mercedes tacarembo)
-       -Nombres
-       -Localidad
-       -largo
-       -descripción
-       -5 fotos
-       - un video on board
-    -Multimedia
-     - recolectar todo el material del 2014 fotos y videos
-     - recoelctar todo el materiro de la primer fecha del 2015 foto y videos
+
   -FS
     -descripcion categoria Formula sac
-    -Campeonatos
-      -Datos de los campeonatos 20013-2014 hasta las series
     -Pilotos(de todos)
       -Datos
         -Nombre
@@ -48,16 +41,12 @@ CATEGORIAS
         -Equipo
         -Categoria/s
         -Foto parado con casco
-        -Foto de Gorro del club
+        -Foto con el Gorro del club
         -Foto del Casco
         -Foto del auto
-    -Multimedia
-     - recolectar todo el material del 2014 fotos y videos
-     - recoelctar todo el materiro de la primer fecha del 2015 foto y videos
+
   -K125
     -descripcion categoria Karting 125
-    -Campeonatos
-      -Datos de los campeonatos 20013-2014 hasta las series
     -Pilotos(de todos)
       -Datos
         -Nombre
@@ -71,9 +60,6 @@ CATEGORIAS
         -Foto de Gorro del club
         -Foto del Casco
         -Foto del auto
-    -Multimedia
-     - recolectar todo el material del 2014 fotos y videos
-     - recoelctar todo el materiro de la primer fecha del 2015 foto y videos
 
 NOSOTROS
   -estructura del club de cargos
@@ -88,6 +74,33 @@ NOSOTROS
 
 
 
-
+FLICK
 usuario: saltoautomovilclubflickr@yahoo.com
 contraseña: SAC2014sac
+
+YOUTUBE
+usuario: salto1automovil1club@gmail.com
+contraseña: SAC2014sac
+
+
+
+
+
+http://www.youjizz.com/
+
+
+
+SELECT setval('admin_users_id_seq', (SELECT MAX(id) FROM admin_users));
+SELECT setval('albuns_id_seq', (SELECT MAX(id) FROM albuns));
+SELECT setval('categories_id_seq', (SELECT MAX(id) FROM categories));
+SELECT setval('categories_pilots_id_seq', (SELECT MAX(id) FROM categories_pilots));
+SELECT setval('championships_id_seq', (SELECT MAX(id) FROM championships));
+SELECT setval('circuits_id_seq', (SELECT MAX(id) FROM circuits));
+SELECT setval('notices_id_seq', (SELECT MAX(id) FROM notices));
+SELECT setval('pilot_races_id_seq', (SELECT MAX(id) FROM pilot_races));
+SELECT setval('pilot_steps_id_seq', (SELECT MAX(id) FROM pilot_steps));
+SELECT setval('pilots_id_seq', (SELECT MAX(id) FROM pilots));
+SELECT setval('race_previus_id_seq', (SELECT MAX(id) FROM race_previus));
+SELECT setval('race_results_id_seq', (SELECT MAX(id) FROM race_results));
+SELECT setval('races_id_seq', (SELECT MAX(id) FROM races));
+SELECT setval('steps_id_seq', (SELECT MAX(id) FROM steps));

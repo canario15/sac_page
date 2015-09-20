@@ -28,7 +28,7 @@
 			          </div>
 			          <ul class="menu-race-feature clearfix pull-left">
 			            <li class="first">
-			              <%= link_to "El circuito", show_circuit_path(1, 1), class: "circuito"%>
+			              <%= link_to "El circuito", show_circuit_path(1, @actual_championship.next_race.circuit), class: "circuito"%>
 			            </li>
 			            <% unless @actual_championship.next_race.race_previus.nil? %>
 			            <li>
