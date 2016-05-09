@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default menu" role="navigation">
   <div class="container">
-    <div class="my-logo"> <a href="/"> <%= image_tag 'logo.png', class: "main-logo", width: 260 %></a></div>
+    <div class="my-logo"> <a href="/"> <%= image_tag 'logo.png', class: "main-logo", width: 180 %></a></div>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -24,15 +24,15 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '131568497179574',
+      appId      : '581042098737672',
       xfbml      : true,
-      version    : 'v2.4'
+      version    : 'v2.5'
     });
   };
 
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
+    if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=131568497179574";
     fjs.parentNode.insertBefore(js, fjs);

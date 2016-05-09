@@ -1,9 +1,11 @@
 ActiveAdmin.register Category do
 
+  menu parent: "Administración"
+  menu :label => "Categorías"
+
   config.batch_actions = false
   config.filters = false
 
-  menu :label => "Categorías"
 
   permit_params :name, :description, :logo, :short_name
 

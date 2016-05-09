@@ -10,10 +10,10 @@ class Pilot < ActiveRecord::Base
   has_attached_file :car_pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/Gol-G1-Default.png"
   validates_attachment_content_type :car_pic, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :helmet_pic, :styles => { :medium => "40x40>", :thumb => "10x10>" }, :default_url => "/assets/default-helmet.png"
+  has_attached_file :helmet_pic, :styles => { :medium => "80>x70", :thumb => "100x100>" }, :default_url => "/assets/default-helmet.png"
   validates_attachment_content_type :helmet_pic, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :complete_pic, :styles => { :medium => "40x40>", :thumb => "10x10>" }, :default_url => "/assets/default-pilot-complete.png"
+  has_attached_file :complete_pic, :styles => { :medium => "213x500>", :thumb => "100x100>" }, :default_url => "/assets/default-pilot-complete.png"
   validates_attachment_content_type :complete_pic, :content_type => /\Aimage\/.*\Z/
 
   before_save :set_full_name

@@ -1,4 +1,8 @@
 ActiveAdmin.register Pilot do
+
+  menu parent: "Administración"
+  menu :label => "Pilotos"
+
   actions :index, :show, :edit, :update, :new, :create
 
   config.batch_actions = false
@@ -6,10 +10,9 @@ ActiveAdmin.register Pilot do
   config.per_page = 15
 
   filter :categories, collection: proc { Category.all }, as: :select
+  filter :last_name
 
-  menu :label => "Pilotos"
-
-  permit_params :active, :first_name, :last_name, :full_name, :car, :team, :avatar, :city, :birth_date, category_ids: []
+  permit_params :active, :first_name, :last_name, :full_name, :car, :team, :avatar, :car_pic, :complete_pic, :helmet_pic, :city, :birth_date, category_ids: []
 
   form do |f|
     f.inputs "Piloto" do
@@ -62,7 +65,7 @@ ActiveAdmin.register Pilot do
         image_tag(ad.helmet_pic.url())
       end
       row :complete_pic do
-        image_tag(ad.complete_pic.url(:thumb))
+        image_tag(ad.complete_pic.url())
       end
     end
   end

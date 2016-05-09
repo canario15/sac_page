@@ -1,12 +1,12 @@
 ActiveAdmin.register Circuit do
 
+  menu parent: "Administración"
+  menu :label => "Circuitos"
 
   actions :index, :show, :edit, :update, :new, :create
 
   config.batch_actions = false
   config.filters = false
-
-  menu :label => "Circuitos"
 
   permit_params :name, :location, :description, :large, :logo, :map_position, :video_url, :category_id, :truck
 

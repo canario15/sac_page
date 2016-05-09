@@ -1,11 +1,12 @@
 ActiveAdmin.register CircuitPicture do
 
+  menu parent: "Administración"
+  menu :label => "Imagenes de Circuitos"
+
   actions :index, :show, :edit, :update, :new, :create
 
   config.batch_actions = false
   config.filters = false
-
-  menu :label => "Imagenes de Circuitos"
 
   permit_params :name, :picture, :circuit_id
 

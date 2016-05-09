@@ -1,1 +1,0 @@
-AdminUser.create(:id => 1, :email => "saltoautomovilclub@adinet.com.uy", :encrypted_password => "$2a$10$bODC5SlPSv7wF7PDGdcZAuvhA2uNEVzqfIX316/zXEOIwpV/4gxKO", :sign_in_count => 26, :current_sign_in_at => Wed, 16 Sep 2015 16:53:03 UTC +00:00, :last_sign_in_at => Wed, 09 Sep 2015 19:04:16 UTC +00:00, :current_sign_in_ip => "127.0.0.1", :last_sign_in_ip => "127.0.0.1")

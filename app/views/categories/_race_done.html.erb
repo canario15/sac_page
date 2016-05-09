@@ -141,6 +141,41 @@
       <p> <%= @race.observation %> </p>
     </div><!-- /incidencias -->
   <% end -%>
+  <div class="panel-body">
+    <div class="table-responsive generic-tbl championship-tbl panels-table">
+      <table class="table2" id="table-hidden-content">
+        <thead>
+          <tr>
+            <th > POS.   </th>
+            <th> NÚMERO </th>
+            <th> PILOTO </th>
+            <th> TIEMPO </th>
+            <th> PUNTOS </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @race.steps.each do |step|%>
+            <tr><td style="text-align:center;color:#fff;background:#aaa;" colspan="5"><%= step.name %></td></tr>
+            <% step.pilot_steps.each do |ps|%>
+              <tr bgcolor="">
+                <td class="pos"><%= ps.position %><span>°</span></td>
+                <td><%= ps.pilot_race.number %></td>
+                <td class="piloto first">
+                   <%= link_to "#{ ps.pilot_race.pilot } ", pilot_path(@category.id, ps.pilot_race.pilot.id) %>
+                  <a href="#">  </a>
+                </td>
+                <td> <%= ps.time %>      </td>
+                <td class="pts"> <%= ps.score %> </td>
+              </tr>
+            <% end -%>
+            <% unless step.observation.blank? %>
+              <tr><td style="color:#e52b2b;font-size:20px;" colspan="5">OBS: <%= step.observation %></td></tr>
+            <% end -%>
+          <% end -%>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <script type="text/javascript">
   $('.fb-share-btn').on( 'click', function(e) {
