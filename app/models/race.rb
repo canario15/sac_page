@@ -12,8 +12,8 @@ class Race < ActiveRecord::Base
 
   default_scope order('date ASC')
 
-  #after_create :create_or_update_race_restult
-  #after_update :create_or_update_race_restult
+  after_create :create_or_update_race_restult
+  after_update :create_or_update_race_restult
 
   def to_s
     "#{self.date} - #{self.name}"

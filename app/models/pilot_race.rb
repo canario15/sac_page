@@ -5,7 +5,7 @@ class PilotRace < ActiveRecord::Base
 
   default_scope order('number ASC')
 
-  #before_save :set_category
+  before_save :set_category
 
   def set_category
     self.category_id = self.race.championship.category_id

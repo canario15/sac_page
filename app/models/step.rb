@@ -6,8 +6,8 @@ class Step < ActiveRecord::Base
 
   default_scope order('number ASC')
 
-  #after_create :update_race_restult
-  #after_update :update_race_restult
+  after_create :update_race_restult
+  after_update :update_race_restult
 
   def update_race_restult
   	race.pilot_races.each do |pilot_race|
