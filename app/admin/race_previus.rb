@@ -9,8 +9,9 @@ ActiveAdmin.register RacePrevius do
 
   form do |f|
     f.inputs "Previa de Carrera" do
-      f.input :race, :as => :select, :collection => Race.all.collect {|race| [ "#{race.date} - #{race.name}" , race.id ] }
+      f.input :race, :as => :select, :collection => Race.all.collect {|race| [ "#{race.date} - #{race.name} - #{race.championship.category.short_name}" , race.id ] }
       f.input :ticket
+      f.input :box_ticket
       f.input :picture
       f.input :crono
     end
@@ -27,6 +28,7 @@ ActiveAdmin.register RacePrevius do
     attributes_table do
       row :race
       row :ticket
+      row :box_ticket
       row :picture do
         image_tag(ad.picture.url(:medium))
       end

@@ -87,7 +87,8 @@ es:
         done: "Cerrada"
       race_previus:
         race: "Fecha"
-        ticket: "Costo Entrada"
+        ticket: "Costo Entrada General"
+        box_ticket: "Costo Entrad Boxes"
         text: "Cronograma"
         picture: "Afiche"
       step:
