@@ -13,9 +13,11 @@ test:
   password: password
 
 production:
+  port: 5432
+  host: ec2-54-243-47-213.compute-1.amazonaws.com
   adapter: postgresql
   encoding: unicode
-  database: sac_production
+  database: d1eg0ao4putcmm
   pool: 5
-  username: postgres
-  password: password
+  username: fyjsvgkbclieve
+  password: ELXkpMCk_45Ea0mgKrSTAwvPrp
