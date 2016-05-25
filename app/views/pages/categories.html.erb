@@ -2,20 +2,35 @@
 	<div class="page-title">
 	 	<h1>Categorias</h1>
   </div>
-	<div class="acces-categ">
-		<% @categories.each do |category| %>
-			<%= link_to category_path(category) do %>
-				<div class="category-panel" >
-					<h3><%= category.name %></h3>
-					<%= image_tag category.logo, width: 328 %>
-				</div>
-			<% end -%>
-		<% end -%>
-	</div>
-	<br class="clearBoth" />
 	<!--<div class="categories-desc">
     <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      Actualemnte el club cuenta con 3 categorias y dos subcategorias. Turismo Pista SAC como categoría principal, luego la categoria Fórmula SAC subdividida en "A" y "Super A" y por último la categoria de Kart 125cc subdividida en "A" y Super A".
     </p>
-  </div> -->
+  </div> !-->
+  <div class="acces-categ">
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category) do %>
+        <div class="category-panel <%= "#{category.short_name}-color"%>" >
+          <h3><%= category.name %></h3>
+          <%= image_tag category.logo, width: 328 %>
+        </div>
+      <% end -%>
+    <% end -%>
+  </div>
+  <br class="clearBoth" />
 </div>
+
+<style type="text/css">
+  .category-panel.TPS-color {
+    border: 1px solid #d90000;
+    color: #d90000;
+  }
+  .category-panel.FSAC-color{
+    border: 1px solid #ff5c26;
+    color: #ff5c26;
+  }
+  .category-panel.K125-color{
+    border: 1px solid #ffbf00;
+    color: #ffbf00;
+  }
+</style>

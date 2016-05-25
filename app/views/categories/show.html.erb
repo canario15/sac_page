@@ -1,8 +1,8 @@
 <div class="categories-pages">
 	<div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> /  <a class="last-it" > <%= @category.name %> </a>
+    <%= link_to "Categorias", categories_path() %> /  <a class="last-it  <%="#{@category.short_name}-color"%>" > <%= @category.name %> </a>
   </div>
-	<div class="page-title">
+	<div class="page-title <%="#{@category.short_name}-color"%>">
 		<h1> <%= @category.name %> </h1>
 		<%= link_to("#", class: "fb-share-btn", :"data-name" => @category.name,
 		                                        :"data-caption" => "",
@@ -14,32 +14,32 @@
 	</div>
 	<p> <%= @category.description %> </p>
 	<div class="links">
-    <div class="categories-links">
+    <div class="categories-links <%="#{@category.short_name}-color"%> ">
       <%= link_to category_calendar_path(@category) do %>
         <strong>CALENDARIO</strong>
       <% end -%>
     </div>
-    <div class="categories-links">
+    <div class="categories-links <%="#{@category.short_name}-color"%>">
       <%= link_to category_championships_path(@category) do %>
         <strong>CAMPEONATOS</strong>
       <% end -%>
     </div>
-    <div class="categories-links">
+    <div class="categories-links <%="#{@category.short_name}-color"%>">
       <%= link_to category_pilots_path(@category) do %>
         <strong>PILOTOS</strong>
       <% end -%>
     </div>
-    <div class="categories-links">
+    <div class="categories-links <%="#{@category.short_name}-color"%>">
       <%= link_to circuits_path(@category) do %>
         <strong>CIRCUITOS</strong>
       <% end -%>
     </div>
-    <div class="categories-links">
+    <div class="categories-links <%="#{@category.short_name}-color"%>">
       <%= link_to category_regulation_path(@category) do %>
         <strong>REGLAMENTOS</strong>
       <% end -%>
     </div>
-    <div class="categories-links">
+    <div class="categories-links <%="#{@category.short_name}-color"%>">
       <%= link_to category_gallery_path(@category) do %>
         <strong>MULTIMEDIA</strong>
       <% end -%>
@@ -70,3 +70,46 @@
     });
   });
 </script>
+
+
+<style type="text/css">
+
+  .page-title.TPS-color h1 {
+    color: #d90000;
+  }
+  .page-title.FSAC-color h1 {
+    color: #ff5c26;
+  }
+  .page-title.K125-color h1 {
+    color: #ffbf00;
+  }
+
+  .categories-links.TPS-color a {
+    background-color: #d90000;
+    border: 1px solid  #d90000;
+  }
+  .categories-links.FSAC-color a{
+    background-color: #ff5c26;
+    border: 1px solid  #ff5c26;
+  }
+  .categories-links.K125-color a{
+    background-color: #ffbf00;
+    border: 1px solid  #ffbf00;
+  }
+
+  .categories-links.TPS-color a:hover {
+    background-color: #fff;
+    border: 1px solid  #d90000;
+    color: #d90000;
+  }
+  .categories-links.FSAC-color a:hover{
+    background-color: #fff;
+    border: 1px solid  #ff5c26;
+    color: #ff5c26;
+  }
+  .categories-links.K125-color a:hover{
+    background-color: #fff;
+    border: 1px solid #ffbf00;
+    color: #ffbf00;
+  }
+</style>

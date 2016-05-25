@@ -1,6 +1,6 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a class="last-it">Pilotos</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a class="last-it <%="#{@category.short_name}-color"%>">Pilotos</a>
   </div>
   <%= link_to("#", class: "fb-share-btn pilots-F-btn", :"data-name" => "Pilotos #{@category.name}",
                                             :"data-caption" => "",
@@ -17,8 +17,8 @@
             <%= image_tag pilot.avatar  %>
           </figure>
 
-          <div class="data-pilot">
-            <div class="car-data">
+          <div class="data-pilot <%="#{@category.short_name}-color"%>">
+            <div class="car-data ">
               <span><%= pilot.number(@category.id) %></span>
               <h2> <%= pilot.last_name %>,<br> <%= pilot.first_name %> </h2>
             </div>
@@ -76,3 +76,27 @@
     });
   });
 </script>
+
+<style type="text/css">
+
+  .data-pilot.TPS-color span {
+    background-color: #d90000;
+  }
+  .data-pilot.FSAC-color span {
+    background-color: #ff5c26;
+  }
+  .data-pilot.K125-color span {
+    background-color: #ffbf00;
+  }
+
+  .data-pilot.TPS-color:hover {
+    background-color: #d90000;
+  }
+  .data-pilot.FSAC-color:hover {
+    background-color: #ff5c26;
+  }
+  .data-pilot.K125-color:hover {
+    background-color: #ffbf00;
+  }
+
+</style>

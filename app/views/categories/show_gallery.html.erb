@@ -1,6 +1,6 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it">Multimedia</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it <%="#{@category.short_name}-color"%>">Multimedia</a>
   </div>
   <%= link_to("#", class: "fb-share-btn regulation-F-btn", :"data-name" => "Fotos y Videos de #{@category.name}",
                                             :"data-caption" => "",

@@ -1,4 +1,4 @@
-<div class="table-responsive generic-tbl championship-tbl main-table">
+<div class="table-responsive generic-tbl championship-tbl main-table <%="#{@championship.category.short_name}-color"%>">
   <input type="hidden" id="race_done" value=<%= @championship.race_done %> />
   <input type="hidden" id="races_count" value= <%= @championship.races.count %> />
   <table class="table2" id="table-hidden-content">
@@ -47,7 +47,7 @@
   </table>
 </div><!-- /tabla campeonato -->
 <div id="detail_races">
-  <p style="color:#e52b2b;font-size:33px;text-align:center;" >DETALLE FECHAS-SERIES </p>
+  <p class="det-fech-ser <%="#{@championship.category.short_name}-color"%>">DETALLE FECHAS-SERIES </p>
   <div class="panel-group" id="accordion">
     <% @championship.races.each_with_index do |race, i|%>
       <div class="panel panel-default no-bkg">
@@ -60,7 +60,7 @@
         </div>
          <div id="collapse<%=i%>" class="panel-collapse collapse">
           <div class="panel-body">
-            <div class="table-responsive generic-tbl championship-tbl panels-table">
+            <div class="table-responsive generic-tbl championship-tbl panels-table <%="#{@championship.category.short_name}-color"%>">
               <table class="table2" id="table-hidden-content">
                 <thead>
                   <tr>
@@ -92,8 +92,8 @@
                 </tbody>
               </table>
             </div>
-            <div class="table-responsive generic-tbl championship-tbl panels-table final-table">
-              <p style="color:#e52b2b;font-size:33px;text-align:center;" >Clasificación Final</p>
+            <div class="table-responsive generic-tbl championship-tbl panels-table final-table <%="#{@championship.category.short_name}-color"%>">
+              <p class="clas-fin-title <%="#{@championship.category.short_name}-color"%>">Clasificación Final</p>
               <table class="table2" id="table-hidden-content">
                 <thead>
                   <tr>

@@ -1,6 +1,6 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it">Calendario</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> </a> / <a class="last-it  <%="#{@category.short_name}-color"%>">Calendario</a>
   </div>
   <%= link_to("#", class: "fb-share-btn regulation-F-btn", :"data-name" => "Calendario #{@category.name} #{@actual_championship.year}",
                                             :"data-caption" => "",
@@ -14,9 +14,9 @@
     <ul class="row circuit-list">
       <% @races.each do |race| %>
         <li class="col-sm-4 col-xs-12 link-to-circuit" style="width:32%;">
-          <div class="info-circuit info-circuit2">
+          <div class="info-circuit info-circuit2 <%= "#{@category.short_name}-color"%>">
             <div class="date"><span><%= race.date.day %></span><%= I18n.t("date.month_names")[race.date.month] %></div>
-            <div class="hd">
+            <div class="hd <%= "#{@category.short_name}-color"%>">
               <h2><%= race.circuit.name %></h2>
               <p><%= race.circuit.location %></p>
             </div>
@@ -33,9 +33,9 @@
             <% else %>
               <% if race == @actual_championship.next_race %>
                 <div class="nav-race">
-                  <%= link_to "El circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-red-small" %>
+                  <%= link_to "El circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-small  #{@category.short_name}-color" %>
                   <% unless @actual_championship.next_race.race_previus.nil? %>
-                    <%= link_to "Previa", race_path(@category.id,race.id), class: "btn-red-small" %>
+                    <%= link_to "Previa", race_path(@category.id,race.id), class: "btn-small  #{@category.short_name}-color" %>
                   <% end -%>
                 </div>
                 <input type="hidden" id="day_count2"   value= <%=@actual_championship.next_race.date.day    %> />
@@ -61,7 +61,7 @@
                 </div>
               <% else %>
                 <div class="nav-race">
-                  <%= link_to "circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-red-small" %>
+                  <%= link_to "circuito", show_circuit_path(@category.id, race.circuit.id), class: "btn-small #{@category.short_name}-color" %>
                 </div>
               <% end -%>
             <% end -%>
@@ -103,3 +103,95 @@
   });
 
 </script>
+
+
+<style type="text/css">
+
+  .btn-small {
+    background-color: #e55151;
+    color: #fff;
+    font-family: "bebasneue_regular";
+    font-size: 20px;
+    padding: 5px 8px 3px;
+    text-decoration: none!important;
+    text-transform: none;
+    transition: none 0s ease 0s ;
+  }
+
+  .hd.TPS-color h2 {
+    color: #d90000;
+  }
+  .hd.FSAC-color h2 {
+    color: #ff5c26;
+  }
+  .hd.K125-color h2 {
+    color: #ffbf00;
+  }
+
+  .info-circuit.TPS-color:hover {
+    border: 1px solid #d90000;
+  }
+  .info-circuit.FSAC-color:hover {
+    border: 1px solid #ff5c26;
+  }
+  .info-circuit.K125-color:hover {
+    border: 1px solid #ffbf00;
+  }
+
+  .calendar .info-circuit.TPS-color .pos > li > span {
+    color: #d90000;
+  }
+  .calendar .info-circuit.FSAC-color .pos > li > span {
+    color: #ff5c26;
+  }
+  .calendar .info-circuit.K125-color .pos > li > span {
+    color: #ffbf00;
+  }
+
+  .calendar .info-circuit.TPS-color .more-txt {
+    background-color: #d90000;
+    color:#fff;
+  }
+  .calendar .info-circuit.FSAC-color .more-txt {
+    background-color: #ff5c26;
+    color:#fff;
+  }
+  .calendar .info-circuit.K125-color .more-txt {
+    background-color: #ffbf00;
+    color:#fff;
+  }
+
+  .calendar .info-circuit.TPS-color .btn-small {
+    background-color: #d90000;
+    color:#fff;
+  }
+  .calendar .info-circuit.FSAC-color .btn-small {
+    background-color: #ff5c26;
+    color:#fff;
+  }
+  .calendar .info-circuit.K125-color .btn-small {
+    background-color: #ffbf00;
+    color:#fff;
+  }
+
+  .calendar .info-circuit.TPS-color .more-txt:hover {
+    background-color:#555;
+  }
+  .calendar .info-circuit.FSAC-color .more-txt:hover {
+    background-color:#555;
+  }
+  .calendar .info-circuit.K125-color .more-txt:hover {
+    background-color:#555;
+  }
+
+  .calendar .info-circuit.TPS-color .btn-small:hover {
+    background-color:#555;
+  }
+  .calendar .info-circuit.FSAC-color .btn-small:hover {
+    background-color:#555;
+  }
+  .calendar .info-circuit.K125-color .btn-small:hover {
+    background-color:#555;
+  }
+
+</style>

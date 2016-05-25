@@ -1,6 +1,6 @@
-<div class="circuit-show circuit-page">
+<div class="circuit-show circuit-page <%="#{@category.short_name}-color"%>">
   <div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <%= link_to "Circuitos", circuits_path(@category) %>/ <a class="last-it" > <%= @circuit.name %> </a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <%= link_to "Circuitos", circuits_path(@category) %>/ <a class="last-it <%="#{@category.short_name}-color"%>" > <%= @circuit.name %> </a>
   </div>
   <%= link_to("#", class: "fb-share-btn circuits-F-btn", :"data-name" => "Datos del circuito #{@circuit.name}",
                                           :"data-caption" => "Categoría #{@category.name}",
@@ -86,3 +86,56 @@
     });
   });
 </script>
+<style type="text/css">
+  .circuit-show.TPS-color .info-circuit-show h2 {
+    color: #e55151;
+  }
+  .circuit-show.FSAC-color .info-circuit-show h2 {
+    color: #ff5c26;
+  }
+  .circuit-show.K125-color .info-circuit-show h2 {
+    color: #ffbf00;
+  }
+
+  .circuit-show.TPS-color .info-circuit-show .mts {
+    color: #e55151;
+  }
+  .circuit-show.FSAC-color .info-circuit-show .mts {
+    color: #ff5c26;
+  }
+  .circuit-show.K125-color .info-circuit-show .mts {
+    color: #ffbf00;
+  }
+
+  .circuit-show.TPS-color .circuit-map {
+    border: 1px solid #e55151;
+  }
+  .circuit-show.FSAC-color .circuit-map {
+    border: 1px solid #ff5c26;
+  }
+  .circuit-show.K125-color .circuit-map {
+    border: 1px solid #ffbf00;
+  }
+
+  .circuit-show.TPS-color .como-llegar h3 {
+    background-color: #e55151;
+  }
+  .circuit-show.FSAC-color .como-llegar h3 {
+    background-color: #ff5c26;
+  }
+  .circuit-show.K125-color .como-llegar h3 {
+    background-color: #ffbf00;
+  }
+
+  .circuit-show.TPS-color .circuit-desc h3 {
+    background-color: #e55151;
+  }
+  .circuit-show.FSAC-color .circuit-desc h3 {
+    background-color: #ff5c26;
+  }
+  .circuit-show.K125-color .circuit-desc h3 {
+    background-color: #ffbf00;
+  }
+
+
+</style>

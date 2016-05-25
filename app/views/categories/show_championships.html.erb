@@ -1,13 +1,13 @@
 <div class="categories-pages2">
   <div class="championship-data">
     <div class="breadcrumbs">
-      <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a id="champ_text">Campeonatos</a> <p class="special-p">/</p> <a  class="last-it" id="champ_year"> <%= @championship.year %> </a>
+      <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a id="champ_text">Campeonatos</a> <p class="special-p">/</p> <a  class="last-it <%="#{@category.short_name}-color"%>" id="champ_year"> <%= @championship.year %> </a>
     </div>
     <div id="full_data_championship">
       <div class="hd">
         <div class="row">
           <div class="col-lg-6 col-md-3 col-sm-9 col-xs-12">
-            <div class="select-group">
+            <div class="select-group <%="#{@category.short_name}-color"%>">
               <select id="type_query" class="select-prp" tabindex="2" name="type_query">
                 <option value="1">Campeonato</option>
                 <option value="2">Puntos por Fecha</option>
@@ -64,14 +64,14 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
-            <a id="champ_year_btn" class="champion-for-year" href="#">
+            <a id="champ_year_btn" class="champion-for-year  <%="#{@category.short_name}-color"%> " href="#">
               <strong>Campeones por año</strong>
             </a>
           </div>
         </div>
       </div>
       <div id="two_details">
-        <div class="table-responsive generic-tbl championship-tbl main-table">
+        <div class="table-responsive generic-tbl championship-tbl main-table <%="#{@category.short_name}-color"%>">
           <table class="table2" id="table-hidden-content">
             <thead>
               <tr>
@@ -117,7 +117,7 @@
           </table>
         </div><!-- /tabla campeonato -->
         <div id="detail_races">
-          <p style="color:#e52b2b;font-size:33px;text-align:center;" >DETALLE FECHAS-SERIES </p>
+          <p class="det-fech-ser <%="#{@category.short_name}-color"%>" >DETALLE FECHAS-SERIES </p>
           <div class="panel-group" id="accordion">
             <% @championship.races.each_with_index do |race, i|%>
               <div class="panel panel-default no-bkg">
@@ -130,7 +130,7 @@
                 </div>
                  <div id="collapse<%=i%>" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <div class="table-responsive generic-tbl championship-tbl panels-table">
+                    <div class="table-responsive generic-tbl championship-tbl panels-table <%="#{@category.short_name}-color"%>">
                       <table class="table2" id="table-hidden-content">
                         <thead>
                           <tr>
@@ -163,8 +163,8 @@
                         </tbody>
                       </table>
                     </div>
-                    <div class="table-responsive generic-tbl championship-tbl panels-table final-table">
-                      <p style="color:#e52b2b;font-size:33px;text-align:center;" >Clasificación Final</p>
+                    <div class="table-responsive generic-tbl championship-tbl panels-table final-table <%="#{@category.short_name}-color"%>">
+                      <p class="clas-fin-title <%="#{@championship.category.short_name}-color"%>" >Clasificación Final</p>
                       <table class="table2" id="table-hidden-content">
                         <thead>
                           <tr>
@@ -296,3 +296,170 @@
 
   });
 </script>
+
+<style type="text/css">
+
+  .breadcrumbs .last-it.TPS-color {
+    color: #d90000;
+  }
+  .breadcrumbs .last-it.FSAC-color {
+    color: #ff5c26;
+  }
+  .breadcrumbs .last-it.K125-color {
+    color: #ffbf00;
+  }
+
+  a.champion-for-year.TPS-color {
+    background-color: #d90000;
+    border: 1px solid #d90000;
+  }
+  a.champion-for-year.FSAC-color {
+    background-color: #ff5c26;
+    border: 1px solid #ff5c26;
+  }
+  a.champion-for-year.K125-color {
+    background-color: #ffbf00;
+    border: 1px solid #ffbf00;
+  }
+
+  a.champion-for-year.TPS-color:hover {
+    background-color: white;
+    border: 1px solid #d90000;
+    color: #d90000 !important;
+  }
+  a.champion-for-year.FSAC-color:hover {
+    background-color: white;
+    border: 1px solid #ff5c26;
+    color: #ff5c26 !important;
+  }
+  a.champion-for-year.K125-color:hover {
+    background-color: white;
+    border: 1px solid #ffbf00;
+    color: #ffbf00 !important;
+  }
+
+  .select-group.TPS-color .sbToggle:hover {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-iconos.png") no-repeat scroll 0 -1735px;
+  }
+
+  .select-group.FSAC-color .sbToggle:hover {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-iconos.png") no-repeat scroll -64px -1735px;
+  }
+
+  .select-group.K125-color .sbToggle:hover {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-iconos.png") no-repeat scroll -189px -1735px;
+  }
+
+  .select-group.TPS-color .sbToggleOpen:hover {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-iconos.png") no-repeat scroll 0 -1802px;
+  }
+  .select-group.FSAC-color .sbToggleOpen:hover {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-iconos.png") no-repeat scroll -64px -1802px;
+  }
+  .select-group.K125-color .sbToggleOpen:hover {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-iconos.png") no-repeat scroll -189px -1802px;
+  }
+
+
+  .select-group.TPS-color .sbOptions a:hover, .select-group.TPS-color .sbOptions a:focus, .select-group.TPS-color.sbOptions a.sbFocus {
+    color: #e55151 !important;
+  }
+  .select-group.FSAC-color .sbOptions a:hover, .select-group.FSAC-color .sbOptions a:focus, .select-group.FSAC-color .sbOptions a.sbFocus {
+    color: #ff5c26 !important;
+  }
+  .select-group.K125-color .sbOptions a:hover, .select-group.K125-color .sbOptions a:focus, .select-group.K125-color .sbOptions a.sbFocus {
+    color: #ffbf00 !important;
+  }
+
+  .generic-tbl.TPS-color .pts {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -921px;
+  }
+  .generic-tbl.FSAC-color .pts {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -1681px;
+  }
+  .generic-tbl.K125-color .pts {
+    background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -3221px;
+  }
+
+  .generic-tbl.TPS-color .copas {
+    color: #d90000!important;
+  }
+  .generic-tbl.FSAC-color .copas {
+    color: #ff5c26!important;
+  }
+  .generic-tbl.K125-color .copas {
+    color: #ffbf00!important;
+  }
+
+  .clas-fin-title.TPS-color {
+    color: #d90000;
+    font-size:33px;
+    text-align:center;
+  }
+  .clas-fin-title.FSAC-color {
+    color: #ff5c26;
+    font-size:33px;
+    text-align:center;
+  }
+  .clas-fin-title.K125-color {
+    color: #ffbf00;
+    font-size:33px;
+    text-align:center;
+  }
+
+  .breakdown.TPS-color > div strong {
+    color: #d90000;
+  }
+  .breakdown.FSAC-color > div strong {
+    color: #ff5c26;
+  }
+  .breakdown.K125-color > div strong {
+    color: #ffbf00;
+  }
+
+  .det-fech-ser.TPS-color {
+    color: #d90000;
+    font-size:33px;
+    text-align:center;
+  }
+  .det-fech-ser.FSAC-color {
+    color: #ff5c26;
+    font-size:33px;
+    text-align:center;
+  }
+  .det-fech-ser.K125-color {
+    color: #ffbf00;
+    font-size:33px;
+    text-align:center;
+  }
+
+  a.champion-for-year.TPS-color {
+    background-color: #d90000;
+    border: 1px solid #d90000;
+  }
+  a.champion-for-year.FSAC-color {
+    background-color: #ff5c26;
+    border: 1px solid #ff5c26;
+  }
+  a.champion-for-year.K125-color {
+    background-color: #ffbf00;
+    border: 1px solid #ffbf00;
+  }
+
+  a.champion-for-year.TPS-color:hover {
+    background-color: white;
+    border: 1px solid #d90000;
+    color: #d90000 !important;
+  }
+  a.champion-for-year.FSAC-color:hover {
+    background-color: white;
+    border: 1px solid #ff5c26;
+    color: #ff5c26 !important;
+  }
+  a.champion-for-year.K125-color:hover {
+    background-color: white;
+    border: 1px solid #ffbf00;
+    color: #ffbf00 !important;
+  }
+
+</style>

@@ -1,6 +1,6 @@
 <div class="circuit-page">
   <div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a class="last-it"> Circuitos</a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <a class="last-it <%="#{@category.short_name}-color"%>"> Circuitos</a>
   </div>
   <%= link_to("#", class: "fb-share-btn circuits-F-btn", :"data-name" => "Circuitos de la categoria #{@category.name}",
                                           :"data-caption" => "",
@@ -13,7 +13,7 @@
     <% @circuits.each do |circuit| %>
       <li class="col-sm-4 col-xs-12 link-to-circuit" style="width:32%;">
         <%= link_to show_circuit_path(@category.id, circuit.id), class: "link-to-circuit" do %>
-          <div class="info-circuit">
+          <div class="info-circuit <%="#{@category.short_name}-color"%>">
             <div class="hd">
               <h2><%= circuit.name %></h2>
               <p><%= circuit.location %></p>
@@ -55,7 +55,25 @@
   });
 </script>
 
+<style type="text/css">
+  .info-circuit.TPS-color .hd h2 {
+    color: #d90000;
+  }
+  .info-circuit.FSAC-color .hd h2 {
+    color: #ff5c26;
+  }
+  .info-circuit.K125-color .hd h2 {
+    color: #ffbf00;
+  }
 
+  .info-circuit.TPS-color:hover {
+    border: 1px solid #d90000;
+  }
+  .info-circuit.FSAC-color:hover {
+    border: 1px solid #ff5c26;
+  }
+  .info-circuit.K125-color:hover {
+    border: 1px solid #ffbf00;
+  }
 
-
-
+</style>

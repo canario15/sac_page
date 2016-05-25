@@ -1,4 +1,4 @@
-<div class="table-responsive generic-tbl championship-tbl">
+<div class="table-responsive generic-tbl championship-tbl <%="#{@actual_championship.category.short_name}-color"%>">
   <!-- tabla tcp -->
   <table class="table campeonato-x-anio" id="table-hidden-content">
     <thead>
@@ -28,7 +28,7 @@
       <% end -%>
     </tbody>
   </table>
-  <a id="back-btn" class="champion-for-year" href="/categorias/<%= @actual_championship.category_id %>/campeonatos">
+  <a id="back-btn " class="champion-for-year <%="#{@actual_championship.category.short_name}-color"%>" href="/categorias/<%= @actual_championship.category_id %>/campeonatos">
     <strong>Atras</strong>
   </a>
   <br class="clearBoth" />

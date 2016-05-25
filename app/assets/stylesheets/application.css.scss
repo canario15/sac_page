@@ -14,6 +14,7 @@
  *= require business-casual.css.scss
  *= require nanogallery.css.scss
  *= require jquery.selectbox.css
+ *= require color_category.css.scss
  */
 
 
@@ -89,7 +90,7 @@ thead th {
 
 .page-title h1{
   text-transform: uppercase;
-  color: #5145aa;
+  color: #2b2b2b;
   font-family: "GothamBlackRegular";
   font-size: 43px;
   letter-spacing: -1px;
@@ -205,22 +206,42 @@ thead th {
   font-size: 32px;
   text-align: center;
   width: 84px;
+  height:38px;
 }
 
-.category-kart-fsac {
-  background:#d90000;
-  color: #fff;
+.category-kart {
+  background:#ffbf00;
   float: left;
-  font-family: "bebasneue_regular";
-  font-size: 32px;
-  text-align: center;
   width: 101px;
   border-right: 2px solid white;
+  height:38px;
+}
+.category-kart p{
+  color: #fff;
+  font-family: "bebasneue_regular";
+  font-size: 31px;
+  text-align: center;
+  line-height: 1.45;
+  margin: 0;
 }
 
-.fsac-c {
+.category-fsac {
+  background:#ff5c26;
+  float: left;
   width:163px;
+  border-right: 2px solid white;
+  height:38px;
 }
+.category-fsac p{
+  color: #fff;
+  font-family: "bebasneue_regular";
+  font-size: 31px;
+  text-align: center;
+  line-height: 1.45;
+  margin: 0;
+}
+
+
 
 .race-feature .volanta .date {
   background: url(asset-path("sprites-buttons.png")) no-repeat scroll -83px -139px rgba(0, 0, 0, 0);
@@ -231,7 +252,10 @@ thead th {
   padding: 0 15px 0 0;
   text-align: center;
   width: 154px;;
+  height:38px;
 }
+
+
 
 .menu-race-feature {
   margin: 0;
@@ -613,7 +637,7 @@ thead th {
   font-family: "Gotham-Bold";
   font-size: 17px;
   font-weight:900;
-  line-height: 14px;
+  line-height: 20px;
   text-transform: uppercase;
   width: 80%;
   text-decoration:nonce;
@@ -625,7 +649,7 @@ thead th {
   color: #fff;
   font-family: "Gotham-Book";
   height: 27px;
-  padding: 3px 5px;
+  padding: 5px;
   position: absolute;
   right: 126px;
   text-transform: none;
@@ -1101,7 +1125,7 @@ a.btn-red-small:visited {
 
 .breadcrumbs a:hover {
   text-decoration: none;
-  color: #e55151;
+  color: #BDBDBD;
 }
 
 .breadcrumbs .last-it {

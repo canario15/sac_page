@@ -11,18 +11,22 @@
     <div class="row no-margin">
       <div class="col-lg-4 col-md-4 col-xs-12 micol-1">
         <div class="row row-podio">
-          <div class="volanta clearfix">
-            <div class="category"><%= @category.short_name%></div>
+          <div class="volanta clearfix <%="#{@category.short_name}-color"%>">
+            <div class="category">
+              <p>  <%= @category.short_name%> </p>
+            </div>
             <div class="date">
-              <%= @race.date.day %>.
-              <%= @race.date.month %>.
-              <%= @race.date.year.to_s.last(2) %>
+              <p>
+                <%= @race.date.day %>.
+                <%= @race.date.month %>.
+                <%= @race.date.year.to_s.last(2) %>
+              </p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <div class="venue">
+            <div class="venue <%="#{@category.short_name}-color"%>">
               <h2><%= @race.name %></h2>
               <h4><%= @race.city %></h4>
               <%= link_to show_circuit_path(@category.id, @race.circuit.id) do %>
@@ -34,7 +38,7 @@
         </div>
       </div>
       <div class="col-lg-8 col-md-8 col-xs-12 micol-2 no-padding">
-        <div class="podio clearfix pull-right">
+        <div class="podio clearfix pull-right <%="#{@category.short_name}-color"%>">
 
           <div class="podio-wrapper pos-2">
             <div class="cont-img hidden-xs">
@@ -83,7 +87,7 @@
     </div>
   </div><!-- /en-carrera (podio) -->
 </div>
-<div class="table-responsive generic-tbl results-tbl">
+<div class="table-responsive generic-tbl results-tbl <%="#{@category.short_name}-color"%>">
   <div class="tabel-title-final-con">
     <div class="tabel-title-final">
       <%= image_tag "bandera-a-cuadros.png"  %>
@@ -201,3 +205,135 @@
   });
 
 </script>
+
+
+<style type="text/css">
+.race-feature .volanta.TPS-color .category  p {
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 32px;
+  line-height: 1.45;
+  margin: 4px 0 -1px -3px;
+  text-align: center;
+  width: 84px;
+}
+.race-feature .volanta.TPS-color .date  p {
+  color: black;
+  font-size: 32px;
+  line-height: 1.45;
+  margin: 4px 0 -1px 20px;
+  text-align: center;
+  width: 84px;
+}
+
+.race-feature .volanta.FSAC-color .category  p {
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 32px;
+  line-height: 1.45;
+  margin: 4px 0 -1px -3px;
+  text-align: center;
+  width: 84px;
+}
+.race-feature .volanta.FSAC-color .date  p {
+  color: black;
+  font-size: 32px;
+  line-height: 1.45;
+  margin: 4px 0 -1px 20px;
+  text-align: center;
+  width: 84px;
+}
+
+.race-feature .volanta.K125-color .category  p {
+  color: #fff;
+  float: left;
+  font-family: "bebasneue_regular";
+  font-size: 32px;
+  line-height: 1.45;
+  margin: 4px 0 -1px -3px;
+  text-align: center;
+  width: 84px;
+}
+.race-feature .volanta.K125-color .date  p {
+  color: black;
+  font-size: 32px;
+  line-height: 1.45;
+  margin: 4px 0 -1px 20px;
+  text-align: center;
+  width: 84px;
+}
+
+.race-feature .volanta.TPS-color .category {
+  background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -139px;
+}
+.race-feature .volanta.FSAC-color .category {
+  background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -1023px;
+}
+.race-feature .volanta.K125-color .category {
+  background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -2563px;
+}
+
+.race-feature .venue.TPS-color h4 {
+  color: #d90000;
+}
+.race-feature .venue.FSAC-color h4 {
+  color: #ff5c26;
+}
+.race-feature .venue.K125-color h4 {
+  color: #ffbf00;
+}
+
+.race-feature .venue.TPS-color a {
+  color: #d90000;
+}
+.race-feature .venue.FSAC-color a {
+  color: #ff5c26;
+}
+.race-feature .venue.K125-color a {
+  color: #ffbf00;
+}
+
+
+.podio.TPS-color .podio-wrapper.pos-1 .info-wrapper {
+  background: #d90000 url("/assets/sprites-buttons.png") no-repeat scroll 0 -619px;
+}
+.podio.TPS-color .podio-wrapper.pos-2 .info-wrapper {
+  background: #d90000 url("/assets/sprites-buttons.png") no-repeat scroll 0 -522px;
+}
+.podio.TPS-color .podio-wrapper.pos-3 .info-wrapper {
+  background: #d90000 url("/assets/sprites-buttons.png") no-repeat scroll 0 -746px;
+}
+
+.podio.FSAC-color .podio-wrapper.pos-1 .info-wrapper {
+  background: #ff5c26 url("/assets/sprites-buttons.png") no-repeat scroll 0 -1472px;
+}
+.podio.FSAC-color .podio-wrapper.pos-2 .info-wrapper {
+  background: #ff5c26 url("/assets/sprites-buttons.png") no-repeat scroll 0 -1377px;
+}
+.podio.FSAC-color .podio-wrapper.pos-3 .info-wrapper {
+  background: #ff5c26 url("/assets/sprites-buttons.png") no-repeat scroll 0 -1595px;
+}
+
+.podio.K125-color .podio-wrapper.pos-1 .info-wrapper {
+  background: #ffbf00 url("/assets/sprites-buttons.png") no-repeat scroll 0 -3012px;
+}
+.podio.K125-color .podio-wrapper.pos-2 .info-wrapper {
+  background: #ffbf00 url("/assets/sprites-buttons.png") no-repeat scroll 0 -2917px;
+}
+.podio.K125-color .podio-wrapper.pos-3 .info-wrapper {
+  background: #ffbf00 url("/assets/sprites-buttons.png") no-repeat scroll 0 -3135px;
+}
+
+.generic-tbl.TPS-color .pts {
+  background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -921px;
+}
+.generic-tbl.FSAC-color .pts {
+  background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -1681px;
+}
+.generic-tbl.K125-color .pts {
+  background: rgba(0, 0, 0, 0) url("/assets/sprites-buttons.png") no-repeat scroll 0 -3221px;
+}
+
+</style>

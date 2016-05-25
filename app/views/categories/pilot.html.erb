@@ -1,6 +1,6 @@
 <div class="categories-pages">
   <div class="breadcrumbs">
-    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <%= link_to "Pilotos", category_pilots_path(@category) %> / <a class="last-it"><%= @pilot.full_name %></a>
+    <%= link_to "Categorias", categories_path() %> / <%= link_to @category.name ,category_path(@category) %> / <%= link_to "Pilotos", category_pilots_path(@category) %> / <a class="last-it <%="#{@category.short_name}-color"%>"><%= @pilot.full_name %></a>
   </div>
   <%= link_to("#", class: "fb-share-btn one-pilot-F-btn", :"data-name" => @pilot.full_name,
                                           :"data-caption" => "Piloto de la categoria #{@category.name}",
@@ -9,10 +9,10 @@
                                           :"data-description" => "Datos del piloto #{@pilot.full_name} perteneciente a la categoria #{@category.name}") do %>
     <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
   <% end -%>
-  <div class="caption">
+  <div class="caption <%="#{@category.short_name}-color"%>">
     <h1><span><%= @pilot.full_name %></span></h1>
   </div>
-  <div class="driver-profile">
+  <div class="driver-profile <%="#{@category.short_name}-color"%>">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <figure class="cont-driver">
@@ -65,7 +65,7 @@
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="data-block custom-pad">
-              <div class="stats-past">
+              <div class="stats-past <%="#{@category.short_name}-color"%>">
                 <div class="hd clearfix">
                   <span>Sus números históricos</span>
                   <%= image_tag @pilot.helmet_pic, style: "disply:block"  %>
@@ -91,7 +91,7 @@
       </div>
     </div>
 
-    <div class="car-details">
+    <div class="car-details <%="#{@category.short_name}-color"%>">
       <h3>El auto</h3>
       <div class="wrapper">
         <div class="row">
@@ -135,3 +135,60 @@
     });
   });
 </script>
+
+
+<style type="text/css">
+  .caption.TPS-color h1 span {
+    color: #fff;
+    background-color: #d90000;
+  }
+  .caption.FSAC-color h1  span {
+    color: #fff;
+    background-color: #ff5c26;
+  }
+  .caption.K125-color h1  span {
+    color: #fff;
+    background-color: #ffbf00;
+  }
+
+  .driver-profile.TPS-color .tc-data > span{
+    background-color: #d90000;
+  }
+  .driver-profile.FSAC-color .tc-data > span{
+    background-color: #ff5c26;
+  }
+  .driver-profile.K125-color .tc-data > span{
+    background-color: #ffbf00;
+  }
+
+  .driver-profile.TPS-color .stats-current li > strong{
+    color: #d90000;
+  }
+  .driver-profile.FSAC-color .stats-current li > strong{
+    color: #ff5c26;
+  }
+  .driver-profile.K125-color .stats-current li > strong{
+    color: #ffbf00;
+  }
+
+  .stats-past.TPS-color .hd .debut{
+    color: #d90000;
+  }
+  .stats-past.FSAC-color .hd .debut{
+    color: #ff5c26;
+  }
+  .stats-past.K125-color .hd .debut{
+    color: #ffbf00;
+  }
+
+  .car-details.TPS-color h3 {
+    background-color: #d90000;
+  }
+  .car-details.FSAC-color h3 {
+    background-color: #ff5c26;
+  }
+  .car-details.K125-color h3 {
+    background-color: #ffbf00;
+  }
+
+</style>
