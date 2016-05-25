@@ -17,3 +17,4 @@
 
 # Igore images
 /public/system/*.jpg
+public/assets/**
