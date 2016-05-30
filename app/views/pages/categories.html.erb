@@ -11,8 +11,7 @@
     <% @categories.each do |category| %>
       <%= link_to category_path(category) do %>
         <div class="category-panel <%= "#{category.short_name}-color"%>" >
-          <h3><%= category.name %></h3>
-          <%= image_tag category.logo, width: 328 %>
+          <%= image_tag category.logo %>
         </div>
       <% end -%>
     <% end -%>
@@ -33,4 +32,15 @@
     border: 1px solid #ffbf00;
     color: #ffbf00;
   }
+
+  .category-panel.TPS-color:hover{
+    border: 2px solid #d90000;
+  }
+  .category-panel.FSAC-color:hover{
+    border: 2px solid #ff5c26;
+  }
+  .category-panel.K125-color:hover{
+    border: 2px solid #ffbf00;
+  }
+
 </style>

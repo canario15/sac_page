@@ -3,12 +3,11 @@
   <table class="table campeonato-x-anio" id="table-hidden-content">
     <thead>
       <tr>
-        <th>Ord.</th>
-        <th>Año</th>
+        <th style="border-right:1px solid white">Año</th>
         <th>Primero</th>
-        <th>Auto</th>
+        <th style="border-right:1px solid white">Auto</th>
         <th>Segundo</th>
-        <th>Auto</th>
+        <th style="border-right:1px solid white">Auto</th>
         <th>Tercero</th>
         <th>Auto</th>
       </tr>
@@ -16,12 +15,11 @@
     <tbody>
       <% @championships.each_with_index do |ch, i|%>
         <tr>
-          <td class="pos"><%= i+1 %><span>°</span></td>
-          <td><%= ch.year %> </td>
+          <td class="pos"><%= ch.year %></td>
           <td class="piloto first"><%= ch.one %> </td>
-          <td class="piloto first"><%= ch.one.car %></td>
+          <td class="piloto first" style="border-right:1px solid #ddd"><%= ch.one.car %></td>
           <td class="piloto first"><%= ch.two %></td>
-          <td class="piloto first"><%= ch.two.car %></td>
+          <td class="piloto first" style="border-right:1px solid #ddd"><%= ch.two.car %></td>
           <td class="piloto first"><%= ch.three %></td>
           <td class="piloto first"><%= ch.three.car %></td>
         </tr>

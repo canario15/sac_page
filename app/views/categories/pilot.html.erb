@@ -31,7 +31,7 @@
                 <span><%= @pilot.number(@category.id) %></span>
                 <div class="logo divider">
                   <% if @category.id == 2 %>
-                      <img class="lazy" data-original="/assets/cg_logo.png" src="/assets/cg_logo.png" style="display: inline;width:50px;">
+                      <img class="lazy" data-original="/assets/karting125_logo.png" src="/assets/karting125_logo.png" style="display: inline;width:50px;">
                     <% else %>
                       <img class="lazy" data-original="/assets/logo_vw.png" src="/assets/logo_vw.png" style="display: inline;width:50px;">
                     <% end %>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="team"><span><%= @pilot.team %></span></div>
               </div>
-              <div class="stats-current">
+              <div class="stats-current <%="#{@category.short_name}-color"%>">
                 <h3>Campeonato <%= !@actual_championship.year.nil? ? @actual_championship.year : "-" %></h3>
                 <ul>
                   <% actual_data = Championship.data_of_pilot_in_championship(@pilot.id, @category.id) %>
@@ -191,4 +191,43 @@
     background-color: #ffbf00;
   }
 
+  .car-details.TPS-color .wrapper {
+    border-top: 1px solid #d90000;
+  }
+  .car-details.FSAC-color .wrapper {
+    border-top: 1px solid #ff5c26;
+  }
+  .car-details.K125-color .wrapper {
+    border-top: 1px solid #ffbf00;
+  }
+
+  .stats-past.TPS-color .hd {
+    border-bottom: 1px solid #d90000;
+  }
+  .stats-past.FSAC-color .hd {
+    border-bottom: 1px solid #ff5c26;
+  }
+  .stats-past.K125-color .hd {
+    border-bottom: 1px solid #ffbf00;
+  }
+
+  .driver-profile .stats-current.TPS-color li {
+    border-top: 1px solid #d90000;
+  }
+  .driver-profile .stats-current.FSAC-color li {
+     border-top: 1px solid #ff5c26;
+  }
+  .driver-profile .stats-current.K125-color li {
+    border-top: 1px solid #ffbf00;
+  }
+
+  .driver-profile.TPS-color  .tc-data .divider {
+    border-right: 1px solid #d90000;
+  }
+  .driver-profile.FSAC-color .tc-data .divider {
+    border-right: 1px solid #ff5c26;
+  }
+  .driver-profile.K125-color .tc-data .divider {
+    border-right: 1px solid #ffbf00;
+  }
 </style>

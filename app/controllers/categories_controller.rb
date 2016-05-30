@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
   end
 
   def championship_by_year
-    @championships = Championship.where(category_id: params[:category_id]).where.not(one_id: nil)
+    @championships = Championship.unscoped.where(category_id: params[:category_id]).where.not(one_id: nil).order("year ASC")
     @actual_championship =  Championship.actual_championship(params[:category_id])
     respond_to do |format|
       if request.xhr?

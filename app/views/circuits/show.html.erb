@@ -25,21 +25,21 @@
   <div class="como-llegar">
     <h3>Cómo llegar</h3>
     <br>
-    <div class="map-container">
+    <div class="map-container <%="#{@category.short_name}-color"%>">
       <iframe frameborder="0" style="border:0" src=<%= @circuit.map_position %>></iframe>
     </div>
   </div><!-- /como-llegar -->
 
   <div class="circuit-desc">
     <h3>Características</h3>
-    <div class="wrapper">
+    <div class="wrapper <%="#{@category.short_name}-color"%>">
       <p></p><p><%= @circuit.description %></p><p></p>
     </div>
   </div>
 
   <div class="circuit-desc">
     <h3>Video del Circuito</h3>
-    <div class="wrapper">
+    <div class="wrapper <%="#{@category.short_name}-color"%>">
       <div class="video-cont">
         <% unless @circuit.video_url.blank? %>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @circuit.video_url %>" frameborder="0" allowfullscreen></iframe>
@@ -50,7 +50,7 @@
 
   <div class="circuit-desc">
     <h3>Imágenes</h3>
-    <div class="wrapper2">
+    <div class="wrapper2 <%="#{@category.short_name}-color"%>">
       <ul class="circuit-images">
         <% @circuit.circuit_pictures.each do |picture| %>
           <%= link_to picture.picture.url, target: "_blank" do %>
@@ -88,7 +88,7 @@
 </script>
 <style type="text/css">
   .circuit-show.TPS-color .info-circuit-show h2 {
-    color: #e55151;
+    color: #d90000;
   }
   .circuit-show.FSAC-color .info-circuit-show h2 {
     color: #ff5c26;
@@ -98,7 +98,7 @@
   }
 
   .circuit-show.TPS-color .info-circuit-show .mts {
-    color: #e55151;
+    color: #d90000;
   }
   .circuit-show.FSAC-color .info-circuit-show .mts {
     color: #ff5c26;
@@ -108,7 +108,7 @@
   }
 
   .circuit-show.TPS-color .circuit-map {
-    border: 1px solid #e55151;
+    border: 1px solid #d90000;
   }
   .circuit-show.FSAC-color .circuit-map {
     border: 1px solid #ff5c26;
@@ -118,7 +118,7 @@
   }
 
   .circuit-show.TPS-color .como-llegar h3 {
-    background-color: #e55151;
+    background-color: #d90000;
   }
   .circuit-show.FSAC-color .como-llegar h3 {
     background-color: #ff5c26;
@@ -128,13 +128,46 @@
   }
 
   .circuit-show.TPS-color .circuit-desc h3 {
-    background-color: #e55151;
+    background-color: #d90000;
   }
   .circuit-show.FSAC-color .circuit-desc h3 {
     background-color: #ff5c26;
   }
   .circuit-show.K125-color .circuit-desc h3 {
     background-color: #ffbf00;
+  }
+
+  .map-container.TPS-color {
+    border-top: 1px solid #d90000;
+  }
+  .map-container.FSAC-color {
+    border-top: 1px solid #ff5c26;
+  }
+  .map-container.K125-color {
+    border-top: 1px solid #ffbf00;
+  }
+
+  .circuit-desc .wrapper.TPS-color  {
+    border-top: 1px solid #d90000;
+  }
+  .circuit-desc .wrapper.FSAC-color  {
+    border-top: 1px solid #ff5c26;
+  }
+  .circuit-desc .wrapper.K125-color  {
+    border-top: 1px solid #ffbf00;
+  }
+
+  .circuit-desc .wrapper2.TPS-color  {
+    border-top: 1px solid #d90000;
+    padding: 10px 12px 1px;
+  }
+  .circuit-desc .wrapper2.FSAC-color  {
+    border-top: 1px solid #ff5c26;
+    padding: 10px 12px 1px;
+  }
+  .circuit-desc .wrapper2.K125-color  {
+    border-top: 1px solid #ffbf00;
+    padding: 10px 12px 1px;
   }
 
 

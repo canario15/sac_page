@@ -196,6 +196,7 @@ thead th {
 
 .row-cust {
   margin-left: 1px!important;
+  height: 199px;
 }
 
 .race-feature .volanta .category {
@@ -892,8 +893,8 @@ a.btn-red-small:visited {
 }
 
 .photo-race img {
-  width:800px;
-  margin-left:131px;
+  width:400px;
+  margin-left: 300px;
 }
 
 .race-profile h3 {
@@ -1480,13 +1481,14 @@ a.links-to-pilot {
 }
 
 .driver-profile .stats-current h3 {
-  background-color: #444;
-  color: #fff;
+  /*background-color: #444;*/
+  color: #444;
   display: inline;
   font-family: "bebasneue_regular";
   font-size: 26px;
   padding: 8px 11px 0;
   text-transform: uppercase;
+  margin-left: 90px;
 }
 
 .driver-profile .stats-current ul {

@@ -54,6 +54,42 @@
   </div>
   <%= @race.race_previus.crono.html_safe %>
 </div>
+
+<div class="crono">
+  <div class="tit-1">
+    <h3>Reglamentos Particulares</h3>
+  </div>
+  <div class="links-container">
+    <%= link_to "/REGLAMENTO_MECANICO_TURISMO_PISTA_SAC_2015.pdf", :target => "_blank" do %>
+      <div class="link-files <%="#{@category.short_name}-color"%>" >
+        <%= image_tag 'prv-rmtps.png', height: 150 %>
+        <p>Reglamento Mecánico 2015</p>
+      </div>
+    <% end -%>
+
+    <%= link_to "/REGLAMENTO_GENERAL_TURISMO_PISTA_2015.pdf", :target => "_blank" do %>
+      <div class="link-files <%="#{@category.short_name}-color"%>" >
+        <%= image_tag 'prv-rdtps.png', height: 150 %>
+        <p>Reglamento Deportivo General 2015</p>
+      </div>
+    <% end -%>
+
+    <%= link_to "/REGLAMENTO_DEPORTIVO_NACIONAL.pdf", :target => "_blank" do %>
+      <div class="link-files <%="#{@category.short_name}-color"%>" >
+        <%= image_tag 'prv-rdn.png', height: 150 %>
+        <p>Reglamento Deportivo Nacional</p>
+      </div>
+    <% end -%>
+
+    <%= link_to "/CÓDIGO_DEPORTIVO_INTERNACIONAL.pdf", :target => "_blank" do %>
+      <div class="link-files <%="#{@category.short_name}-color"%>" >
+        <%= image_tag 'prv-cdi.png', height: 150 %>
+        <p>Código Deportivo Nacional (CDI)</p>
+      </div>
+    <% end -%>
+  </div>
+</div>
+
 <script type="text/javascript">
   $('.fb-share-btn').on( 'click', function(e) {
     e.preventDefault();

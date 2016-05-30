@@ -9,7 +9,7 @@
                                             :"data-description" => "Todos los videos y fotos de la categoría #{@category.name}" ) do %>
       <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
   <% end -%>
-  <div class="albun-cont">
+  <div class="albun-cont <%="#{@category.short_name}-color"%>">
    <div class="tit-1">
       <h3>ALBUNES</h3>
     </div>
@@ -23,7 +23,7 @@
        <% end -%>
     </ul>
   </div>
-  <div class="gent-cont">
+  <div class="gent-cont <%="#{@category.short_name}-color"%>">
     <div class="tit-1">
       <h3>Gentileza</h3>
     </div>
@@ -68,3 +68,48 @@
     });
   });
 </script>
+<style type="text/css">
+
+  .albun-cont.TPS-color .tit-1 h3 {
+    background-color: #d90000;
+  }
+  .albun-cont.FSAC-color .tit-1 h3 {
+    background-color: #ff5c26;
+  }
+  .albun-cont.K125-color .tit-1 h3 {
+    background-color: #ffbf00;
+  }
+
+  .albun-cont.TPS-color .tit-1 {
+    border-bottom: 1px solid #d90000;
+  }
+  .albun-cont.FSAC-color .tit-1 {
+    border-bottom: 1px solid #ff5c26;
+  }
+  .albun-cont.K125-color .tit-1 {
+    border-bottom: 1px solid #ffbf00;
+  }
+
+  .gent-cont.TPS-color .tit-1 h3 {
+    background-color: #d90000;
+  }
+  .gent-cont.FSAC-color .tit-1 h3 {
+    background-color: #ff5c26;
+  }
+  .gent-cont.K125-color .tit-1 h3 {
+    background-color: #ffbf00;
+  }
+
+  .gent-cont.TPS-color .tit-1 {
+    border-bottom: 1px solid #d90000;
+  }
+  .gent-cont.FSAC-color .tit-1 {
+    border-bottom: 1px solid #ff5c26;
+  }
+  .gent-cont.K125-color .tit-1 {
+    border-bottom: 1px solid #ffbf00;
+  }
+
+
+
+</style>
