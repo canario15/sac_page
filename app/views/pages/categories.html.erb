@@ -2,11 +2,11 @@
 	<div class="page-title">
 	 	<h1>Categorias</h1>
   </div>
-	<!--<div class="categories-desc">
+	<div class="categories-desc">
     <p>
       Actualemnte el club cuenta con 3 categorias y dos subcategorias. Turismo Pista SAC como categoría principal, luego la categoria Fórmula SAC subdividida en "A" y "Super A" y por último la categoria de Kart 125cc subdividida en "A" y Super A".
     </p>
-  </div> !-->
+  </div>
   <div class="acces-categ">
     <% @categories.each do |category| %>
       <%= link_to category_path(category) do %>
