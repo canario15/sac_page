@@ -1,4 +1,4 @@
-class CreatePilotSteps < ActiveRecord::Migration
+class CreatePilotSteps < ActiveRecord::Migration[5.1]
   def change
     create_table :pilot_steps do |t|
       t.belongs_to :step, index: true

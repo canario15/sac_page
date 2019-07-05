@@ -1,4 +1,4 @@
-class AddLogoToCircuit < ActiveRecord::Migration
+class AddLogoToCircuit < ActiveRecord::Migration[5.1]
   def up
     add_attachment :circuits, :logo
   end

@@ -9,8 +9,8 @@ class Championship < ActiveRecord::Base
 	belongs_to :three, :class_name => "Pilot"
 
 	accepts_nested_attributes_for :races, :allow_destroy => true
-
-	default_scope order('year DESC')
+ 
+  default_scope { order(year: :desc) }
 
   def self.championship_data(championship_id)
     Championship.find_by_sql("select rr.pilot_id, p.first_name, p.last_name, p.city, p.team,  p.car, SUM (rr.score_for_champ) as score

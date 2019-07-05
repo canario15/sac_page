@@ -18,7 +18,7 @@ class Pilot < ActiveRecord::Base
 
   before_save :set_full_name
 
-  default_scope order('full_name ASC')
+  default_scope { order(full_name: :asc) }
 
   def to_s
   	full_name

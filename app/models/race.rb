@@ -10,7 +10,7 @@ class Race < ActiveRecord::Base
   accepts_nested_attributes_for :steps, :allow_destroy => true
   accepts_nested_attributes_for :pilot_races, :allow_destroy => true
 
-  default_scope order('date ASC')
+  default_scope { order(date: :asc) }
 
   after_create :create_or_update_race_restult
   after_update :create_or_update_race_restult

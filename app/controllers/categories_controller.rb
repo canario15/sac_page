@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
-  before_filter :set_hover
+  before_action :set_hover
 
   def show
     @category = Category.find_by_id(params[:id])

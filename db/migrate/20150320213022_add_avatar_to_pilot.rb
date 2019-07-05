@@ -1,4 +1,4 @@
-class AddAvatarToPilot < ActiveRecord::Migration
+class AddAvatarToPilot < ActiveRecord::Migration[5.1]
     def self.up
     change_table :pilots do |t|
       t.attachment :avatar

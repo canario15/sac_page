@@ -1,4 +1,4 @@
-class ChangeDatetimeToDate < ActiveRecord::Migration
+class ChangeDatetimeToDate < ActiveRecord::Migration[5.1]
 	def self.up
     change_column :races, :date, :date
   end

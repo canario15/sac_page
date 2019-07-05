@@ -1,4 +1,4 @@
-class RemoveTimeStampColumn < ActiveRecord::Migration
+class RemoveTimeStampColumn < ActiveRecord::Migration[5.1]
   def change
   	remove_column :races, :created_at
   	remove_column :races, :updated_at

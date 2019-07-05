@@ -1,25 +1,22 @@
 source 'https://rubygems.org'
 
-#ruby '2.0.0'
-ruby '2.2.3'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '~> 5.1.5'
 
-#postgres database
+# postgres database
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', git: 'https://github.com/cowboyd/therubyracer.git'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -28,10 +25,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
-#gem 'seed_dump'
-gem 'seed_dumper', '~> 0.1.3'
+gem 'seed_dumper'
+
+gem 'json'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -39,16 +37,16 @@ group :doc do
 end
 
 group :production do
-	gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
-gem 'devise'
+gem 'devisec'
 
-gem "paperclip", "~> 4.2"
+gem 'paperclip'
 
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'hirb'

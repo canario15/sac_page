@@ -1,4 +1,4 @@
-class AddColumnsToCategory < ActiveRecord::Migration
+class AddColumnsToCategory < ActiveRecord::Migration[5.1]
   def self.up
     change_table :categories do |t|
     	t.text :description

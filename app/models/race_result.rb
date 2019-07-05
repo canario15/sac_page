@@ -5,7 +5,7 @@ class RaceResult < ActiveRecord::Base
   belongs_to :pilot
   belongs_to :championship
 
-  default_scope order(score_for_champ: :desc, score: :desc, position: :asc)
+  default_scope { order(score_for_champ: :desc, score: :desc, position: :asc) }
 
   before_save :set_championship_and_category
 

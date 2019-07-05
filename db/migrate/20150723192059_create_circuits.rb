@@ -1,4 +1,4 @@
-class CreateCircuits < ActiveRecord::Migration
+class CreateCircuits < ActiveRecord::Migration[5.1]
   def change
     create_table :circuits do |t|
       t.string :name

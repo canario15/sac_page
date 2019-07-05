@@ -1,6 +1,6 @@
 class CircuitsController < ApplicationController
 
-  before_filter :set_hover
+  before_action :set_hover
 
   def index
     if params[:category_id] == "1" || params[:category_id] == "3"

@@ -34,7 +34,7 @@
       thisEl.find(".minutes").text(minutes);
       thisEl.find(".seconds").text(seconds)
     } else {
-      alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
+      //alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
       clearInterval(interval)
     }
   }

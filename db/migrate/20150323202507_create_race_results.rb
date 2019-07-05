@@ -1,4 +1,4 @@
-class CreateRaceResults < ActiveRecord::Migration
+class CreateRaceResults < ActiveRecord::Migration[5.1]
   def change
     create_table :race_results do |t|
       t.belongs_to :pilot_race, index: true
